@@ -19,6 +19,29 @@
 - i18n
   - alles mehrsprachig?
 
+## Templates
+|       Name       |                                                          Field                                                          | Can have  siblings |                    Comment                    |
+| :--------------: | :---------------------------------------------------------------------------------------------------------------------: | :----------------: | :-------------------------------------------: |
+|     Category     |                          Name: Text(100, T)<br>Description: Text(100, T)<br>Image: Image Field                          |        Yes         | Appears on first level when it has no parents |
+| Photo Box Module | Header: Text(100, T)<br>Description: Rich(1000, T)<br>User Photo: Form Field(Photo: Attachment, Commitment: String(50)) |         No         | form field data appears somewhere in the cms  |
+|  Article Module  |             Header: Text(100, T)<br>Text: Rich(10000, T)<br>Image: Image Field<br>Url Ressource: Url Field              |         No         |                                               |
+| Donation Module  |                          Header: Text(100, T)<br>Description: Rich(1000, T)<br>IBAN: Text(22)                           |         No         |         Donation sum appears in CMS?          |
+
+### Custom Fields
+
+|    Name     |                                  Fields                                   | Comment |
+| :---------: | :-----------------------------------------------------------------------: | :-----: |
+| Image Field |                Image: Attachment<br>Caption: Text(100, T)                 |         |
+|  Url Field  | Url: Text(500)<br>Description(1000, T)<br>Qr-Code: Toggle<br>Mail: Toggle |         |
+
+### Custom Field Types
+
+|    Name    | Explanation                                                                                                                              |
+| :--------: | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Form Field | Like a Group Filed but opens a POST Endpoint on which data can get collected. Every Form Field also appears in the CMS to view the data. |
+
+
+
 ### Foto Commitment
 - File Upload
 - Speichern von Meta Informationen
