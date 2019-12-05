@@ -36,7 +36,7 @@
   - Abfrage aller Daten im Backend
 ### Spenden
 - Möglichkeit im Backend die Spendenkonto-Verbindung einzugeben
-- Abrufen der Spendensummen
+- (Abrufen der Spendensummen)
 ### Andere Projekte
 - Artikel 
   - Überschrift
