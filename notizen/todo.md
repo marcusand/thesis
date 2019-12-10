@@ -14,4 +14,5 @@
     - Erscheint als Menü Punkt?
 - [x] Url Field mit eigener Beschreibung und evtl. Möglichkeit Qr-Code und Mail anzukreuzen.
 - [ ] Mail versender
+- [ ] API -> nur Bäume ausgeben und nicht die einzelnen packages
  
