@@ -1,33 +1,37 @@
 \begin{titlepage}
   \centering
 
-  \IfFileExists{logos/tum.pdf}{%
-    \includegraphics[height=20mm]{logos/tum.pdf}
+  \IfFileExists{logos/hdm.png}{%
+    \includegraphics[height=30mm]{logos/hdm.png}
   }{%
     \vspace*{20mm}
   }
 
-  \vspace{5mm}
-  {\huge\MakeUppercase{\getFaculty{}}}\\
+  % \vspace{5mm}
+  % {\huge\MakeUppercase{\getFaculty{}}}\\
 
-  \vspace{5mm}
-  {\large\MakeUppercase{\getUniversity{}}}\\
+  % \vspace{5mm}
+  % {\large\MakeUppercase{\getUniversity{}}}\\
 
   \vspace{20mm}
-  {\Large \getDoctype{}}
+  {\huge\MakeUppercase{\getDoctype{}}}\\
+
+  \vspace*{5mm}
+  {\large im Studiengang \getCourseOfStudies{}}
 
   \vspace{15mm}
   {\huge\bfseries \getTitle{}}
 
-  \vspace{10mm}
-  {\huge\bfseries \foreignlanguage{ngerman}{\getTitleGer{}}}
+  \vspace*{15mm}
+  vorgelegt von \getAuthor{} \\
+  an der \getUniversity{} \\
+  am \getSubmissionDate{} \\
+  zur Erlangung des akademischen Grades eines \getAcademicDegree{}
 
   \vspace{15mm}
   \begin{tabular}{l l}
-    Author:          & \getAuthor{} \\
-    Supervisor:      & \getSupervisor{} \\
-    Advisor:         & \getAdvisor{} \\
-    Submission Date: & \getSubmissionDate{} \\
+    Erstprüfer:      & \getSupervisor{} \\
+    Zweitprüfer:     & \getAdvisor{} \\
   \end{tabular}
 
   \IfFileExists{logos/faculty.pdf}{%
