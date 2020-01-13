@@ -3,6 +3,9 @@
 ## Titel
 *Möglichkeiten und Grenzen eines webtechnologiebasierten Softwarestacks für Kiosk-Software-Systeme anhand der Entwicklung einer Sharing-Station für Museen und Ausstellungen.*
 
+Alternativ:
+*Möglichkeiten und Grenzen einer webtechnologiebasierten Kiosksoftware anhand der Entwicklung einer Sharing-Station für Museen und Ausstellungen*
+
 ## Fokus
 - Ansprüche und Maßstäbe die typischerweise an Webtechnologien gelegt werden in neuem Kontext prüfen
 - „Guideline“ für die Findung eines Softwarestacks
@@ -12,9 +15,36 @@
 ## Zielgruppendefinition
 *Die Arbeit richtet sich an Softwareentwickler, die vor der Aufgabe stehen eine Kiosksoftware zu entwerfen. Nach Lesen der Arbeit soll klar sein ob ein Entwickeln alleinig mit Webtechnologien der Richtige Weg ist und was bei der Wahl der Frameworks, Softwarebibliotheken und der Softwarearchitektur zu beachten ist.*
 
-## Zeit
-- geplanter Zeitraum 07.01.2020 - 07.04.2020 
-- späteste Anmeldung bis 16.12.2019
+## Abstract
+Diese Bachelor-Thesis untersucht das Entwickeln einer Kiosksoftware mit einem webtechnologiebasiertem Softwarestack anhand eines realen Praxisbeispiels. 
+Dabei wird der gesamte Technologiestack schichtweise betrachtet und Vor- und Nachteile diskutiert. Der Fokus liegt hierbei klar auf der Frontend-Applikation und der Kommunikation mit Hardwarekomponenten, welches durch Entwickeln einer generischen MQTT-Schnittstelle gelöst wird. 
+
+## Zeitplan
+- Start 07.01
+- Planung 13.01 - 19.01
+  - grobe Gliederung
+  - Rechercheplanung
+  - Absprache mit Betreuern 
+- Vorbereitung 20.01 - 02.02
+  - Materialbeschaffung
+  - Recherche
+  - Auswertung
+  - Grobe Implementierung aller Bausteine
+  - event. Experteninterview
+- Strukturierung 03.02 - 16.02
+  - endgültige Gliederung
+  - wichtige Aspekte gut strukturieren
+  - event. Auswertung Experteninterview
+- Schreiben 17.02 - 15.03
+  - mit Einleitung beginnen aus welcher Zielsetzung, Aufbau und Methodik ersichtlich werden
+  - Literaturverzeichnis erstellen
+  - grobes Überprüfen nach wissenschaftlichen Standards
+- Abschluss 16.03 - 01.04 
+  - Korrekturlesen
+  - Layout finalisieren 
+  - Drucken
+  - Abgeben
+- Ende 06.04
 
 ## Nicht vergessen:
 - deutsches und englisches Abstract
