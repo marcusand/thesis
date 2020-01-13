@@ -18,8 +18,16 @@
     - Frontend 
     - Microservices
 - Anforderungen 
-- Hardwareschnittstelle
+  - fast Prototyping
+  - Multiplattform
+  - Modular?
+  - Ansprechendes User-Interface
+  - Kommunikation mit Hardware
+- Softwarestack
+- Hardware-Kommunikation
 - Continuous Deployment
+- Performance
+
 <br>
 - Backend Technologien
   - Allgemeine Besprechung
@@ -38,16 +46,20 @@
 - Erstellen eines Point of Information / Jasjotbir Singh // http://d-nb.info/119935032X
 - Getting it across: layout issues for kiosk systems // https://kops.uni-konstanz.de/handle/123456789/6253
 - Entwicklung eines interaktiven Informations-Kiosks // Wissenschaftliche Arbeit // https://opus4.kobv.de/opus4-hs-duesseldorf/frontdoor/index/index/docId/1580
+- HTML5-Hardware-Kommunikation mit PPS-Messaging // https://www.elektronikpraxis.vogel.de/html5-hardware-kommunikation-mit-pps-messaging-a-411417/
+  
 
 <br>
 
 - Sharing Station
   - als Platform 
-- SPA
+- SPA 
+  - kein Nachladen bei Seitenwechsel
 - Typische Technologiestacks
 - Point of Information // Kiosksystem
 - Cache
 - Hardwarekommunikation
+  - Webcam
   - mit Electron eigentlich lösbar, aber im Sinne der Plattform-Kompalität Lösung über Schnittstelle
 - Updatestrategie
 - Nutzung reichhaltiger APIs (z.B. Media Capture and Streams)
@@ -58,3 +70,6 @@
   - etc.
 - Betreiben der Software im Vollbildmodus um Verlassen und Beenden zu Verhindern
 - Performance
+- Continous Deployment Strategien
+  - eigentliche Applikationsfiles können statisch gehostet werden und bei Start geladen werden, darüber hinaus können diese im Browser geladen werden.
+  - die installierte Anwendung ist nur noch Rahmen
