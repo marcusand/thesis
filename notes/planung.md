@@ -6,39 +6,66 @@
 - Übersicht Literatur
 
 ## Ideen:
-- Abstract
-- Einleitung
-  - MESO vorstellen
-  - Projekt für Dialogmuseum vorstellen
-- Grundlagen
-  - Kiosksoftware
-  - Softwarestack
-    - Datenbank
-    - Serverapplikation
-    - Frontend 
-    - Microservices
 - Anforderungen 
-  - fast Prototyping
+  - schnelles Prototyping
   - Multiplattform
-  - Modular?
-  - Ansprechendes User-Interface
+  - (Modularität)
+  - User Interface
+    - ansprechend
+    - responsive
   - Kommunikation mit Hardware
-- Softwarestack
+  - Soll sich wie Native Software anfühlen 
+    - SPA
+    - (Offline-Verfügbarkeit)
+  - touch-friendly
+- Softwarestack Sharing Station
 - Hardware-Kommunikation
 - Continuous Deployment
+  - alle Systeme bekommen update gleichzeitig durch deploy auf Server
 - Performance
+- UML für React
+- Caching
+  - durch webworker bei PWA
+- Cross-browser capability spielt keine Rolle
+- Homie Controller für JavaScript mit Websockets entwickeln
 
-<br>
-- Backend Technologien
-  - Allgemeine Besprechung
-  - MuseOS CMS
-  - MongoDB
-- Frontend Technologien
-  - Allgemeine Besprechung
-  - SPA
-  - JavaScript
+### Gliederung
+- Abstract
+- Einleitung
+  - Meso
+  - Dialogmuseum
+  - Zielsetzung der Arbeit
+- Grundlagen
+  - Kiosksoftware / POI
+  - Webtechnologien
+- Anforderungsanalyse
+  - funktionale Anforderungen
+    - Allgemein
+    - Sharing Station
+  - nicht-funktionale Anforderungen
+    - Offline Verfügbarkeit
+    - Intuitiv
+    - Plattformunabhängig / Portierbar
+    - Modular / Erweiterbar
+- Softwarestack
+  - Backend
+    - CMS 
+    - Datenbank
+  - Frontend
+    - React
+    - Redux
+    - ...
+- Hardware Anbindung
+  - JavaScript Sandbox Prinzip
+  - Media Devices API
+  - Individuelle Geräte über MQTT
+    - Kartenterminal
+    - Münzeinwurf
+- Deployment und Präsentation
+  - Browser
   - Electron
-- 
+  - PWA
+
 
 ### Recherche
 - "Multimediale Kioskterminals : Infotankstellen, Telekommunikationssysteme und Smart Shops der Zukunft" // Silberer, Günter (Herausgeber) // 978-3-409-11667-1 // http://d-nb.info/959550232 
@@ -47,9 +74,15 @@
 - Getting it across: layout issues for kiosk systems // https://kops.uni-konstanz.de/handle/123456789/6253
 - Entwicklung eines interaktiven Informations-Kiosks // Wissenschaftliche Arbeit // https://opus4.kobv.de/opus4-hs-duesseldorf/frontdoor/index/index/docId/1580
 - HTML5-Hardware-Kommunikation mit PPS-Messaging // https://www.elektronikpraxis.vogel.de/html5-hardware-kommunikation-mit-pps-messaging-a-411417/
+- Characterizing Architecturally Significant Requirements // https://ieeexplore.ieee.org/document/6365165
+- Java Point of Sale // https://en.wikipedia.org/wiki/JavaPOS
+- Bachelorarbeit Design und Implementierung eines POS-SystemsVerkaufssoftware zum Einsatz auf spezifischerKassenhardware in einer Kennzeichenprägestelle // http://edoc.sub.uni-hamburg.de/haw/volltexte/2012/1472/pdf/DIPOSS.pdf
+- Kiosksimple // Softwareprodukt // https://www.kiosksimple.com
+- Kiosksimple-Blog // https://blog.kiosksimple.com/2014/08/18/6-reasons-to-develop-your-kiosk-application-as-a-native-windows-application/
   
 
 <br>
+
 
 - Sharing Station
   - als Platform 
