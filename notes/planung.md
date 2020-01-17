@@ -13,6 +13,8 @@
 - PWA oder Electron
 - Homie
 - Deployment?
+- Sicherheit???
+- 
 
 <br>
 
