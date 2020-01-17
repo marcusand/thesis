@@ -20,8 +20,7 @@ Alternativ:
 *Die Arbeit richtet sich an Softwareentwickler, die vor der Aufgabe stehen eine Kiosksoftware zu entwerfen. Nach Lesen der Arbeit soll klar sein ob ein Entwickeln alleinig mit Webtechnologien der Richtige Weg ist und was bei der Wahl der Frameworks, Softwarebibliotheken und der Softwarearchitektur zu beachten ist.*
 
 ## Abstract
-Diese Bachelor-Thesis untersucht das Entwickeln einer Kiosksoftware mit einem webtechnologiebasiertem Softwarestack anhand eines realen Praxisbeispiels. 
-Dabei wird der gesamte Technologiestack schichtweise betrachtet und Vor- und Nachteile diskutiert. Der Fokus liegt hierbei klar auf der Frontend-Applikation und der Kommunikation mit Hardwarekomponenten, welches durch Entwickeln einer generischen MQTT-Schnittstelle gelöst wird. 
+Diese Bachelor-Thesis untersucht das Entwickeln einer Kiosksoftware mit einem webtechnologiebasiertem Softwarestack anhand eines realen Praxisbeispiels. Dabei werden typische und spezifische Anforderungen besprochen, sowie der Technologiestack schichtweise betrachtet und Vor- und Nachteile diskutiert. Der Fokus liegt hierbei klar auf der Frontend-Applikation und der Kommunikation mit Hardwarekomponenten, welches durch Entwickeln einer generischen MQTT-Schnittstelle gelöst wird. 
 
 Darüber hinaus wird im Rahmen der Anforderungen ein Continous-Deployment-Konzept entwickelt.
 
