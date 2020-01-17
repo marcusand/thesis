@@ -5,7 +5,17 @@
 - Rechercheplanung
 - Übersicht Literatur
 
+
+
 ## Ideen:
+- UML für React
+- weiter Anforderungen
+- PWA oder Electron
+- Homie
+- Deployment?
+
+<br>
+
 - Anforderungen 
   - schnelles Prototyping
   - Multiplattform
@@ -47,7 +57,9 @@
     - Intuitiv
     - Plattformunabhängig / Portierbar
     - Modular / Erweiterbar
+    - Testbar
 - Softwarestack
+  - Architektur
   - Backend
     - CMS 
     - Datenbank
@@ -61,7 +73,7 @@
   - Individuelle Geräte über MQTT
     - Kartenterminal
     - Münzeinwurf
-- Deployment und Präsentation
+- Deployment / Plattform
   - Browser
   - Electron
   - PWA
