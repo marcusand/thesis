@@ -1,0 +1,193 @@
+@startuml
+title Sharing Station App
+
+class Redux << (P,yellow) Provider>> {
+  ~store
+}
+
+class App << (C, blue) component>> {
+  ~store
+}
+
+class Header << (C, blue) component>> {
+  ~store
+}
+
+class ErrorAlert << (C, blue) component>> {
+  ~store
+}
+
+class Loading << (C, blue) component>> {
+
+}
+
+class Router << (C, red) container>> {
+  ~store
+}
+
+class AnimatedSwitch << (C, red) container>> {
+
+}
+
+Class Menu << (C, blue) component>> {
+
+}
+
+Class MenuEntry << (C, blue) component>> {
+
+}
+
+class ArticleModuleContainer << (C, red) container>> {
+
+}
+
+class ArticleModule << (C, blue) component>> {
+
+}
+
+class PhotoboxModuleContainer << (C, red) container>> {
+
+}
+
+class PhotoboxModule << (C, blue) component>> {
+  
+}
+
+class PhotoGallery << (C, blue) component>> {
+
+}
+
+class TakePhoto << (C, blue) component>> {
+
+}
+
+class DonationModuleContainer << (C, red) container>> {
+
+}
+
+class DonationModule << (C, blue) component>> {
+  
+}
+
+class SelectDonation << (C, blue) component>> {
+
+}
+
+class Donate << (C, blue) component>> {
+
+}
+
+class ContactModuleContainer << (C, red) container>> {
+
+}
+
+class ContactModule << (C, blue) component>> {
+  
+}
+
+class NotFound << (C, blue) component>> {
+  
+}
+
+Redux <..> App
+
+App <..> Header
+App <..> ErrorAlert
+App <...> Router
+
+Router -- Menu
+Router -- ArticleModuleContainer
+Router -- PhotoboxModuleContainer
+Router -- DonationModuleContainer
+Router -- ContactModuleContainer
+Router -- NotFound
+
+Menu -- MenuEntry
+
+ArticleModuleContainer -- ArticleModule
+ContactModuleContainer -- ContactModule
+PhotoboxModuleContainer -- PhotoboxModule
+DonationModuleContainer -- DonationModule
+
+PhotoboxModule -- PhotoGallery
+PhotoboxModule -- TakePhoto
+
+DonationModule -- SelectDonation
+DonationModule -- Donate
+
+@enduml
+' class ControlContainer << (C,red) container>> {
+'     ~store
+'     ==methods==
+'     +handleEvents()
+' }
+
+' class SweepContainer << (C,red) container>> {
+'     ~store
+'     ==props==
+'     # radius:number
+'     # hubRadius: number
+' }
+
+' class Bezel << (C,blue) component >> {
+'     ==props==
+'     # radius: number
+' }
+
+' class Display << (C,blue) component >> {
+'     ==props==
+'     # svgHeight: number
+'     # svgWidth: number
+'     # diameter: number
+'     # radius: number
+'     # hubRadius: number
+' }
+
+' class Hub << (C,blue) component >> {
+'     ==props==
+'     # radius:number
+' }
+
+' class Sweep << (C,blue) component >> {
+'     ==props==
+'     #dim:object
+' }
+
+' class RadarControls << (C,blue) component >> {
+'     ==props==
+'     # controls:array
+'     # controlHandler()
+'     ==methods==
+'     +handleToggleEvents()
+' }
+
+' class Toggle << (C,blue) component >> {
+'     ==state==
+'     # value
+'     ==props==
+'     # id: number
+'     # label: string
+'     # onClick()
+' }
+
+' class "StartStop:Toggle" << (C,lightblue) instance >>
+
+' Redux <..> RadarContainer
+' Redux <..> ControlContainer
+' Redux <..> SweepContainer
+' RadarContainer *-- SweepContainer
+' RadarContainer *-- ControlContainer
+
+' RadarContainer o-- Display
+
+' Display o-- Bezel
+' Display o-- Hub
+
+' SweepContainer o-- Sweep
+
+' ControlContainer o-- RadarControls
+' ControlContainer "handleEvents" <.. "controlHandler" RadarControls
+' RadarControls o-- Toggle
+' RadarControls "handleToggleEvents" <.. "onClick" Toggle
+
+' Toggle <|-- "StartStop:Toggle"
