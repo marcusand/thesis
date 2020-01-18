@@ -1,0 +1,28 @@
+@startuml
+title: Sharing Station Architektur
+!define LIGHTBLUE
+!include ./style.puml
+
+frame "LAN" {
+  frame "Exponat" {
+    node "Frontend-Applikation" as frontend
+    node "MQTT-Client" as mqttclient
+    rectangle "Webcam" as webcam
+    rectangle "Münzeinwurf" as münzeinwurf
+    rectangle "Kartenterminal" as kartenterminal
+
+    webcam -down-> frontend
+    kartenterminal <-right-> mqttclient
+    münzeinwurf -right-> mqttclient
+  }
+  node "MQTT-Broker" as mqttbroker
+  
+  mqttbroker <-> mqttclient
+  mqttbroker <-> frontend
+}
+node "CMS" as cms
+database "Datenbank" as datenbank
+
+cms <-> datenbank
+cms <-> frontend
+@enduml
