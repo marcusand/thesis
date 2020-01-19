@@ -1,7 +1,9 @@
 @startuml
 title Sharing Station App
+!define LIGHTBLUE
+!include ./style.puml
 
-class Redux << (P,yellow) Provider>> {
+class Redux <<Provider>> {
   ~store
 }
 

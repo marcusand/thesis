@@ -1,0 +1,34 @@
+@startuml
+!define LIGHTBLUE
+!include ./style.puml
+
+skinparam nodesep 50
+skinparam ranksep 100
+
+frame "WAN" {
+frame "LAN" {
+    node "Kiosk Workstation" <<device>> as workstation {
+      component "Sharing Station App" <<application>> as  application
+      component "MQTT Broker" <<service>> as mqttBroker
+    }
+    node "MQTT Embedded Client" <<device>> as mqttClient
+    node "Webcam" <<device>> as webcam
+    node "Coin Slot" <<device>> as coinSlot
+    node "Card Terminal" <<device>> as cardTerminal
+
+    webcam -- application: mediastream
+    cardTerminal -- mqttClient: serial
+    coinSlot -- mqttClient: serial
+  
+  mqttBroker -- mqttClient: <<protocol>>\nmqtt
+  mqttBroker -- application: <<protocol>>\nmqtt over\nwebsockets
+}
+node "Server" <<device>> as cmsServer {
+    component "CMS" <<application>> as cms
+    database "Database" as database
+    cms - database
+  }
+}
+
+cms -up- application: <<protocol>>\nhttp(s)
+@enduml
