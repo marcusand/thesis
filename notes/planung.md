@@ -17,6 +17,10 @@
 - Hardwarekommunikation
   - Webcam
   - mit Electron eigentlich lösbar, aber im Sinne der Plattform-Kompalität Lösung über Schnittstelle
+  - Web USB
+  - Homie:
+    - Autodiscovery nicht nötig
+  - Konfigurationsdatei
 - Updatestrategie
 - Nutzung reichhaltiger APIs (z.B. Media Capture and Streams)
 - Nutzung großes Ökosystem
@@ -29,6 +33,7 @@
 - Continous Deployment Strategien
   - eigentliche Applikationsfiles können statisch gehostet werden und bei Start geladen werden, darüber hinaus können diese im Browser geladen werden.
   - die installierte Anwendung ist nur noch Rahmen
+- Darüber schreiben wie sonst Interfaces, Anwendungen und Kiosksysteme bei MESO programmiert werden
 
 <br>
 
