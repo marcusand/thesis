@@ -10,7 +10,6 @@
   \vspace{20mm}
   {\huge{\getDoctype{}}}\\
 
-  \vspace*{5mm}
   {\large im Studiengang \getCourseOfStudies{}}
 
   \vspace{15mm}
@@ -19,13 +18,13 @@
   \vspace*{15mm}
   vorgelegt von 
 
-  \vspace{5mm}
-  {\large \getAuthor{}} 
+  {\large \getAuthor{}} \\
+  an der \getUniversity{} \\
+  am \getSubmissionDate{} \\
 
   \vspace{5mm}
-  an der \getUniversity{} 
-  am \getSubmissionDate{} \\
-  zur Erlangung des akademischen Grades eines \getAcademicDegree{}
+  zur Erlangung des akademischen Grades \\
+  \getAcademicDegree{}
 
   \vspace{15mm}
   \begin{tabular}{l l}
@@ -33,8 +32,4 @@
     Zweitprüfer:     & \getAdvisor{} \\
   \end{tabular}
 
-  \IfFileExists{logos/faculty.pdf}{%
-    \vfill{}
-    \includegraphics[height=20mm]{logos/faculty.pdf}
-  }{}
 \end{titlepage}
