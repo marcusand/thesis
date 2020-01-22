@@ -4,6 +4,7 @@
 - Lex. Wirtschaftsinformatik // http://d-nb.info/gnd/4403685-1 // *Beinhaltet eine Definition von Kiosksoftware*
 - Getting it across: layout issues for kiosk systems // https://kops.uni-konstanz.de/handle/123456789/6253 // Online
 - Java Point of Sale // https://en.wikipedia.org/wiki/JavaPOS 
+- A networked multimedia retrieval management system for distributed kiosk applications // https://ieeexplore.ieee.org/abstract/document/292478/metrics
 
 ---
 
