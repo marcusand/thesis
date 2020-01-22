@@ -8,6 +8,8 @@
 Alternativ:
 *Möglichkeiten und Grenzen von Webtechnologien bei der Entwicklung von Kiosksoftware anhand der Implementierung einer Sharing-Station für Museen und Ausstellungen*
 
+*Möglichkeiten und Grenzen von Webtechnologien bei der Entwicklung von Kiosksoftware anhand der Implementierung einer Anwendung für Museen und Ausstellungen.*
+
 ## Abstract
 Diese Bachelor-Thesis untersucht das Entwickeln einer Kiosksoftware mit einem webtechnologiebasiertem Softwarestack anhand eines realen Praxisbeispiels. Dabei werden typische und spezifische Anforderungen besprochen, sowie der Technologiestack schichtweise betrachtet und Vor- und Nachteile diskutiert. Der Fokus liegt hierbei klar auf der Frontend-Applikation und der Kommunikation mit Hardwarekomponenten, welches durch Entwickeln einer generischen MQTT-Schnittstelle gelöst wird.
 
@@ -23,7 +25,7 @@ Diese Bachelor-Thesis untersucht das Entwickeln einer Kiosksoftware mit einem we
     - Zielsetzung der Arbeit
     - Zielgruppe 
 - Grundlagen
-  - Kiosksoftware / POI<br>
+  - Kiosksysteme<br>
     *Ausführliche Definition und Erklärung des Begriffs*
   - Webtechnologien<br>
     *Erklärung des Begriffs 'Webtechnologien' und Bedeutung im Zusammenhang mit der Arbeit*
