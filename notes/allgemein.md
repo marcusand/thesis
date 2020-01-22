@@ -8,7 +8,7 @@ Alternativ:
 
 *Möglichkeiten und Grenzen von Webtechnologien für Kiosksoftware anhand der Entwicklung einer Sharing-Station für Museen und Ausstellungen*
 
-*Möglichkeiten und Grenzen von Webtechnologien bei der Entwicklung von Kiosksoftware anhand der Implementierung einer Sharing-Station für Museen und Ausstellungen*
+*Möglichkeiten und Grenzen von Webtechnologien bei der Entwicklung von Kiosksystemen anhand der Implementierung einer Sharing-Station für Museen und Ausstellungen*
 
 ## Fokus
 - Ansprüche und Maßstäbe die typischerweise an Webtechnologien gelegt werden in neuem Kontext prüfen
