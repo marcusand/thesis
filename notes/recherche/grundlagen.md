@@ -10,6 +10,8 @@
 
 - Wenn man in der Informationstechnologie von Kiosksystemen spricht sind damit Computersysteme gemeint die im öffentlichen Raum platziert sind.
 - Kiosk - ursprüngliche Definition:
+  - aus Persisch köschk bedeutet Gartenhäuschen
+  - in islamischer Baukust ein pavilonähnlicher Bau
   - Verkaufshäuschen. Bevorzugte Standorte sind belebte Straßen, Plätze und Ausflugziele.
   - Gemeinsamkeiten: 
     - Standorte
@@ -46,6 +48,7 @@
 - Javascript Release: 
    https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html
 - HTML als weltweite Verknüpfung multimedialer Inhalte
+- Referenz auf Holfelder, der auch auf Kiosksysteme mit Web Technologien eingeht, aber Unterschied zu der Art der Sharing Station
 - Im konkreten Fall soll das System in sich geschlossen sein. Also nicht auf weltweite Inhalte verknüpfen.
 - Webtechnologien eignen sich immer mehr durch CSS Animationen, HTML5 Video Element
 - Wandel von mit sich verknüpften Inhalten zu reinen JS Anwendungen
