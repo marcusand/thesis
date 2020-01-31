@@ -15,9 +15,6 @@
     *Ausführliche Definition und Erklärung des Begriffs*
   - Webtechnologien<br>
     *Erklärung des Begriffs 'Webtechnologien' und Bedeutung im Zusammenhang mit der Arbeit*
-- Sharing Station
-  - Motivation
-  - Konzeption
 - Anforderungsanalyse
   - funktionale Anforderungen<br>
     *Erläuterung der funktionalen Anforderungen an Kiosksoftware beispielhaft an den spezifischen Anforderungen der Sharing Station*
