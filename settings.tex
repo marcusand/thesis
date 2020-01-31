@@ -34,6 +34,10 @@
 \usepackage{todo}
 
 \bibliography{bibliography}
+\defbibheading{bibliography}[Literatur- und Quellenverzeichnis]{%
+	\chapter*{#1}%
+	\addcontentsline{toc}{chapter}{#1}%
+} 
 
 \setkomafont{disposition}{\normalfont\bfseries} % use serif font for headings
 \linespread{1.05} % adjust line spread for mathpazo font
@@ -72,3 +76,4 @@
   keywordstyle=\bfseries\color{TUMBlue},
   stringstyle=\color{TUMAccentGreen}
 }
+
