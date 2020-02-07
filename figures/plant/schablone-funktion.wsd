@@ -1,0 +1,50 @@
+@startuml
+!define LIGHTBLUE
+!include ./style.puml
+
+skinparam rectangle {
+	roundCorner 20
+}
+
+rectangle system [
+  <System>
+]
+
+rectangle wichtigkeit [
+  <Wichtigkeit>
+  ===
+  muss
+  ---
+  sollte
+  ---
+  wird
+]
+
+rectangle art [
+  <Art der Funktionalität>
+  ===
+  -
+  ---
+  die Mögllichkeit bieten
+  ---
+  fähig sein
+]
+
+rectangle objekt [
+  <Objekt>
+]
+
+rectangle prozesswort [
+  <Prozesswort>
+]
+
+system -right- wichtigkeit
+wichtigkeit -right- art
+art -right- objekt
+objekt-right-prozesswort
+
+' note top of wichtigkeit: Wichtigkeit
+' note top of art: Art der Funktionalität
+' note top of prozesswort: Funktionatlität identifizieren
+
+@enduml

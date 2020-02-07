@@ -5,7 +5,7 @@
 !endif
 
 !ifndef FONTSIZE
-!define FONTSIZE 11
+!define FONTSIZE 13
 !endif
 
 !ifdef DARKBLUE
@@ -16,7 +16,7 @@ skinparam stereotypeCBackgroundColor ACCENT
 !define DARKSTYLE
 !endif
 !ifdef LIGHTBLUE
-!define ACCENT 2a86e2
+!define ACCENT c9e0f8
 !define ACCENTDARK 1a66c2
 skinparam stereotypeCBackgroundColor ACCENTDARK
 !define LIGHTSTYLE
