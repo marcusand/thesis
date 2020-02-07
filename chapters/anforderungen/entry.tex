@@ -1,5 +1,5 @@
 \chapter{Anforderungsanalyse}
-\label{section:anforderungen}
+\label{sec:anforderungen}
 
 Nun sind wir am Ausgangspunkt der Arbeit angelangt: Es soll die Software für ein Kiosksystem
 entwickelt werden. Im Rahmen dieser Arbeit und am Beispiel der \shst{}
@@ -14,49 +14,24 @@ werden.\\
 
 Nach einer üblichen Methode der Systemanalyse werden die Anforderungen in funktionale und 
 nicht-funktionale Anforderungen unterteilt. Dabei definieren funktionale Anforderungen die 
-reine Funktionalität und geben dabei Antworten 
+reine Funktionalität und geben Antworten 
 auf die Frage "Was soll das System machen?". Nicht-funktionale Anforderungen bilden die
 restlichen Anforderungen ab und definieren dabei Anforderungen an die Art und Qualität der
 Funktionen. Nicht-funktionale Anforderungen können dabei noch weiter, in Qualitätsanforderungen 
 und Randbedingungen, unterschieden werden \cite[S.20 f.]{systemanalyse}. 
 Da sich an dieser Stelle der Anforderungsumfang in Maßen hält, wird diese weitere Unterscheidung
-nicht vorgenommen.
-Funktionale Anforderungen sind dabei immer sehr projektspezifisch, da sie die konkreten Features
+nicht vorgenommen.\\
+Funktionale Anforderungen sind immer sehr projektspezifisch, da sie die konkreten Features
 und Funktionalitäten abbilden. So beschreiben auch hier die funktionalen Anforderungen die konkreten
 Eigenschaften der \shst{} und geben dabei einen guten Überblick über den geplanten Funktionsumfang.
 Nicht-funktionale Anforderungen hingegen sind generischer und lassen sich leichter auf andere Projekte
 übertragen. So sind die im Folgenden beschriebenen nicht-funktionalen Anforderungen, Anforderungen, die
-auch typisch für Kiosksoftware im Allgemeinen sind. Sie sind für das Ziel dieser Arbeit also von 
-größerer Wichtigkeit.\\
+auch typisch für Kiosksoftware im Allgemeinen sind. Sie sind für die Zielsetzung dieser Arbeit also von 
+größerer Bedeutung.\\
 Beim Definieren der Anforderungen beschränkt sich diese Arbeit auf die Anforderungen an die Software.
 Dabei stellen manche Anforderungen auch Ansprüche an andere Teile des Systems. Diese Überschneidung
 lässt sich nicht vermeiden. Gerade die funktionalen Anforderungen stellen meist Anforderungen an das 
 Gesamtsystem.\\ 
-
-\begin{figure}
-    \centering
-    \includestandalone[width=1\textwidth]{figures/plant/out/schablone-funktion}
-    \caption{Schablone für die funktionalen Anforderungen}
-    \label{fig:schablone-funktion}
-\end{figure}
-
-Die Anforderungen sind in natürlicher Sprache verfasst und folgen dabei einer bestimmten Syntax. Diese
-Syntax folgt den Schablonenregeln von \citeext{requirements}.
-
-
-\iffalse
-- Um die Möglichkeiten und Grenzen dieser Technologien strukturiert und genau bewerten zu können,
-  werden im ersten Schritt die Anforderungen an das System, und genauer an die Software des Systems,
-  analysiert. 
-- Untersuchung der Anforderungen an die Software. Dabei stellen manche Anforderungen auch 
-  Ansprüche an andere Teile des Systems. Die Überschneidung lässt sich nicht vermeiden.
-- Funktionale Anforderungen sind immer sehr Projekt spezifisch, während nicht-funktionale 
-  Anforderungen allgemeiner und übertragbarer sind. 
-- Funktionale Anforderungen stellen Forderungen an das Gesamtsystem und geben Antwort auf die 
-  Frage "Was soll das System machen". Alle weiteren Anforderungen bezeichnet man als nicht-funktionale
-  Anforderungen (S.19 kompakt)
-- Die nicht-funktionalen Anforderungen sind auf die Anforderungen an die Software beschränkt
-\fi
 
 \input{funktionale}
 \input{nicht-funktionale}
