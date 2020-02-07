@@ -1,0 +1,59 @@
+@startuml
+!define LIGHTBLUE
+!include ./style.puml
+
+skinparam rectangle {
+	roundCorner 20
+}
+
+rectangle betrachtungsgegenstand [
+  <[Komponente des +]\nBetrachtungs-\ngegenstand(s)>
+]
+
+rectangle wichtigkeit [
+  <Wichtigkeit>
+  ===
+  muss
+  ---
+  sollte
+  ---
+  wird
+]
+
+rectangle art [
+  so\ngestaltet\nsein, dass
+]
+
+rectangle bedingung [
+  <Beding-\nung>
+]
+
+rectangle objekt [
+  <Betrachtungs-\ngegenstand>
+]
+
+rectangle eigenschaft [
+  <Eigen-\nschaft>
+]
+
+rectangle wert [
+  <Wert>
+]
+
+rectangle betrieben [
+  betrieben\nwerden\nkann
+]
+
+betrachtungsgegenstand -right- wichtigkeit
+wichtigkeit -right- art
+art -right- bedingung
+bedingung-right-objekt
+objekt -right- eigenschaft
+eigenschaft -right- wert
+wert -right- betrieben
+
+' note top of wichtigkeit: Wichtigkeit
+' note top of art: Art der Funktionalität
+' note top of prozesswort: Funktionatlität identifizieren
+
+@enduml

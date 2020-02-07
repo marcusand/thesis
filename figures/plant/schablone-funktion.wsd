@@ -23,8 +23,9 @@ rectangle wichtigkeit [
 rectangle art [
   <Art der Funktionalität>
   ===
-  -
+   -
   ---
+  <Akteur>
   die Mögllichkeit bieten
   ---
   fähig sein
