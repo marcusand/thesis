@@ -33,16 +33,46 @@ keine Anwendung und ist deshalb auch nicht abgebildet.
 
 \begin{enumerate}[label=\textbf{NFA\arabic*}]
 	\item\label{nfa1} \textbf{Die Clientsoftware muss so gestaltet sein, dass sie zusammen mit Hardwarekomponenten 
-  betrieben werden kann.}
+  betrieben werden kann.}\\
+  Für viele Kiosksysteme sind angeschlossene Hardwarekomponenten, als Nutzerschnittstelle oder Ausgabegeräte, essenziell.
+  Gerade Servie-Kioske sind meist ohne ihre Hardwarekomponenten nicht zu benutzen. Das wohl eindrücklichste
+  Beispiel hierfür ist der Ticketautomat: Ohne Kreditkartenterminal und Ticketdrucker wäre dieses Geräte nicht denkbar.\\
+  Auch die \shst{} soll Hardwarekomponenten beinhalten. Für die Foto-Commitment-Funktion (\ref{fa4}) wird eine
+  Kamera und für die Spenden-Funktion (\ref{fa3}) ein Kreditkartenterminal und ein Münzeinwurf benötigt. Alle 
+  Geräte müssen mit der Clientsoftware kommunizieren können um eine Steuerung und ein Feedback über die Oberfläche
+  zu gewährleisten. 
 	\item\label{nfa2} \textbf{Die Clientsoftware sollte so gestaltet sein, dass sie auch offline 
-  betrieben werden kann.} 
-  \item\label{nfa3} \textbf{Die Oberfläche der Clientsoftware muss multilingual sein.}
+  betrieben werden kann.}\\
+  Die Bedienbarkeit der Clientsoftware sollte auch dann gewährleistet werden, wenn das Netz zwischenzeitlich
+  ausfällt oder hoch belastet ist. Gerade Werbe- und Informations-Kioske sind sehr darauf bedacht ihre
+  Nutzer möglichst lange am Gerät zu halten \cite{across}. Ein zu langer Ladevorgang durch welchen die 
+  Oberfläche zwischenzeitlich nicht bedienbar ist, würde dazu führen, dass viele Nutzer sich 
+  vom Gerät entfernen. Dies soll verhindert werden.\\
+  Bei der \shst{} soll das Navigieren durch die Oberfläche und das Ausführen möglichst aller Funktionen 
+  auch offline möglich sein. Lediglich Transaktionen bei denen der Nutzer Daten abschickt, wie Speichern 
+  eines Fotos oder Eintragen für den Newsletter, sollen auch nur dann positives Feedback geben wenn 
+  diese erfolgreich über das Netz erfolgt sind. Bei Nichterreichen eines Servers oder Services soll eine entsprechende
+  Fehlermeldung angezeigt werden, welche den Nutzer darauf hinweist es später noch einmal zu versuchen.
+  \item\label{nfa3} \textbf{Die Oberfläche der Clientsoftware muss multilingual sein.}\\
+  Durch die meist öffentliche- oder halböffentliche Platzierung von Kiosksystemen, stehen diese
+  immer einer großen Anzahl unterschiedlicher Nutzer*innen zur Verfügung. Um möglichst vielen
+  ein optimales Erlebnis zu gewährleisten ist die Möglichkeit einer Spracheinstellung von großer Wichtigkeit.\\
+  Auf Grund der typischen Besucher*innen und den finanziellen Möglichkeiten des Museums, werden die 
+  Spracheinstellungen bei der \shst{} auf Deutsch und Englisch beschränkt.
   \item\label{nfa4} \textbf{Die Oberfläche der Clientsoftware sollte in sich geschlossen sein.}\\
   Verlassen nicht möglich, Kein Laden zwischen den Seiten, Keine Internet-Links
-  \item\label{nfa5} \textbf{Die Oberfläche der Clientsoftware sollte einfach zu bedienen und Touch-friendly sein.}
-  \item\label{nfa6} \textbf{Die Clientsoftware sollte plattformunabhängig sein.}
-  \item\label{nfa7} \textbf{Das Deployment der Clientsoftware sollte möglichst einfach und von außerhalb möglich sein.}
-  \item\label{nfa8} \textbf{Die Software sollte modular und erweiterbar gehalten sein.}
+  \item\label{nfa5} \textbf{Die Oberfläche der Clientsoftware sollte einfach zu bedienen und Touch-friendly sein.}\\
+  \item\label{nfa6} \textbf{Die Clientsoftware sollte plattformunabhängig sein.}\\
+  Diese Anforderung ist nicht unbedingt typisch für Kiosksoftware im Allgemeinen, bei Kiosksoftware im Ausstellungs- und
+  Messebetrieb wird sie jedoch häufig gestellt. Beispielsweise soll eine Software bei einer Messe auf einem
+  großen Touchscreen und bei der nächsten auf mehreren iPads laufen. Oder eine Archivsoftware, welche als Kiosksystem
+  in einer Ausstellung betrieben wird, soll nach der Ausstellung online zur Verfügung gestellt werden.\\ 
+  Wie in \autoref{subsection:sharing-station-produkt} bereits erwähnt, soll die \shst{} als Plattform gedacht und
+  unter den Gesichtspunkten der Adaptier- und Wiederverwendbarkeit entwickelt werden. Dazu zählt auch, dass die Software
+  auf verschiedene Plattformen lauffähig ist, da zukünftige Kunden die Anforderung nach einer anderen Plattform
+  haben könnten. 
+  \item\label{nfa7} \textbf{Das Deployment der Clientsoftware sollte möglichst einfach und von außerhalb möglich sein.}\\
+  \item\label{nfa8} \textbf{Die Software sollte modular und erweiterbar gehalten sein.}\\
   \item\label{nfa9} \textbf{Das CMS sollte über das Internet aufrufbar sein.}\\
   Online-Vorschau
 \end{enumerate}
