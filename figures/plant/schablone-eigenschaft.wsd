@@ -1,0 +1,45 @@
+@startuml
+!define LIGHTBLUE
+!include ./style.puml
+
+skinparam rectangle {
+	roundCorner 20
+}
+
+rectangle eigenschaft [
+  <Eigen-\nschaft>
+]
+
+rectangle betrachtungsgegenstand [
+  <Betrachtungs-\ngegenstand>
+]
+
+rectangle wichtigkeit [
+  <Wichtigkeit>
+  ===
+  muss
+  ---
+  sollte
+  ---
+  wird
+]
+
+rectangle vergleich [
+ <Vergleichs-\noperator>
+]
+
+rectangle wert [
+  <Wert>
+]
+
+rectangle sein [
+  sein
+]
+
+eigenschaft -right- betrachtungsgegenstand 
+betrachtungsgegenstand -right- wichtigkeit
+wichtigkeit -right- vergleich
+vergleich -right- wert
+wert-right-sein
+
+@enduml
