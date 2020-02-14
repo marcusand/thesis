@@ -46,27 +46,19 @@
 % Add table of contents to PDF bookmarks
 \BeforeTOCHead[toc]{{\cleardoublepage\pdfbookmark[0]{\contentsname}{toc}}}
 
-% Define TUM corporate design colors
-% Taken from http://portal.mytum.de/corporatedesign/index_print/vorlagen/index_farben
-\definecolor{TUMBlue}{HTML}{0065BD}
-\definecolor{TUMSecondaryBlue}{HTML}{005293}
-\definecolor{TUMSecondaryBlue2}{HTML}{003359}
-\definecolor{TUMBlack}{HTML}{000000}
-\definecolor{TUMWhite}{HTML}{FFFFFF}
-\definecolor{TUMDarkGray}{HTML}{333333}
-\definecolor{TUMGray}{HTML}{808080}
-\definecolor{TUMLightGray}{HTML}{CCCCC6}
-\definecolor{TUMAccentGray}{HTML}{DAD7CB}
-\definecolor{TUMAccentOrange}{HTML}{E37222}
-\definecolor{TUMAccentGreen}{HTML}{A2AD00}
-\definecolor{TUMAccentLightBlue}{HTML}{98C6EA}
-\definecolor{TUMAccentBlue}{HTML}{64A0C8}
+\definecolor{Blue}{HTML}{0065BD}
+\definecolor{SecondaryBlue}{HTML}{003359}
+\definecolor{Black}{HTML}{000000}
+\definecolor{White}{HTML}{FFFFFF}
+\definecolor{DarkGray}{HTML}{333333}
+\definecolor{AccentOrange}{HTML}{E37222}
+\definecolor{AccentGreen}{HTML}{A2AD00}
 
 % Settings for pgfplots
 \pgfplotsset{compat=newest}
 \pgfplotsset{
   % For available color names, see http://www.latextemplates.com/svgnames-colors
-  cycle list={TUMBlue\\TUMAccentOrange\\TUMAccentGreen\\TUMSecondaryBlue2\\TUMDarkGray\\},
+  cycle list={Blue\\AccentOrange\\AccentGreen\\SecondaryBlue\\DarkGray\\},
 }
 
 % Settings for lstlistings
@@ -74,7 +66,7 @@
   basicstyle=\ttfamily,
   columns=fullflexible,
   autogobble,
-  keywordstyle=\bfseries\color{TUMBlue},
-  stringstyle=\color{TUMAccentGreen}
+  keywordstyle=\bfseries\color{Blue},
+  stringstyle=\color{AccentGreen}
 }
 
