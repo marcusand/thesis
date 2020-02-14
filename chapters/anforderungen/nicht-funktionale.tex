@@ -16,7 +16,7 @@ vor: Die Umgebungs-, Eigenschafts- und Prozessschablone. \autoref{fig:schablone-
 die ersten beiden dieser Schablonen. Sie ähneln dabei der Schablone in \autoref{fig:schablone-funktion}.
 Wieder spielt das Wichtigkeit-Schlüsselwort eine große Rolle. Anders als vorher ist das Subjekt nun 
 nicht mehr \emph{<System>} sondern \emph{<Betrachtungsgegenstand>}, welcher im Falle der Umgebungsschablone
-im Hauptsatz auf einen Teilbestandteil beschränkt werden kann.\\
+im Hauptsatz auf einen Teilbestandteil beschränkt werden kann (\emph{[Komponente des +]}).\\
 
 Die Umgebungsschablone bildet Anforderungen ab, die von der Umgebung 
 des Betrachtungsgegenstands abhängig sind. \ref{nfa1} und \ref{nfa2} sind nach dieser Schablone gebildet.
@@ -27,9 +27,10 @@ Schablone immer einen definierten Wert für die beschriebene Eigenschaft, allerd
 Anforderungen auch oft nur die reine Existenz einer Eigenschaft, wie z.B. in \ref{nfa3}.
 In solchen Fällen schiebt sich die Eigenschaft hinter das 
 Wichtigkeit-Schlüsselwort und der Vergleichsoperator und der Wert werden weggelassen.\\
-Die Prozessschablone stellt Anforderungen an Akteure, z.B. an den Auftragnehmer, und nicht an das System.
-Da in diesem Falle nur Anforderungen an die Softwaretechnologien betrachtet werden, findet diese Schablone 
-keine Anwendung und ist deshalb auch nicht abgebildet.
+Die dritte Schablone nach \citeext{requirements}, die Prozessschablone, ist in \autoref{fig:schablone-nicht-funktional}
+nicht abgebildet. Sie stellt Anforderungen an Akteure, z.B. an den Auftragnehmer, und nicht an das System.
+Da im Falle dieser Arbeit nur Anforderungen an die Softwaretechnologien betrachtet werden, findet diese Schablone 
+keine Anwendung und wird nicht weiter erläutert. 
 
 \begin{enumerate}[label=\textbf{NFA\arabic*}]
 	\item\label{nfa1} \textbf{Die Clientsoftware muss so gestaltet sein, dass sie zusammen mit Hardwarekomponenten 
@@ -59,14 +60,23 @@ keine Anwendung und ist deshalb auch nicht abgebildet.
   ein optimales Erlebnis zu gewährleisten ist die Möglichkeit einer Spracheinstellung von großer Wichtigkeit.\\
   Auf Grund der typischen Besucher*innen und den finanziellen Möglichkeiten des Museums, werden die 
   Spracheinstellungen bei der \shst{} auf Deutsch und Englisch beschränkt.
-  \item\label{nfa4} \textbf{Die Oberfläche der Clientsoftware sollte in sich geschlossen sein.}\\
-  Verlassen nicht möglich, Kein Laden zwischen den Seiten, Keine Internet-Links
+  \item\label{nfa4} \textbf{Die Oberfläche der Clientsoftware muss in sich geschlossen sein.}\\
+  Diese Anforderung ist typisch für Kiosksoftware. Sie bedeutet, dass die Oberfläche der Anwendung von Benutzer*innen 
+  nicht verlassen werden kann. Sie soll den Eindruck eines geschlossenen Systems vermitteln. Dies ist zum eine
+  aus der User-Experience Sicht wünschenswert aber auch aus einer sicherheitstechnischen Sicht relevant. Den 
+  Benutzer*innen soll keine Möglichkeit geboten werden Schaden auf dem System anzurichten oder andere Webseiten
+  im Netz zu erreichen.\\
+  Gerade bei der Clientsoftware der \shst{}, welche selbst eine Webanwendung sein wird, muss hier besonderes darauf
+  geachtet werden, dass keine anderen Webseiten erreicht werden können. Aber ebenso das Verlassen dieser sollte
+  nicht möglich sein.
   \item\label{nfa5} \textbf{Die Oberfläche der Clientsoftware sollte einfach zu bedienen und Touch-friendly sein.}\\
+
   \item\label{nfa6} \textbf{Die Clientsoftware sollte plattformunabhängig sein.}\\
   Diese Anforderung ist nicht unbedingt typisch für Kiosksoftware im Allgemeinen, bei Kiosksoftware im Ausstellungs- und
   Messebetrieb wird sie jedoch häufig gestellt. Beispielsweise soll eine Software bei einer Messe auf einem
   großen Touchscreen und bei der nächsten auf mehreren iPads laufen. Oder eine Archivsoftware, welche als Kiosksystem
-  in einer Ausstellung betrieben wird, soll nach der Ausstellung online zur Verfügung gestellt werden.\\ 
+  in einer Ausstellung betrieben wird, soll nach der Ausstellung online zur Verfügung gestellt werden. Die Software
+  muss also so entwickelt werden, dass sie leicht auf ein anderes System übertragen werden kann. \\ 
   Wie in \autoref{subsection:sharing-station-produkt} bereits erwähnt, soll die \shst{} als Plattform gedacht und
   unter den Gesichtspunkten der Adaptier- und Wiederverwendbarkeit entwickelt werden. Dazu zählt auch, dass die Software
   auf verschiedene Plattformen lauffähig ist, da zukünftige Kunden die Anforderung nach einer anderen Plattform
