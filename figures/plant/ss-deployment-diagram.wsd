@@ -6,9 +6,9 @@ skinparam nodesep 50
 skinparam ranksep 100
 
 frame "WAN" {
-frame "LAN" {
+  frame "LAN" {
     node "Kiosk Workstation" <<device>> as workstation {
-      component "Sharing Station App" <<application>> as  application
+      component "Sharing-Station App" <<application>> as  application
       component "MQTT Broker" <<service>> as mqttBroker
     }
     node "MQTT Embedded Client" <<device>> as mqttClient
@@ -16,19 +16,24 @@ frame "LAN" {
     node "Coin Slot" <<device>> as coinSlot
     node "Card Terminal" <<device>> as cardTerminal
 
-    webcam -- application: mediastream
-    cardTerminal -- mqttClient: serial
-    coinSlot -- mqttClient: serial
+    webcam -- application: <<protocol>>\nserial
+    cardTerminal -- mqttClient: <<protocol>>\nserial
+    coinSlot -- mqttClient: <<protocol>>\nserial
   
   mqttBroker -- mqttClient: <<protocol>>\nmqtt
   mqttBroker -- application: <<protocol>>\nmqtt over\nwebsockets
-}
-node "Server" <<device>> as cmsServer {
+  }
+  interface "Wordpress Newsletter API" as newsletterApi 
+
+  node "Server" <<device>> as cmsServer {
     component "CMS" <<application>> as cms
+    component "Web Server" <<application>> as webServer
     database "Database" as database
-    cms - database
+    cms -- database
   }
 }
 
+webServer -up- application: <<protocol>>\nhttp(s)
 cms -up- application: <<protocol>>\nhttp(s)
+newsletterApi -up- application: <<protocol>>\nhttp(s)
 @enduml

@@ -7,90 +7,108 @@
 \definecolor{plantucolor0001}{RGB}{0,0,0}
 \definecolor{plantucolor0002}{RGB}{204,204,204}
 \definecolor{plantucolor0003}{RGB}{170,170,170}
-\definecolor{plantucolor0004}{RGB}{51,51,51}
+\definecolor{plantucolor0004}{RGB}{201,224,248}
+\definecolor{plantucolor0005}{RGB}{26,102,194}
+\definecolor{plantucolor0006}{RGB}{51,51,51}
 \begin{tikzpicture}[yscale=-1
 ,pstyle0/.style={color=black,fill=white,line width=1.5pt}
 ,pstyle1/.style={color=black,line width=1.5pt}
 ,pstyle2/.style={color=plantucolor0003,fill=plantucolor0002,line width=1.5pt}
 ,pstyle3/.style={color=plantucolor0003,line width=1.5pt}
-,pstyle4/.style={color=black,line width=1.0pt}
+,pstyle5/.style={color=black,line width=1.0pt}
 ]
-\draw[pstyle0] (22pt,24pt) rectangle (700pt,637pt);
+\draw[pstyle0] (22pt,24pt) rectangle (719pt,783pt);
 \draw[pstyle1] (70.6824pt,25pt) -- (70.6824pt,31pt) -- (60.6824pt,41pt) -- (22pt,41pt);
 \node at (25pt,25pt)[below right,color=black]{\textbf{WAN}};
-\draw[pstyle0] (46pt,65pt) rectangle (676pt,440pt);
+\draw[pstyle0] (46pt,65pt) rectangle (695pt,440pt);
 \draw[pstyle1] (89.4207pt,66pt) -- (89.4207pt,72pt) -- (79.4207pt,82pt) -- (46pt,82pt);
 \node at (49pt,66pt)[below right,color=black]{\textbf{LAN}};
-\draw[pstyle2] (352pt,116pt) -- (362pt,106pt) -- (550pt,106pt) -- (550pt,406pt) -- (540pt,416pt) -- (352pt,416pt) -- (352pt,116pt) -- cycle;
-\draw[pstyle3] (540pt,116pt) -- (549pt,107pt);
-\draw[pstyle3] (352pt,116pt) -- (540pt,116pt);
-\draw[pstyle3] (540pt,116pt) -- (540pt,416pt);
-\node at (417.6pt,119pt)[below right,color=black]{\textit{\guillemotleft device\guillemotright }};
-\node at (385.6598pt,133pt)[below right,color=black]{\textbf{Kiosk Workstation}};
-\draw[pstyle2] (391pt,510pt) -- (401pt,500pt) -- (654pt,500pt) -- (654pt,603pt) -- (644pt,613pt) -- (391pt,613pt) -- (391pt,510pt) -- cycle;
-\draw[pstyle3] (644pt,510pt) -- (653pt,501pt);
-\draw[pstyle3] (391pt,510pt) -- (644pt,510pt);
-\draw[pstyle3] (644pt,510pt) -- (644pt,613pt);
-\node at (489.1pt,513pt)[below right,color=black]{\textit{\guillemotleft device\guillemotright }};
-\node at (497.2789pt,527pt)[below right,color=black]{\textbf{Server}};
-\draw[pstyle2] (146pt,359pt) -- (156pt,349pt) -- (335.9111pt,349pt) -- (335.9111pt,395pt) -- (325.9111pt,405pt) -- (146pt,405pt) -- (146pt,359pt) -- cycle;
-\draw[pstyle3] (325.9111pt,359pt) -- (334.9111pt,350pt);
-\draw[pstyle3] (146pt,359pt) -- (325.9111pt,359pt);
-\draw[pstyle3] (325.9111pt,359pt) -- (325.9111pt,405pt);
-\node at (209.1678pt,369pt)[below right,color=plantucolor0004]{\textit{\guillemotleft device\guillemotright }};
-\node at (161pt,382pt)[below right,color=black]{MQTT Embedded Client};
-\draw[pstyle2] (566pt,162pt) -- (576pt,152pt) -- (659.5755pt,152pt) -- (659.5755pt,198pt) -- (649.5755pt,208pt) -- (566pt,208pt) -- (566pt,162pt) -- cycle;
-\draw[pstyle3] (649.5755pt,162pt) -- (658.5755pt,153pt);
-\draw[pstyle3] (566pt,162pt) -- (649.5755pt,162pt);
-\draw[pstyle3] (649.5755pt,162pt) -- (649.5755pt,208pt);
-\node at (581pt,172pt)[below right,color=plantucolor0004]{\textit{\guillemotleft device\guillemotright }};
-\node at (581.6303pt,185pt)[below right,color=black]{Webcam};
+\draw[pstyle2] (371pt,116pt) -- (381pt,106pt) -- (569pt,106pt) -- (569pt,406pt) -- (559pt,416pt) -- (371pt,416pt) -- (371pt,116pt) -- cycle;
+\draw[pstyle3] (559pt,116pt) -- (568pt,107pt);
+\draw[pstyle3] (371pt,116pt) -- (559pt,116pt);
+\draw[pstyle3] (559pt,116pt) -- (559pt,416pt);
+\node at (436.6pt,119pt)[below right,color=black]{\textit{\guillemotleft device\guillemotright }};
+\node at (404.6598pt,133pt)[below right,color=black]{\textbf{Kiosk Workstation}};
+\draw[pstyle2] (402pt,510pt) -- (412pt,500pt) -- (695pt,500pt) -- (695pt,749pt) -- (685pt,759pt) -- (402pt,759pt) -- (402pt,510pt) -- cycle;
+\draw[pstyle3] (685pt,510pt) -- (694pt,501pt);
+\draw[pstyle3] (402pt,510pt) -- (685pt,510pt);
+\draw[pstyle3] (685pt,510pt) -- (685pt,759pt);
+\node at (515.1pt,513pt)[below right,color=black]{\textit{\guillemotleft device\guillemotright }};
+\node at (523.2789pt,527pt)[below right,color=black]{\textbf{Server}};
+\draw[color=plantucolor0005,fill=plantucolor0004,line width=2.0pt] (280pt,574pt) ellipse (8pt and 8pt);
+\node at (199.4571pt,591pt)[below right,color=black]{Wordpress Newsletter API};
+\draw[pstyle2] (140pt,359pt) -- (150pt,349pt) -- (329.9111pt,349pt) -- (329.9111pt,395pt) -- (319.9111pt,405pt) -- (140pt,405pt) -- (140pt,359pt) -- cycle;
+\draw[pstyle3] (319.9111pt,359pt) -- (328.9111pt,350pt);
+\draw[pstyle3] (140pt,359pt) -- (319.9111pt,359pt);
+\draw[pstyle3] (319.9111pt,359pt) -- (319.9111pt,405pt);
+\node at (203.1678pt,369pt)[below right,color=plantucolor0006]{\textit{\guillemotleft device\guillemotright }};
+\node at (155pt,382pt)[below right,color=black]{MQTT Embedded Client};
+\draw[pstyle2] (585pt,162pt) -- (595pt,152pt) -- (678.5755pt,152pt) -- (678.5755pt,198pt) -- (668.5755pt,208pt) -- (585pt,208pt) -- (585pt,162pt) -- cycle;
+\draw[pstyle3] (668.5755pt,162pt) -- (677.5755pt,153pt);
+\draw[pstyle3] (585pt,162pt) -- (668.5755pt,162pt);
+\draw[pstyle3] (668.5755pt,162pt) -- (668.5755pt,208pt);
+\node at (600pt,172pt)[below right,color=plantucolor0006]{\textit{\guillemotleft device\guillemotright }};
+\node at (600.6303pt,185pt)[below right,color=black]{Webcam};
 \draw[pstyle2] (238pt,162pt) -- (248pt,152pt) -- (335.5538pt,152pt) -- (335.5538pt,198pt) -- (325.5538pt,208pt) -- (238pt,208pt) -- (238pt,162pt) -- cycle;
 \draw[pstyle3] (325.5538pt,162pt) -- (334.5538pt,153pt);
 \draw[pstyle3] (238pt,162pt) -- (325.5538pt,162pt);
 \draw[pstyle3] (325.5538pt,162pt) -- (325.5538pt,208pt);
-\node at (254.9892pt,172pt)[below right,color=plantucolor0004]{\textit{\guillemotleft device\guillemotright }};
+\node at (254.9892pt,172pt)[below right,color=plantucolor0006]{\textit{\guillemotleft device\guillemotright }};
 \node at (253pt,185pt)[below right,color=black]{Coin Slot};
 \draw[pstyle2] (62pt,162pt) -- (72pt,152pt) -- (187.9077pt,152pt) -- (187.9077pt,198pt) -- (177.9077pt,208pt) -- (62pt,208pt) -- (62pt,162pt) -- cycle;
 \draw[pstyle3] (177.9077pt,162pt) -- (186.9077pt,153pt);
 \draw[pstyle3] (62pt,162pt) -- (177.9077pt,162pt);
 \draw[pstyle3] (177.9077pt,162pt) -- (177.9077pt,208pt);
-\node at (93.1661pt,172pt)[below right,color=plantucolor0004]{\textit{\guillemotleft device\guillemotright }};
+\node at (93.1661pt,172pt)[below right,color=plantucolor0006]{\textit{\guillemotleft device\guillemotright }};
 \node at (77pt,185pt)[below right,color=black]{Card Terminal};
-\draw[pstyle2] (388.5pt,354pt) rectangle (531.5182pt,400pt);
-\draw[pstyle2] (383.5pt,359pt) rectangle (393.5pt,364pt);
-\draw[pstyle2] (383.5pt,390pt) rectangle (393.5pt,395pt);
-\node at (417.5424pt,364pt)[below right,color=plantucolor0004]{\textit{\guillemotleft application\guillemotright }};
-\node at (398.5pt,377pt)[below right,color=black]{Sharing Station App};
-\draw[pstyle2] (395pt,157pt) rectangle (502.6727pt,203pt);
-\draw[pstyle2] (390pt,162pt) rectangle (400pt,167pt);
-\draw[pstyle2] (390pt,193pt) rectangle (400pt,198pt);
-\node at (419.521pt,167pt)[below right,color=plantucolor0004]{\textit{\guillemotleft service\guillemotright }};
-\node at (405pt,180pt)[below right,color=black]{MQTT Broker};
-\draw[pstyle2] (407.5pt,551pt) rectangle (512.4333pt,597pt);
-\draw[pstyle2] (402.5pt,556pt) rectangle (412.5pt,561pt);
-\draw[pstyle2] (402.5pt,587pt) rectangle (412.5pt,592pt);
-\node at (417.5pt,561pt)[below right,color=plantucolor0004]{\textit{\guillemotleft application\guillemotright }};
-\node at (443.5952pt,574pt)[below right,color=black]{CMS};
-\draw[pstyle2] (562.5pt,563pt) ..controls (562.5pt,553pt) and (600.1857pt,553pt) .. (600.1857pt,553pt) ..controls (600.1857pt,553pt) and (637.8714pt,553pt) .. (637.8714pt,563pt) -- (637.8714pt,585pt) ..controls (637.8714pt,595pt) and (600.1857pt,595pt) .. (600.1857pt,595pt) ..controls (600.1857pt,595pt) and (562.5pt,595pt) .. (562.5pt,585pt) -- (562.5pt,563pt);
-\draw[pstyle3] (562.5pt,563pt) ..controls (562.5pt,573pt) and (600.1857pt,573pt) .. (600.1857pt,573pt) ..controls (600.1857pt,573pt) and (637.8714pt,573pt) .. (637.8714pt,563pt);
-\node at (572.5pt,577pt)[below right,color=black]{Database};
-\draw[pstyle4] (594.5pt,208.27pt) ..controls (577.76pt,232.56pt) and (552.1pt,268.81pt) .. (528pt,299pt) ..controls (512.75pt,318.09pt) and (494.35pt,338.8pt) .. (480.54pt,353.93pt);
-\node at (558pt,272pt)[below right,color=plantucolor0004]{mediastream};
-\draw[pstyle4] (136.52pt,208.01pt) ..controls (147.34pt,232.43pt) and (164.59pt,269.05pt) .. (183pt,299pt) ..controls (193.61pt,316.25pt) and (207.14pt,334.4pt) .. (218.47pt,348.74pt);
-\node at (184pt,272pt)[below right,color=plantucolor0004]{serial};
-\draw[pstyle4] (262.82pt,208.14pt) ..controls (252.05pt,222.02pt) and (240.57pt,239.8pt) .. (235pt,258pt) ..controls (225.82pt,288.01pt) and (229.75pt,324.3pt) .. (234.41pt,348.64pt);
-\node at (236pt,272pt)[below right,color=plantucolor0004]{serial};
-\draw[pstyle4] (425.14pt,203.37pt) ..controls (386.72pt,239.38pt) and (311.29pt,310.1pt) .. (269.89pt,348.91pt);
-\node at (364pt,265.5pt)[below right,color=plantucolor0004]{\guillemotleft protocol\guillemotright };
-\node at (383.6pt,278.5pt)[below right,color=plantucolor0004]{mqtt};
-\draw[pstyle4] (450.04pt,203.19pt) ..controls (451.16pt,226.91pt) and (453.07pt,265.62pt) .. (455pt,299pt) ..controls (456.07pt,317.46pt) and (457.44pt,338.39pt) .. (458.47pt,353.77pt);
-\node at (458.3935pt,259pt)[below right,color=plantucolor0004]{\guillemotleft protocol\guillemotright };
-\node at (462.8859pt,272pt)[below right,color=plantucolor0004]{mqtt over};
-\node at (456pt,285pt)[below right,color=plantucolor0004]{websockets};
-\draw[pstyle4] (512.77pt,574pt) ..controls (529.24pt,574pt) and (545.71pt,574pt) .. (562.18pt,574pt);
-\draw[pstyle4] (460pt,400.37pt) ..controls (460pt,437.98pt) and (460pt,513.45pt) .. (460pt,550.89pt);
-\node at (461pt,457pt)[below right,color=plantucolor0004]{\guillemotleft protocol\guillemotright };
-\node at (474.3714pt,470pt)[below right,color=plantucolor0004]{http(s)};
+\draw[pstyle2] (409pt,354pt) rectangle (553.2991pt,400pt);
+\draw[pstyle2] (404pt,359pt) rectangle (414pt,364pt);
+\draw[pstyle2] (404pt,390pt) rectangle (414pt,395pt);
+\node at (438.6829pt,364pt)[below right,color=plantucolor0006]{\textit{\guillemotleft application\guillemotright }};
+\node at (419pt,377pt)[below right,color=black]{Sharing-Station App};
+\draw[pstyle2] (418pt,157pt) rectangle (525.6727pt,203pt);
+\draw[pstyle2] (413pt,162pt) rectangle (423pt,167pt);
+\draw[pstyle2] (413pt,193pt) rectangle (423pt,198pt);
+\node at (442.521pt,167pt)[below right,color=plantucolor0006]{\textit{\guillemotleft service\guillemotright }};
+\node at (428pt,180pt)[below right,color=black]{MQTT Broker};
+\draw[pstyle2] (418.5pt,551pt) rectangle (523.4333pt,597pt);
+\draw[pstyle2] (413.5pt,556pt) rectangle (423.5pt,561pt);
+\draw[pstyle2] (413.5pt,587pt) rectangle (423.5pt,592pt);
+\node at (428.5pt,561pt)[below right,color=plantucolor0006]{\textit{\guillemotleft application\guillemotright }};
+\node at (454.5952pt,574pt)[below right,color=black]{CMS};
+\draw[pstyle2] (573.5pt,551pt) rectangle (678.4333pt,597pt);
+\draw[pstyle2] (568.5pt,556pt) rectangle (578.5pt,561pt);
+\draw[pstyle2] (568.5pt,587pt) rectangle (578.5pt,592pt);
+\node at (583.5pt,561pt)[below right,color=plantucolor0006]{\textit{\guillemotleft application\guillemotright }};
+\node at (590.8957pt,574pt)[below right,color=black]{Web Server};
+\draw[pstyle2] (433.5pt,711pt) ..controls (433.5pt,701pt) and (471.1857pt,701pt) .. (471.1857pt,701pt) ..controls (471.1857pt,701pt) and (508.8714pt,701pt) .. (508.8714pt,711pt) -- (508.8714pt,733pt) ..controls (508.8714pt,743pt) and (471.1857pt,743pt) .. (471.1857pt,743pt) ..controls (471.1857pt,743pt) and (433.5pt,743pt) .. (433.5pt,733pt) -- (433.5pt,711pt);
+\draw[pstyle3] (433.5pt,711pt) ..controls (433.5pt,721pt) and (471.1857pt,721pt) .. (471.1857pt,721pt) ..controls (471.1857pt,721pt) and (508.8714pt,721pt) .. (508.8714pt,711pt);
+\node at (443.5pt,725pt)[below right,color=black]{Database};
+\draw[pstyle5] (616.24pt,208.23pt) ..controls (601.55pt,232.8pt) and (578.45pt,269.52pt) .. (555pt,299pt) ..controls (539.42pt,318.59pt) and (519.69pt,338.93pt) .. (504.53pt,353.78pt);
+\node at (585pt,265.5pt)[below right,color=plantucolor0006]{\guillemotleft protocol\guillemotright };
+\node at (601.9793pt,278.5pt)[below right,color=plantucolor0006]{serial};
+\draw[pstyle5] (123.52pt,208.06pt) ..controls (123.35pt,233.18pt) and (126.2pt,270.84pt) .. (142pt,299pt) ..controls (153.18pt,318.93pt) and (171.7pt,335.85pt) .. (189.28pt,348.7pt);
+\node at (143pt,265.5pt)[below right,color=plantucolor0006]{\guillemotleft protocol\guillemotright };
+\node at (159.9793pt,278.5pt)[below right,color=plantucolor0006]{serial};
+\draw[pstyle5] (258.99pt,208.3pt) ..controls (246.98pt,221.95pt) and (234.27pt,239.5pt) .. (228pt,258pt) ..controls (217.85pt,287.93pt) and (222.45pt,324.55pt) .. (227.72pt,348.98pt);
+\node at (229pt,265.5pt)[below right,color=plantucolor0006]{\guillemotleft protocol\guillemotright };
+\node at (245.9793pt,278.5pt)[below right,color=plantucolor0006]{serial};
+\draw[pstyle5] (444.81pt,203.37pt) ..controls (401.04pt,239.38pt) and (315.1pt,310.1pt) .. (267.92pt,348.91pt);
+\node at (375pt,265.5pt)[below right,color=plantucolor0006]{\guillemotleft protocol\guillemotright };
+\node at (394.6pt,278.5pt)[below right,color=plantucolor0006]{mqtt};
+\draw[pstyle5] (473.03pt,203.37pt) ..controls (474.77pt,240.98pt) and (478.25pt,316.45pt) .. (479.98pt,353.89pt);
+\node at (480.3935pt,259pt)[below right,color=plantucolor0006]{\guillemotleft protocol\guillemotright };
+\node at (484.8859pt,272pt)[below right,color=plantucolor0006]{mqtt over};
+\node at (478pt,285pt)[below right,color=plantucolor0006]{websockets};
+\draw[pstyle5] (471pt,597.17pt) ..controls (471pt,625.41pt) and (471pt,673.8pt) .. (471pt,700.97pt);
+\draw[pstyle5] (505.11pt,400.3pt) ..controls (520.59pt,415.26pt) and (540.6pt,435.85pt) .. (556pt,456pt) ..controls (579.71pt,487.03pt) and (601.94pt,526.67pt) .. (614.74pt,550.92pt);
+\node at (576pt,457pt)[below right,color=plantucolor0006]{\guillemotleft protocol\guillemotright };
+\node at (589.3714pt,470pt)[below right,color=plantucolor0006]{http(s)};
+\draw[pstyle5] (479.85pt,400.37pt) ..controls (477.92pt,437.98pt) and (474.05pt,513.45pt) .. (472.13pt,550.89pt);
+\node at (477pt,457pt)[below right,color=plantucolor0006]{\guillemotleft protocol\guillemotright };
+\node at (490.3714pt,470pt)[below right,color=plantucolor0006]{http(s)};
+\draw[pstyle5] (457.76pt,400.19pt) ..controls (442.91pt,414.17pt) and (423.1pt,432.46pt) .. (405pt,448pt) ..controls (400.68pt,451.71pt) and (399.22pt,452.19pt) .. (395pt,456pt) ..controls (352.3pt,494.55pt) and (305.38pt,545.11pt) .. (287.49pt,564.73pt);
+\node at (396pt,457pt)[below right,color=plantucolor0006]{\guillemotleft protocol\guillemotright };
+\node at (409.3714pt,470pt)[below right,color=plantucolor0006]{http(s)};
 \end{tikzpicture}
 \end{document}
