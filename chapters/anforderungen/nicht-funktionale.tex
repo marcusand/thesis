@@ -77,12 +77,27 @@ keine Anwendung und wird nicht weiter erläutert.
   großen Touchscreen und bei der nächsten auf mehreren iPads laufen. Oder eine Archivsoftware, welche als Kiosksystem
   in einer Ausstellung betrieben wird, soll nach der Ausstellung online zur Verfügung gestellt werden. Die Software
   muss also so entwickelt werden, dass sie leicht auf ein anderes System übertragen werden kann. \\ 
-  Wie in \autoref{subsection:sharing-station-produkt} bereits erwähnt, soll die \shst{} als Plattform gedacht und
+  Wie in \autoref{ssub:sharing-station-produkt} bereits erwähnt, soll die \shst{} als Produkt gedacht und
   unter den Gesichtspunkten der Adaptier- und Wiederverwendbarkeit entwickelt werden. Dazu zählt auch, dass die Software
   auf verschiedene Plattformen lauffähig ist, da zukünftige Kunden die Anforderung nach einer anderen Plattform
   haben könnten. 
   \item\label{nfa7} \textbf{Das Deployment der Clientsoftware sollte möglichst einfach und von außerhalb möglich sein.}\\
+  Bei Kiosksystemen ist es meist immer von Vorteil wenn Softwareupdates nicht vor Ort am Gerät eingespielt werden 
+  müssen sondern von außerhalb erfolgen können.\\
+  Bei der \shst{} ist dies keine vom Kunden geforderte Anforderung. Allerdings zeigt die Erfahrung, dass nachträgliche
+  Anpassung und Fehlbehebung an der Software in den meisten Fällen nötig ist. Eine entsprechende Deployment Strategie
+  ist also von großem Vorteil.
   \item\label{nfa8} \textbf{Die Software sollte modular und erweiterbar gehalten sein.}\\
-  \item\label{nfa9} \textbf{Das CMS sollte über das Internet aufrufbar sein.}\\
-  Online-Vorschau
+  Auch diese Anforderung ist nicht unbedingt typisch für Kiosksoftware, aber doch denkbar, dass sie häufig gestellt wird. 
+  Eine modulare und erweiterbare Software ist oft von Vorteil auch wenn sie meist längere Zeit in der Entwicklung
+  benötigt.\\
+  Im Falle der \shst{} ist dies eine gewünschte Anforderung. Wie in \autoref{ssub:sharing-station-produkt} beschrieben
+  soll die \shst{} zukünftig als Produkt angeboten werden und muss so auch um weitere Funktionalitäten 
+  erweitert werden können. 
+  \item\label{nfa9} \textbf{Das CMS muss über das Internet aufrufbar sein.}\\
+  Ebenso wie bei dem Deployment ist es auch bei der Inhaltserstellung und -pflege von Vorteil wenn diese bei 
+  Kiosksystemen nicht vor Ort am Gerät oder im lokalen Netz erfolgen muss, sondern von außerhalb gemacht 
+  werden kann. Das CMS ist dafür am besten ein über das Internet erreichbarer Dienst.\\
+  Diese Anforderung gilt genauso für die \shst{}. Alleine schon da die Büroräume des Kunden sich an einem 
+  anderen Ort wie das Museum befinden ist dies eine verpflichtende Anforderung.
 \end{enumerate}
