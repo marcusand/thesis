@@ -62,3 +62,5 @@ Darüber hinaus wird im Rahmen der Anforderungen ein Continous-Deployment-Konzep
 - es gibt wahrscheinlich eine Verteidigung
 - Quellen kapitelweise bei vielen Quellen sonst am Ende der Arbeit
 - nicht ich verwenden
+- Abkürzungsverzeichnis?
+- Zielsetzung und Zielgruppe
