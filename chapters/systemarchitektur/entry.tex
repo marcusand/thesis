@@ -3,7 +3,7 @@
 
 \begin{figure}
     \centering
-    \includestandalone[width=0.8\textwidth]{figures/plant/out/ss-deployment-diagram}
+    \includestandalone[width=1\textwidth]{figures/plant/out/ss-deployment-diagram}
     \caption{Deployment Diagram der \shst{}}
     \label{fig:ss-deployment-diagram}
 \end{figure}
@@ -12,16 +12,30 @@ Das Diagram in \autoref{fig:ss-deployment-diagram} zeigt die Topologie des Gesam
 Es soll dabei Überblick über alle im System enthaltenen Hardwarekomponenten und Applikationen
 geben. Zusätzlich werden die Netzstruktur und die Kommunikationswege zwischen den Komponenten 
 aufgezeigt.\\
-Bei dem Diagram handelt es sich um ein UML Deployment Diagram \cite{uml-diagrams}. Es ist dafür 
-gedacht um Systemarchitektur und die Verteilung von Softwarekomponenten auf die verschiedenen
-Teile des Systems zu visualisieren. Hardwarekomponenten werden dabei als Geräte-Knoten
-(\emph{<<device>>}) dargestellt. Auf ihnen können Softwarekomponenten laufen (\emph{<<service>>,
-<<application>>, database}). Die Verbindungen zwischen Knoten und Komponenten stellen
-Kommunikationswege dar. Die Beschriftung an den Wegen nennt das genutzte Kommunikationsprotokoll. 
-Die umschließenden Rahmen zeigen welche Komponenten sich in welchem Netz befinden.  
+Bei dem Diagram handelt es sich um ein UML Deployment Diagram \cite{uml-spec}. Es ist dafür 
+gedacht, um die Systemarchitektur und die Verteilung von Hardware- und Softwarekomponenten in der 
+Umgebung des Systems zu visualisieren \cite{uml-2.5}. Hardwarekomponenten werden dabei als Geräteknoten
+(\emph{<<device>>}) dargestellt. Auf ihnen können Softwarekomponenten verteilt werden (\emph{<<service>>,
+<<application>>, database}) \cite{uml-diagrams, uml-2.5}. Die Verbindungen zwischen Knoten und Komponenten
+sind eine spezielle Art der Assoziation und stellen in diesem Fall Kommunikationspfade dar \cite{uml-2.5}.
+Die Beschriftung an den Wegen nennt dabei das genutzte Kommunikationsprotokoll.\\
+Die umschließenden Rahmen zeigen welche Komponenten sich in welchem Netz befinden.\\
 
-\iffalse
-Soll Überblick über das System sharing-station geben
-Topologie des Systems
-Ein Deployment-Diagram nach UML gibt einen Überblick über das Gesamtsystem
-\fi
+Im Mittelpunkt der Architektur steht die Kiosk-Workstation -- der Ausstellungsrechner. Auf ihm läuft
+die Clientapplikation (\emph{Sharing Station App}). An die Workstation direkt angeschlossen und mit der
+Applikation über die USB-Schnittstelle kommunizierend ist die Webcam, 
+welche für die Foto-Commitment Funktion (\ref{fa4}) benötigt wird. 
+Die zwei weiteren Hardwarekomponenten \emph{Card Terminal} und \emph{Coin Slot} sind nicht 
+an die Kiosk-Workstation sondern über serielle Kommunikation an einen Embedded Client angeschlossen. 
+Dieser kommuniziert über
+den \emph{MQTT Broker} mit der Clientapplikation. Die Hintergründe zu dieser Architektur werden in
+\autoref{chap:hardwareschnittstellen} erläutert.\\
+Alle eben beschriebenen Komponenten befinden sich im lokalen Netzwerk des Museums. Darüber hinaus gibt 
+es noch die Dienste, welche über das Internet erreichbar sind. Im Zentrum steht hier der Server. 
+Bei diesem handelt es sich um einen Cloud-Server mit Root-Zugriff. Zum einen ist auf diesem das CMS zusammen
+mit der Datenbank gehostet und zum anderen ein Webserver welcher die Applikationsfiles der \emph{Sharing
+Station App} ausliefert. Beide kommunizieren über das HTTPS-Protokoll mit der Clientapplikation.\\
+Und schließlich gibt es noch den Wordpress-Server des Dialogmuseums. Dessen Architektur ist nicht bekannt 
+aber auch nicht weiter von Bedeutung. Lediglich die Schnittstelle zum Eintragen einer E-Mail Adresse in 
+die Newsletterliste ist relevant. Bei dieser handelt es sich um einen einzelnen Endpoint, welcher ebenfalls
+über das HTTPS-Protokoll angesprochen werden kann. 
