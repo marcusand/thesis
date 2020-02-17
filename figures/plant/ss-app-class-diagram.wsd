@@ -1,93 +1,83 @@
 @startuml
-title Sharing Station App
 !define LIGHTBLUE
 !include ./style.puml
 
-class Redux <<Provider>> {
+class Redux << (P, yellow) Provider>> {
   ~store
 }
 
-class App << (C, blue) component>> {
+class App << (C, DeepSkyBlue) component>> {
   ~store
 }
 
-class Header << (C, blue) component>> {
+class Header << (C, DeepSkyBlue) component>> {
   ~store
 }
 
-class ErrorAlert << (C, blue) component>> {
+class ErrorAlert << (C, DeepSkyBlue) component>> {
   ~store
 }
 
-class Loading << (C, blue) component>> {
-
-}
-
-class Router << (C, red) container>> {
+class Router << (C, OrangeRed) container>> {
   ~store
 }
 
-class AnimatedSwitch << (C, red) container>> {
+Class Menu << (C, DeepSkyBlue) component>> {
 
 }
 
-Class Menu << (C, blue) component>> {
+Class MenuEntry << (C, DeepSkyBlue) component>> {
 
 }
 
-Class MenuEntry << (C, blue) component>> {
+class ArticleModuleContainer << (C, OrangeRed) container>> {
+}
+
+class ArticleModule << (C, DeepSkyBlue) component>> {
 
 }
 
-class ArticleModuleContainer << (C, red) container>> {
-
+class PhotoboxModuleContainer << (C, OrangeRed) container>> {
+  ~store
 }
 
-class ArticleModule << (C, blue) component>> {
-
-}
-
-class PhotoboxModuleContainer << (C, red) container>> {
-
-}
-
-class PhotoboxModule << (C, blue) component>> {
+class PhotoboxModule << (C, DeepSkyBlue) component>> {
   
 }
 
-class PhotoGallery << (C, blue) component>> {
+class PhotoGallery << (C, DeepSkyBlue) component>> {
 
 }
 
-class TakePhoto << (C, blue) component>> {
+class TakePhoto << (C, DeepSkyBlue) component>> {
 
 }
 
-class DonationModuleContainer << (C, red) container>> {
-
+class DonationModuleContainer << (C, OrangeRed) container>> {
+  ~store
 }
 
-class DonationModule << (C, blue) component>> {
+class DonationModule << (C, DeepSkyBlue) component>> {
   
 }
 
-class SelectDonation << (C, blue) component>> {
+class SelectDonation << (C, DeepSkyBlue) component>> {
 
 }
 
-class Donate << (C, blue) component>> {
+class Donate << (C, DeepSkyBlue) component>> {
 
 }
 
-class ContactModuleContainer << (C, red) container>> {
-
+class ContactModuleContainer << (C, OrangeRed) container>> {
+  ~store
 }
 
-class ContactModule << (C, blue) component>> {
+class ContactModule << (C, DeepSkyBlue) component>> {
   
 }
 
-class NotFound << (C, blue) component>> {
+class NotFound << (C, DeepSkyBlue) component>> {
   
 }
 
@@ -118,25 +108,25 @@ DonationModule -- SelectDonation
 DonationModule -- Donate
 
 @enduml
-' class ControlContainer << (C,red) container>> {
+' class ControlContainer << (C,OrangeRed) container>> {
 '     ~store
 '     ==methods==
 '     +handleEvents()
 ' }
 
-' class SweepContainer << (C,red) container>> {
+' class SweepContainer << (C,OrangeRed) container>> {
 '     ~store
 '     ==props==
 '     # radius:number
 '     # hubRadius: number
 ' }
 
-' class Bezel << (C,blue) component >> {
+' class Bezel << (C,DeepSkyBlue) component >> {
 '     ==props==
 '     # radius: number
 ' }
 
-' class Display << (C,blue) component >> {
+' class Display << (C,DeepSkyBlue) component >> {
 '     ==props==
 '     # svgHeight: number
 '     # svgWidth: number
@@ -145,17 +135,17 @@ DonationModule -- Donate
 '     # hubRadius: number
 ' }
 
-' class Hub << (C,blue) component >> {
+' class Hub << (C,DeepSkyBlue) component >> {
 '     ==props==
 '     # radius:number
 ' }
 
-' class Sweep << (C,blue) component >> {
+' class Sweep << (C,DeepSkyBlue) component >> {
 '     ==props==
 '     #dim:object
 ' }
 
-' class RadarControls << (C,blue) component >> {
+' class RadarControls << (C,DeepSkyBlue) component >> {
 '     ==props==
 '     # controls:array
 '     # controlHandler()
@@ -163,7 +153,7 @@ DonationModule -- Donate
 '     +handleToggleEvents()
 ' }
 
-' class Toggle << (C,blue) component >> {
+' class Toggle << (C,DeepSkyBlue) component >> {
 '     ==state==
 '     # value
 '     ==props==
