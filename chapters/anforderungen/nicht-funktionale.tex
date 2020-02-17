@@ -17,7 +17,6 @@ die ersten beiden dieser Schablonen. Sie ähneln dabei der Schablone in \autoref
 Wieder spielt das Wichtigkeit-Schlüsselwort eine große Rolle. Anders als vorher ist das Subjekt nun 
 nicht mehr \emph{<System>} sondern \emph{<Betrachtungsgegenstand>}, welcher im Falle der Umgebungsschablone
 im Hauptsatz auf einen Teilbestandteil beschränkt werden kann (\emph{[Komponente des +]}).\\
-
 Die Umgebungsschablone bildet Anforderungen ab, die von der Umgebung 
 des Betrachtungsgegenstands abhängig sind. \ref{nfa1} und \ref{nfa2} sind nach dieser Schablone gebildet.
 \ref{nfa2} beispielsweise fordert, dass die Software auch dann funktioniert wenn das Netz ausfällt in dem 
@@ -30,7 +29,11 @@ Wichtigkeit-Schlüsselwort und der Vergleichsoperator und der Wert werden weggel
 Die dritte Schablone nach \citeext{requirements}, die Prozessschablone, ist in \autoref{fig:schablone-nicht-funktional}
 nicht abgebildet. Sie stellt Anforderungen an Akteure, z.B. an den Auftragnehmer, und nicht an das System.
 Da im Falle dieser Arbeit nur Anforderungen an die Softwaretechnologien betrachtet werden, findet diese Schablone 
-keine Anwendung und wird nicht weiter erläutert. 
+keine Anwendung und wird nicht weiter erläutert.\\
+
+Wie schon bei den funktionalen Anforderungen, folgt auch hier jeder Anforderung eine frei formulierte Erklärung. 
+Diese bezieht sich immer zuerst auf Kiosksoftware und Kiosksysteme im Allgemeinen und erklärt dann die Bedeutung
+der Anforderung für die \shst{}.
 
 \begin{enumerate}[label=\textbf{NFA\arabic*}]
 	\item\label{nfa1} \textbf{Die Clientsoftware muss so gestaltet sein, dass sie zusammen mit Hardwarekomponenten 
@@ -79,13 +82,13 @@ keine Anwendung und wird nicht weiter erläutert.
   muss also so entwickelt werden, dass sie leicht auf ein anderes System übertragen werden kann. \\ 
   Wie in \autoref{ssub:sharing-station-produkt} bereits erwähnt, soll die \shst{} als Produkt gedacht und
   unter den Gesichtspunkten der Adaptier- und Wiederverwendbarkeit entwickelt werden. Dazu zählt auch, dass die Software
-  auf verschiedene Plattformen lauffähig ist, da zukünftige Kunden die Anforderung nach einer anderen Plattform
+  auf verschiedenen Plattformen lauffähig ist, da zukünftige Kunden die Anforderung nach einer anderen Plattform
   haben könnten. 
   \item\label{nfa7} \textbf{Das Deployment der Clientsoftware sollte möglichst einfach und von außerhalb möglich sein.}\\
   Bei Kiosksystemen ist es meist von Vorteil wenn Softwareupdates nicht vor Ort am Gerät eingespielt werden 
   müssen sondern von außerhalb erfolgen können.\\
   Bei der \shst{} ist dies keine vom Kunden geforderte Anforderung. Allerdings zeigt die Erfahrung, dass nachträgliche
-  Anpassung und Fehlbehebung an der Software in den meisten Fällen nötig ist. Eine entsprechende Deployment Strategie
+  Anpassung und Fehlbehebung an der Software in den meisten Fällen nötig ist. Eine entsprechende Deployment-Strategie
   ist also von großem Vorteil.
   \item\label{nfa8} \textbf{Die Software sollte modular und erweiterbar gehalten sein.}\\
   Auch diese Anforderung ist nicht unbedingt typisch für Kiosksoftware, aber doch denkbar, dass sie häufig gestellt wird. 
