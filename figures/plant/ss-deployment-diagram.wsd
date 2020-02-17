@@ -7,7 +7,7 @@ skinparam ranksep 100
 
 frame "WAN" {
   frame "LAN" {
-    node "Kiosk Workstation" <<device>> as workstation {
+    node "Kiosk-Workstation" <<device>> as workstation {
       component "Sharing-Station App" <<application>> as  application
       component "MQTT Broker" <<service>> as mqttBroker
     }
@@ -33,7 +33,7 @@ frame "WAN" {
   }
 }
 
-webServer -up- application: <<protocol>>\nhttp(s)
-cms -up- application: <<protocol>>\nhttp(s)
-newsletterApi -up- application: <<protocol>>\nhttp(s)
+webServer -up- application: <<protocol>>\nHTTPS
+cms -up- application: <<protocol>>\nHTTPS
+newsletterApi -up- application: <<protocol>>\nHTTPS
 @enduml
