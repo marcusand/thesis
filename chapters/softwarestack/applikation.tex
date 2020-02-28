@@ -33,9 +33,9 @@ zu stellen. Dies wird in \autoref{subs:plattform} weiter erläutert.\\
 
 \ref{nfa8} fordert schließlich die Multilingualität der Oberfläche. Wie in \autoref{sec:backend} 
 bereits erläutert, können Datensätze im CMS mehrsprachig angelegt werden. Diese werden der Clientapplikation
-über eine Schnittstelle zur Verfügung gestellt und sind so zu jedem Zeitpunkt verfügbar. 
+in einem Datensatz zur Verfügung gestellt und sind so zu jedem Zeitpunkt verfügbar. 
 Nutzer*innen sollen später in der Oberfläche der Clientapplikation die Möglichkeit haben die Sprache
-umzustellen. Erfolg dies, muss keine neue Seite vom Server angefordert werden, sondern lediglich
+umzustellen. Erfolg dies, muss keine neue Seite oder neuer Datensatz vom Server angefordert werden, sondern lediglich
 die angezeigten Daten durch die entsprechende Sprachversion ausgetauscht werden.\\
 
 \begin{figure}
@@ -46,4 +46,31 @@ die angezeigten Daten durch die entsprechende Sprachversion ausgetauscht werden.
 \end{figure}
 
 Um dieser beschriebenen Architektur gerecht zu werden, wurde für die \shst{} die JavaScript
-Bibliothek React \cite{react} verwendet.
+Bibliotheken React \cite{react} und Redux \cite{redux} verwendet. React bildet dabei
+den Rahmen für die SPA-Architektur, während Redux ein Pattern für die Verwaltung 
+von Applikationszuständen implementiert. Redux hilft bei steigender Komplexität von 
+Zuständen in Anwendungen -- ist im Rahmen dieser Thesis aber von untergeordneter Bedeutung.
+React wiederum bietet die Möglichkeit alle zuvor genannten Anforderungen zu erfüllen. 
+Das ist neben der Implementierung der SPA-Architektur auch die Möglichkeit die 
+Anwendung zu modularisieren. Denn: Neben der losen Kopplung von CMS und Clientapplikation
+ist auch eine Modularität innerhalb der Clientapplikation nötig, um die Anforderung \ref{nfa8}
+vollständig zu erfüllen. React erlaubt dies durch sein Komponenten-basiertes System. Einzelne
+Interface-Elemente oder auch einzelne Unterseiten können als Komponenten gekapselt werden.
+Wie fein diese Kapselung sein soll, kann vom Entwickler entschieden werden. Richtig implementiert
+können Komponenten so wiederverwendet, ausgetauscht oder das System um neue erweitert werden.\\
+\autoref{fig:ss-app-class-diagram} zeigt die Komponentenstruktur der Clientapplikation der \shst{}.
+Die Abbildung ist vereinfacht und zeigt nur die wichtigsten Komponenten. Die Darstellung orientiert
+sich an einem UML-Klassendiagramm, jedoch sind die Klassen in diesem Falle keine Klassen sondern die
+Komponenten 
+\footnote{React-Komponenten können Klassen sein - müssen aber nicht. Seit React 16.8.0 und
+der Einführung der Hook-API \cite{react-hooks} kann sogar gänzlich auf Klassen verzichtet werden und Komponenten 
+durchgängig als reine Funktionen implementiert werden. Das wurde in diesem Falle so umgesetzt.}. 
+Rot markierte Komponenten sind Container-Komponenten und haben keine eigene Darstellung sondern implementieren 
+lediglich Geschäftslogik. Blau markierte Komponenten sind Interface-Komponenten, die eine direkte 
+Darstellung in der Oberfläche haben. Die eine gelb markierte Komponente ist der Redux-Store. 
+Er ist ebenfalls eine besonderer Art der Container-Komponente und beinhaltet den Applikationszustand.\\
+Im Zentrum der Abbildung befindet sich die Router-Komponente. Sie leitet zwischen den einzelnen Unterseiten
+zu denen die Nutzer*innen navigieren können. Das können entweder Untermenüs oder Module sein, welche
+die Funktionalitäten wie die Spenden-Funktion oder die Kontakt-Funktion implementieren. Ein Teilbaum abgehend 
+von der Router-Komponente kann dabei immer als Modul gesehen werden. Diese klare Abgrenzung der Module,
+bietet so die Möglichkeit die Applikation leicht um neue zu erweitern.
