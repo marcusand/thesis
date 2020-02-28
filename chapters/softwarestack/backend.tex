@@ -1,14 +1,16 @@
-\section{Backend}
+\section{CMS und Datenbank}
 \label{sec:backend}
 
 Mit dem Begriff Backend ist hier die Kombination aus CMS und Datenbank gemeint. Die 
 Anforderungen an ein Backend für Kiosksoftware können sehr unterschiedlich sein. Darüberhinaus
-gibt es für CMS eine große Auswahl an kommerziellen und freien Softwareprodukten.\\
+gibt es für CMS eine große Auswahl an kommerziellen und freien Softwareprodukten.
 Nach der Anforderungsanalyse aus \autoref{chap:anforderungen} muss das CMS den Anforderungen
-\ref{nfa9}, \ref{nfa8} und \ref{nfa3} gerecht werden. 
+\ref{nfa9}, \ref{nfa8} und \ref{nfa3} gerecht werden.\\
+
 \ref{nfa3} stellt die Forderung der Multilingualität an die Oberfläche der Clientsoftware. 
 Um dies zu erfüllen müssen Inhalte mehrsprachig verfügbar sein, also muss auch 
 das CMS die Möglichkeit bieten Datenobjekte mehrsprachig anzulegen.\\
+
 \ref{nfa8} stellt die Forderung der Modularität an die Software. 
 Dabei spielt auch die Kopplung zwischen CMS und 
 Clientapplikation eine Rolle und diese sollte möglichst gering sein. Eine geringe Kopplung
@@ -16,16 +18,16 @@ wird erreicht, wenn das CMS nicht für die Darstellung der Daten verantwortlich 
 diese nur über eine Schnittstelle zur Verfügung stellt. CMS dieser Art besitzen also 
 keine Präsentationsschicht und werden deshalb als \emph{headless} bezeichnet \cite{headless-market}.
 Die Darstellung der Daten findet alleinig in der Clientapplikation statt.\\
+
 Und schließlich fordert \ref{nfa9}, dass das CMS über das Internet erreichbar ist. 
 Das CMS sollte also selbst eine Webanwendungen sein, welche auf einem über das Internet erreichbarem Server
 gehostet ist.\\
+
 All diese Anforderungen werden von vielen auf dem Markt verfügbaren CMS-Systemen erfüllt
 und sind daher weniger außergewöhnlich. Beispielsweise besitzt auch das sehr verbreitete CMS \emph{Wordpress} 
 standardmäßig eine REST-API, über die Daten abgefragt werden können \cite{wordpress}. Zusammen mit einem 
 Plugin wie \emph{WP Headless} \cite{wordpress-headless}, welches die Präsentationsschicht von Wordpress
-entfernt, kann es so ebenfalls headless betrieben werden.\\
-
-\todo{mehr Beispiele aufzählen}
+entfernt, kann es so ebenfalls headless betrieben werden.\todo{mehr Beispiele aufzählen} \\
 
 \begin{figure}
     \centering

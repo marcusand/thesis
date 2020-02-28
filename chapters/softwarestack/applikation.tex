@@ -1,2 +1,49 @@
 \subsection{Applikation}
 \label{subs:applikation}
+
+Anforderungen aus \autoref{chap:anforderungen}, welche die eigentliche Applikation 
+der Clientsoftware betreffen, sind die Anforderungen \ref{nfa2}, \ref{nfa3} und \ref{nfa8}.\\
+
+\ref{nfa8} stellt die Anforderung der Modularität an das gesamte Softwaresystem. Diese
+betrifft also auch die Clientapplikation. Wie in \autoref{sec:backend} bereits erläutert, 
+ist für eine große Modularität eine lose Kopplung von Daten- und Präsentationsschicht ein
+wichtiger Faktor. Umgekehrt bedeutet dies, dass die Clientsoftware eine in sich geschlossene
+eigene Anwendung sein muss. Sie besitzt lediglich die Datenschnittstelle zum CMS. Das leistet im 
+Falle der Webtechnologien eine Single-Page Applikation (SPA). Eine SPA wird einmalig von einem 
+Server geladen. Laden von weiteren Seiten beim Navigieren durch die Oberfläche 
+findet nicht statt \cite{js-definitive}. Um Transaktionen und neue Zustände möglich zu machen,
+können jedoch im Hintergrund asynchrone Datenanfragen gemacht werden (AJAX). 
+Die SPA gibt so den Nutzer*innen nicht mehr das Gefühl einer
+Webseite, sonder einer geschlossenen Anwendung, was im Falle der Kiosksoftware ein gewünschter
+Effekt ist und damit in gewisser Weise auch zur Erfüllung der Anforderung \ref{nfa4} beiträgt.\\
+Das Laden einer einzigen Seite vom Server bedeutet jedoch nicht, dass keine Navigationsstruktur
+mit Vor- und Zurück-Bewegungen implementieren werden kann. Die Navigation findet jedoch alleinig in 
+der Clientapplikation statt und ist nicht mit Laden von neuen Seiten verbunden. Es wird lediglich
+ein neuer Zustand der Applikation geladen \cite{spa-manifesto}.\\
+
+\ref{nfa2} fordert Offline-Verfügbarkeit. Auch hier trägt das Konzept der SPA zur 
+Erbringung der Anforderung bei. Dadurch, dass die Anwendung nur einmal initial geladen werden muss 
+und danach vollständig im Client zur Verfügung steht, ist eine Netzwerkverbindung nach dem initialen 
+Laden nicht mehr nötig. Das umfasst allerdings nur die eigentliche Applikation und nicht die
+AJAX-Anfragen, die auch zu späteren Zeitpunkten erfolgen können. Auch ist bei einem Neuladen
+der Applikation immer eine Netzwerkverbindung zwingend nötig. Das Konzept der SPA erfüllt
+die Anforderung der Offline-Verfügung also nur zu einem gewissen Teil. Allerdings bildet die Geschlossenheit
+einer SPA eine wichtige Voraussetzung um die Applikation auch vollständig offline zur Verfügung
+zu stellen. Dies wird in \autoref{subs:plattform} weiter erläutert.\\
+
+\ref{nfa8} fordert schließlich die Multilingualität der Oberfläche. Wie in \autoref{sec:backend} 
+bereits erläutert, können Datensätze im CMS mehrsprachig angelegt werden. Diese werden der Clientapplikation
+über eine Schnittstelle zur Verfügung gestellt und sind so zu jedem Zeitpunkt verfügbar. 
+Nutzer*innen sollen später in der Oberfläche der Clientapplikation die Möglichkeit haben die Sprache
+umzustellen. Erfolg dies, muss keine neue Seite vom Server angefordert werden, sondern lediglich
+die angezeigten Daten durch die entsprechende Sprachversion ausgetauscht werden.\\
+
+\begin{figure}
+    \centering
+    \includestandalone[width=1\textwidth]{figures/plant/out/ss-app-class-diagram}
+    \caption{Komponenten Diagram der \shst{} App}
+    \label{fig:ss-app-class-diagram}
+\end{figure}
+
+Um dieser beschriebenen Architektur gerecht zu werden, wurde für die \shst{} die JavaScript
+Bibliothek React \cite{react} verwendet.
