@@ -35,7 +35,9 @@ Offlinestatus nicht mehr durch das CMS aktualisierbar, aber zumindest die letzte
 bis ein Netzwerkzugriff wieder möglich ist. Um solch einer Anforderung gerecht zu werden, bieten moderne 
 Browser die Service-Worker API \cite{service-worker-api}.\\ 
 Bei Service-Workern handelt es sich um Proxy-Server, welche sich zwischen der Webanwendung und dem 
-Netzwerk befinden. Diese speichern Netzwerkzugriffe in einem lokalen Speicher und können Anfragen auf
+Netzwerk befinden. Ein Service-Worker wird in einem Skript definiert, welches
+unabhängig vom Prozess der Webseite ausgeführt wird \cite{service-worker-intro}. 
+Dieses speichert Netzwerkzugriffe in einem lokalen Speicher und kann Anfragen auf
 diesen verweisen, sollte das Netzwerk bei dem nächsten Zugriff nicht erreichbar sein \cite{service-worker-api}.
 Service-Worker werden bei initialem Aufruf heruntergeladen und bleiben auch nach Schließen des Browsers
 gespeichert. Das gilt auch für die Daten, welche sie speichern. Diese sind also auch bei Neustart ohne
@@ -63,10 +65,10 @@ die angezeigten Daten durch die entsprechende Sprachversion ausgetauscht werden.
     \label{fig:ss-app-class-diagram}
 \end{figure}
 
-Um dieser beschriebenen Architektur gerecht zu werden, wurde für die Clientapplikation der \shst{} die JavaScript
-Bibliotheken React \cite{react} und Redux \cite{redux} zusammen mit dem 
+Um dieser beschriebenen Architektur gerecht zu werden, wurde für die Clientapplikation der \shst{} 
+unter Anderen die JavaScript Bibliotheken React \cite{react} und Redux \cite{redux} zusammen mit dem 
 Toolkit Workbox \cite{workbox} verwendet. React bildet dabei
-den Rahmen für die SPA-Architektur, Workbox bietet eine Bibliothek, welche es erleichtert 
+den Rahmen für die SPA-Architektur; Workbox bietet eine Bibliothek, welche es erleichtert 
 Service-Worker zu implementieren und Redux ist eine Bibliothek, welche ein Pattern für die Verwaltung 
 von Applikationszuständen implementiert. Redux hilft bei steigender Komplexität von 
 Zuständen in Anwendungen -- ist im Rahmen dieser Thesis aber von untergeordneter Bedeutung und wird daher
@@ -96,4 +98,48 @@ zu denen die Nutzer*innen navigieren können. Teilbäume, abgehend von der Route
 die Hauptmodule der Applikation gesehen werden. Sie können dabei Untermenüs oder Module sein, welche
 die konkreten Funktionalitäten wie die Spenden-Funktion (\ref{fa3}) oder die Newsletter-Funktion (\ref{fa5}) 
 implementieren. Diese klarer Abgrenzung der einzelnen Module bietet so die Möglichkeit, diese leicht
-durch andere zu ersetzten oder um neue zu erweitern.
+durch andere zu ersetzten oder um neue zu erweitern.\\
+
+\begin{figure}
+  \lstinputlisting[%
+    style=ES6, 
+    caption=
+  ]{webpack.prod.config.js}
+  \caption{Teil der Webpack Konfiguration der \shst{} App}
+  \label{fig:webpack-config}
+\end{figure}
+
+Workbox hilft bei der Implementierung von Service-Worker Skripten. Darüber hinaus gibt es ein 
+Workbox-Plugin \cite{workbox-webpack-plugin} für den JavaScript-Bundler Webpack \cite{webpack}. 
+Beide Technologien wurden im Falle der \shst{} eingesetzt. Mit Hilfe dieses Plugins müssen 
+Service-Worker Skripte nicht selbst implementiert werden, sondern werden automatisiert erstellt.
+Im Konfigurationsfile von Webpack kann durch setzen von Parametern bestimmt werden, was
+der Service-Worker leisten soll. \autoref{fig:webpack-config} zeigt einen Teil der 
+Webpack-Konfiguration der \shst{}. In Zeile 31 wird das Objekt zur Generierung des
+Service-Workers erstellt. Als Parameter wird ein Objekt mit der Konfiguration übergeben. 
+Diese Objekt ist optional -- auch ohne Konfiguration wird ein Service-Worker erstellt,
+welcher dafür sorgt, dass alle von Webpack erstellten Files beim Nutzen der Applikation
+gecached und offline verfügbar gemacht werden. Weitere Funktionalitäten können durch
+Setzen der Konfigurationsparameter aktiviert werden.\\
+In Zeile 34 wird die maximale Dateigröße gesetzt. 
+Dateien größer als dieser Wert, werden nicht offline verfügbar gemacht. Dieser Wert
+ist standardmäßig niedriger und wurde an dieser Stelle erhöht um auch das Video zu cachen, welches
+für den Idle-Modus (\ref{fa8}) benötigt wird.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{figures/images/ss-network-falling-back-to-cache.png}
+    \caption{NetworkFirst-Strategie. Quelle: The Offline Cookbook \cite{offline-cookbook}}
+    \label{fig:network-first}
+\end{figure}
+
+In Zeile 35 wird definiert welche Dateien, neben den von Webpack erstellten Dateien, 
+gecached werden sollen. Das sind in diesem Fall alle Daten und Dateien, die durch Netzwerkanfragen an 
+das CMS geladen werden. Diese Anfragen haben den gemeinsamen Namespace \texttt{/api/} und 
+können dadurch mit dem regulären Ausdruck \texttt{/.*\textbackslash/api\textbackslash/.*/} erfasst werden.
+Mit der Option \texttt{handler} wird eine Caching-Strategie gewählt. Workbox bietet hier die Möglichkeit
+zwischen fünf verschiedenen, vordefinierten Handler-Klassen zu wählen \cite{workbox-strategies}. 
+Die Strategie der Klasse \texttt{NetworkFirst} beruht darauf, dass die Anfrage zuerst an das Netzwerk
+gestellt wird. Ist dieses nicht erreichbar, wird auf die letzte Version im Cache zurückgegriffen. 
+Ist ein Netzwerkzugriff erfolgreich, wird auch immer die Version im Cache durch diese Version ersetzt.
+\autoref{fig:network-first} visualisiert diese Strategie. \todo{Strategie vielleicht nochmal überarbeiten}
