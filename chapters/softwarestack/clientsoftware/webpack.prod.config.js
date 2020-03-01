@@ -30,7 +30,6 @@ module.exports = merge(baseConfig, {
     }),
     new WorkboxPlugin.GenerateSW({
       swDest: 'sw.js',
-      clientsClaim: true,
       skipWaiting: true,
       maximumFileSizeToCacheInBytes: 60000000,
       runtimeCaching: [{
