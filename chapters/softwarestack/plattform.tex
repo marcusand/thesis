@@ -10,7 +10,7 @@ Also beispielsweise neben auf einer herkömmlichen Windows-Workstation auch auf 
 Tablet oder einer Linux-Workstation. Webtechnologien bieten hierfür die beste Vorraussetzung. 
 Browser oder Umgebungen die Webanwendungen ausführen können, gibt es für praktisch 
 jede Plattform. Wichtig ist jedoch trotzdem, dass bei der Entwicklung auf
-Plattformunabhängigkeit geachtet wird. Beispielsweise bietet das Framework Electron.js, die 
+Plattformunabhängigkeit geachtet wird. Beispielsweise bietet das Framework Electron.js die 
 Möglichkeit, mit Webtechnologien native Desktop-Apps zu entwickeln. Es wird dabei aber nicht
 nur mit Browser-Technologien gearbeitet -- ein parallel laufender Node.js-Prozess bietet
 die Möglichkeit auf Betriebssystem-Funktionalitäten zuzugreifen 
@@ -22,7 +22,7 @@ Browser-Technologien gearbeitet wird, da eine Bindung an eine spezifische Plattf
 nicht stattfindet. Bei einem solchen Vorgehen wäre es später immer noch möglich, 
 die Anwendung in einem Electron.js-Framework zu verpacken und als Desktop-Anwendung auszuliefern. 
 Genauso könnte die Applikation aber auch als klassische Webanwendung im Internet verfügbar gemacht oder 
-als mobile App, mit ein Framework wie Apache Cordova, ausgeliefert werden.\\
+als mobile App, mit ein Framework wie Apache Cordova \cite{cordova}, ausgeliefert werden.\\
 
 \ref{nfa4} fordert die Geschlossenheit der Clientapplikation. Im Folgenden wird davon ausgegangen, 
 dass die Software auf einer Workstation und nicht beispielsweise auf einem mobilen Endgerät präsentiert
@@ -35,6 +35,6 @@ die Menüleiste ausgeblendet und das Verlassen des Vollbildmodus deaktiviert wir
 Da sich jedoch zuvor entschieden wurde, eine reine Browser-Anwendung zu implementieren, ist es nun naheliegend 
 diese auch in einem Browser und nicht als native Applikation zu präsentieren. Der Browser Google Chrome bietet
 dafür ebenfalls eine \emph{kiosk} Option. Diese kann durch übergeben des Startparameters \texttt{-{}-kiosk}
-aktiviert werden. Zusätzlich kann eine URL angegeben werden, die bei Öffnen direkt aufgerufen werden soll.
+aktiviert werden. Zusätzlich kann eine URL angegeben werden, die beim Öffnen direkt aufgerufen werden soll.
 Der Browser startet dann ebenfalls in einem nicht verlassbaren Vollbildmodus und blendet jegliche Menüleisten aus.
 Zusätzlich wird bei Touch-Input der Mauszeiger vollständig ausgeblendet.

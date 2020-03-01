@@ -35,23 +35,22 @@ entfernt, kann es so ebenfalls headless betrieben werden.\todo{mehr Beispiele au
     \label{fig:cms-interface}
 \end{figure}
 
-Für das Backend der \shst{} wurde auf ein bereits vorhandenes, von \meso{} entwickeltes,
+Für die \shst{} wurde auf ein bereits vorhandenes, von \meso{} entwickeltes,
 CMS zurückgegriffen. Es wurde jedoch vom Autor dieser Arbeit
 an manchen Stellen angepasst und um einige Funktionen
 erweitert. Es ist in Node.js \cite{node} geschrieben und speichert die Daten in einer 
 MongoDB \cite{mongo}.\\
 Es handelt sich dabei um ein reines headless CMS. Es besitzt neben einer JSON-API um die Daten 
-auszuliefern noch eine Upload-Schnittstelle sowie eine Schnittstelle um Formulardaten abzuspeichern
-(\ref{nfa8}).\\
+auszuliefern noch eine Upload-Schnittstelle sowie eine Schnittstelle um Formulardaten abzuspeichern.\\
 Die Struktur des CMS ist Template-basiert \todo{Schreibweise checken}. Administratoren können Templates 
 anlegen, welche eine Datenstruktur definieren. Redakteure können dann anhand dieser Templates 
 konkrete Content-Objekte erstellen, welche baumartig miteinander verknüpft werden. Templates 
 werden dabei mithilfe von verschiedenen Datenfeldern gebildet. Datenfelder sind zum Beispiel
 Zahlenfeld, Textfeld oder Rich-Text-Feld. Datenfelder können dabei als übersetzbare Felder angelegt
 werden. Beim Erstellen eines Content-Objekts können später so verschiedene Sprachversionen
-hinterlegt werden (\ref{nfa3}).\\
+hinterlegt werden.\\
 Das CMS ist dauerhaft bei einem Cloud-Anbieter gehostet und die Oberfläche somit über das
-Internet aufrufbar (\ref{nfa9}). \autoref{fig:cms-interface} zeigt diese Oberfläche.
+Internet aufrufbar. \autoref{fig:cms-interface} zeigt diese Oberfläche.
 
 \todo{Screenshots vom CMS einfügen}
 \todo{Links in RTF erläutern}
