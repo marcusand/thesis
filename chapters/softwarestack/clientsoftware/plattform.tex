@@ -15,10 +15,10 @@ Möglichkeit, mit Webtechnologien native Desktop-Apps zu entwickeln. Es wird dab
 nur mit Browser-Technologien gearbeitet -- ein parallel laufender Node.js-Prozess bietet
 die Möglichkeit auf Betriebssystem-Funktionalitäten zuzugreifen 
 und über einen Inter-Process-Communication (IPC) Kanal mit der Oberfläche der Anwendung zu
-kommunizieren. Dies bietet zwar allerhand Vorteile, beispielsweise bei der Kommunikation
+kommunizieren \cite{electron-architecture}. Dies bietet zwar allerhand Vorteile, beispielsweise bei der Kommunikation
 mit Hardwarekomponenten, bindet die Anwendung aber an eine Desktop-Umgebung. 
 Bei der Entwicklung der Applikation wird im besten Fall also darauf geachtet, dass nur mit 
-Browser-Technologien gearbeitet wird, da eine Bindung an eine spezifische Plattform so 
+Browsertechnologien gearbeitet wird, da eine Bindung an eine spezifische Plattform so 
 nicht stattfindet. Bei einem solchen Vorgehen wäre es später immer noch möglich, 
 die Anwendung in einem Electron.js-Framework zu verpacken und als Desktop-Anwendung auszuliefern. 
 Genauso könnte die Applikation aber auch als klassische Webanwendung im Internet verfügbar gemacht oder 
@@ -32,7 +32,7 @@ Vollbildmodus gestartet wird. Darüberhinaus sollten jegliche Betriebssystemfunk
 Verlassen der Applikation möglich machen würden, deaktiviert werden. Electron.js bietet dafür beispielsweise
 die \emph{kiosk} Option. Diese sorgt unter Anderem dafür, dass die Applikation im Vollbildmodus gestartet, 
 die Menüleiste ausgeblendet und das Verlassen des Vollbildmodus deaktiviert wird.\\
-Da sich jedoch zuvor entschieden wurde, eine reine Browser-Anwendung zu implementieren, ist es nun naheliegend 
+Da sich jedoch zuvor entschieden wurde eine reine Browser-Anwendung zu implementieren, ist es nun naheliegend 
 diese auch in einem Browser und nicht als native Applikation zu präsentieren. Der Browser Google Chrome bietet
 dafür ebenfalls eine \emph{kiosk} Option. Diese kann durch Übergeben des Startparameters \texttt{-{}-kiosk}
 aktiviert werden. Zusätzlich kann eine URL angegeben werden, die beim Öffnen direkt aufgerufen werden soll.

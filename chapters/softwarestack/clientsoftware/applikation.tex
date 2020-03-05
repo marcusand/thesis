@@ -12,14 +12,14 @@ eigene Anwendung sein muss. Sie besitzt lediglich die Datenschnittstelle zum CMS
 Falle der Webtechnologien eine Single-Page Applikation (SPA). Eine SPA wird einmalig von einem 
 Server geladen. Laden von weiteren Seiten beim Navigieren durch die Oberfläche 
 findet nicht statt \cite{js-definitive}. Um Transaktionen und neue Zustände möglich zu machen,
-können jedoch im Hintergrund asynchrone Datenanfragen gemacht werden (AJAX). 
+können jedoch im Hintergrund asynchrone Datenanfragen gestellt werden (AJAX). 
 Die SPA gibt so den Nutzer*innen nicht mehr das Gefühl einer
 Webseite, sonder einer geschlossenen Anwendung, was im Falle der Kiosksoftware ein gewünschter
 Effekt ist und damit in gewisser Weise auch zur Erfüllung der Anforderung \ref{nfa4} beiträgt.\\
 Das Laden einer einzigen Seite vom Server bedeutet jedoch nicht, dass keine Navigationsstruktur
 mit Vor- und Zurück-Bewegungen implementieren werden kann. Die Navigation findet jedoch alleinig in 
 der Clientapplikation statt und ist nicht mit Laden von neuen Seiten verbunden. Es werden lediglich
-neue Zustände geladen \cite{spa-manifesto}.\\
+neue Zustände aufgerufen \cite{spa-manifesto}.\\
 
 \ref{nfa2} fordert Offline-Verfügbarkeit. Auch hier trägt das Konzept der SPA zur 
 Erbringung der Anforderung bei. Dadurch, dass die Anwendung nur einmal initial geladen werden muss 
@@ -28,9 +28,9 @@ Laden nicht mehr nötig. Das umfasst allerdings nur die eigentliche Applikation 
 AJAX-Anfragen, die auch zu späteren Zeitpunkten erfolgen können. Auch ist bei einem Neuladen
 der Applikation immer eine Netzwerkverbindung zwingend nötig. Das Konzept der SPA erfüllt
 die Anforderung der Offline-Verfügung also nur zu einem gewissen Teil. Allerdings bildet die Geschlossenheit
-einer SPA eine wichtige Voraussetzung um die Applikation auch vollständig offline zur Verfügung
+einer SPA eine wichtige Voraussetzung, um die Applikation auch vollständig offline zur Verfügung
 zu stellen. \emph{Vollständig offline} meint hier also, dass beispielsweise auch Daten, die über
-einen AJAX-Aufruf aus dem CMS geladen werden, local gecached werden können. Zwar wären Content-Daten bei
+einen AJAX-Aufruf aus dem CMS geladen werden, lokal gecached werden können. Zwar wären Content-Daten bei
 Offlinestatus nicht mehr durch das CMS aktualisierbar, aber zumindest die letzte Version solange verfügbar,
 bis ein Netzwerkzugriff wieder möglich ist. Um solch einer Anforderung gerecht zu werden, bieten moderne 
 Browser die Service-Worker API \cite{service-worker-api}.\\ 
@@ -70,11 +70,11 @@ unter Anderen die JavaScript Bibliotheken React \cite{react} und Redux \cite{red
 Toolkit Workbox \cite{workbox} verwendet. React bildet dabei
 den Rahmen für die SPA-Architektur; Workbox bietet eine Bibliothek, welche es erleichtert 
 Service-Worker zu implementieren und Redux ist eine Bibliothek, welche ein Pattern für die Verwaltung 
-von Applikationszuständen implementiert. Redux hilft bei steigender Komplexität von 
+von Applikationszuständen bereitstellt. Redux hilft bei steigender Komplexität von 
 Zuständen in Anwendungen -- ist im Rahmen dieser Thesis aber von untergeordneter Bedeutung und wird daher
 nicht weiter erläutert.\\
 
-React bietet die Möglichkeit die meisten der zuvor genannten Anforderungen zu erfüllen. 
+React bietet die Möglichkeit, die meisten der zuvor genannten Anforderungen zu erfüllen. 
 Das ist neben der Implementierung der SPA-Architektur, auch die Möglichkeit die 
 Anwendung zu modularisieren. Denn: Neben der losen Kopplung von CMS und Clientapplikation
 ist auch eine Modularität innerhalb der Clientapplikation nötig, um die Anforderung \ref{nfa8}
@@ -84,7 +84,7 @@ Wie fein diese Kapselung sein soll, kann von den Entwickler*innen entschieden we
 können Komponenten so wiederverwendet, ausgetauscht oder das System leicht um neue erweitert werden.\\
 \autoref{fig:ss-app-class-diagram} zeigt die Komponentenstruktur der Clientapplikation der \shst{}.
 Die Abbildung ist vereinfacht und zeigt nur die wichtigsten Komponenten. Die Darstellung orientiert
-sich an einem UML-Klassendiagramm \cite{uml-spec}, jedoch sind die Klassen in diesem Falle keine Klassen sondern die
+sich an einem UML-Klassendiagramm \cite{uml-spec}, jedoch sind die Klassen in diesem Falle keine Klassen, sondern die
 Komponenten 
 \footnote{React-Komponenten können Klassen sein - müssen aber nicht. Seit React 16.8.0 und
 der Einführung der Hook-API \cite{react-hooks} kann sogar gänzlich auf Klassen verzichtet werden und Komponenten 
@@ -98,7 +98,7 @@ zu denen die Nutzer*innen navigieren können. Teilbäume, abgehend von der Route
 die Hauptmodule der Applikation gesehen werden. Sie können dabei Untermenüs oder Module sein, welche
 die konkreten Funktionalitäten wie die Spenden-Funktion (\ref{fa3}) oder die Newsletter-Funktion (\ref{fa5}) 
 implementieren. Diese klarer Abgrenzung der einzelnen Module bietet so die Möglichkeit, diese leicht
-durch andere zu ersetzten oder um neue zu erweitern.\\
+durch andere zu ersetzen oder um neue zu erweitern.\\
 
 \begin{figure}
   \lstinputlisting[%
@@ -111,13 +111,13 @@ durch andere zu ersetzten oder um neue zu erweitern.\\
 
 Workbox hilft bei der Implementierung von Service-Worker Skripten. Darüber hinaus gibt es ein 
 Workbox-Plugin \cite{workbox-webpack-plugin} für den JavaScript-Bundler Webpack \cite{webpack}. 
-Beide Technologien wurden im Falle der \shst{} eingesetzt. Mit Hilfe dieses Plugins müssen 
+Beide Technologien wurden im Falle der \shst{} eingesetzt. Mit Hilfe dieses Plugins, müssen 
 Service-Worker Skripte nicht selbst implementiert werden, sondern werden automatisiert erstellt.
-Im Konfigurationsfile von Webpack kann durch setzen von Parametern bestimmt werden, was
+Im Konfigurationsfile von Webpack, kann durch setzen von Parametern bestimmt werden, was
 der Service-Worker leisten soll. \autoref{fig:webpack-config} zeigt einen Teil der 
 Webpack-Konfiguration der \shst{}. In Zeile 31 wird das Objekt zur Generierung des
 Service-Workers erstellt. Als Parameter wird ein Objekt mit der Konfiguration übergeben. 
-Diese Objekt ist optional -- auch ohne Konfiguration wird ein Service-Worker erstellt,
+Dieses Objekt ist optional -- auch ohne Konfiguration wird ein Service-Worker erstellt,
 welcher dafür sorgt, dass alle von Webpack erstellten Files beim Nutzen der Applikation
 gecached und offline verfügbar gemacht werden. Weitere Funktionalitäten können durch
 Setzen der Konfigurationsparameter aktiviert werden.\\
@@ -141,5 +141,6 @@ Mit der Option \texttt{handler} wird eine Caching-Strategie gewählt. Workbox bi
 zwischen fünf verschiedenen, vordefinierten Handler-Klassen zu wählen \cite{workbox-strategies}. 
 Die Strategie der Klasse \texttt{NetworkFirst} beruht darauf, dass die Anfrage zuerst an das Netzwerk
 gestellt wird. Ist dieses nicht erreichbar, wird auf die letzte Version im Cache zurückgegriffen. 
-Ist ein Netzwerkzugriff erfolgreich, wird auch immer die Version im Cache durch diese Version ersetzt.
-\autoref{fig:network-first} visualisiert diese Strategie. \todo{Strategie vielleicht nochmal überarbeiten}
+Ist ein Netzwerkzugriff erfolgreich, wird auch immer die Version im Cache durch die neue Version ersetzt.
+\autoref{fig:network-first} visualisiert diese Strategie. \todo{Strategie vielleicht nochmal überarbeiten
+bzw. Nachteile behandeln}

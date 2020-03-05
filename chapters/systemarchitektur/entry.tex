@@ -8,13 +8,14 @@
     \label{fig:ss-deployment-diagram}
 \end{figure}
 
-Für die weitere Betrachtung der Softwaretechnologien, ist es nötig erst einen Überblick über 
+Für die weitere Betrachtung der Softwaretechnologien ist es nötig erst einen Überblick über 
 das Gesamtsystem der \shst{} zu erhalten, um zu verstehen, wie die einzelnen Komponenten
 zusammenarbeiten.\\
 Dafür zeigt das Diagram in \autoref{fig:ss-deployment-diagram} die Topologie des Gesamtsystems.
 Es soll dabei Überblick über alle im System enthaltenen Hardwarekomponenten und Applikationen
 geben. Zusätzlich werden die Netzstruktur und die Kommunikationswege zwischen den Komponenten 
 aufgezeigt.\\
+
 Bei dem Diagram handelt es sich um ein UML Deployment Diagram \cite{uml-spec}. Es ist dafür 
 gedacht, um die Systemarchitektur und die Verteilung von Hardware- und Softwarekomponenten in der 
 Umgebung des Systems zu visualisieren \cite{uml-2.5}. Hardwarekomponenten werden dabei als Geräteknoten
@@ -23,13 +24,12 @@ Umgebung des Systems zu visualisieren \cite{uml-2.5}. Hardwarekomponenten werden
 sind eine spezielle Art der Assoziation und stellen in diesem Fall Kommunikationspfade dar \cite{uml-2.5}.
 Die Beschriftung an den Wegen nennt dabei das genutzte Kommunikationsprotokoll.\\
 Die umschließenden Rahmen zeigen welche Komponenten sich in welchem Netz befinden.\\
-
 Im Mittelpunkt der Architektur steht die Kiosk-Workstation -- der Ausstellungsrechner. Auf ihm läuft
 die Clientapplikation (\emph{Sharing Station App}). An die Workstation direkt angeschlossen, und mit der
 Applikation über die USB-Schnittstelle kommunizierend, ist die Webcam, 
 welche für die Foto-Commitment Funktion (\ref{fa4}) benötigt wird. 
 Die zwei weiteren Hardwarekomponenten \emph{Card Terminal} und \emph{Coin Slot} sind nicht 
-an die Kiosk-Workstation sondern über serielle Kommunikation an einen Embedded Client angeschlossen. 
+an die Kiosk-Workstation, sondern über serielle Kommunikation an einen Embedded-Client angeschlossen. 
 Dieser kommuniziert über
 den \emph{MQTT Broker} mit der Clientapplikation. Die Hintergründe zu dieser Architektur werden in
 \autoref{chap:hardwareschnittstellen} erläutert.\\
@@ -41,7 +41,7 @@ damit die Anforderung \ref{nfa9}. Neben dem CMS und der Datenbank ist auf dem Se
 Webserver gehostet, welcher die Applikationsfiles der \emph{Sharing
 Station App} ausliefert. Die Hintergründe hierzu werden in \autoref{subs:plattform} beschrieben.
 CMS sowie Webserver kommunizieren über das HTTPS-Protokoll mit der Clientapplikation.\\
-Und schließlich gibt es noch den Wordpress-Server des Dialogmuseums. Dessen Architektur ist nicht bekannt 
+Und schließlich gibt es noch den Wordpress-Server des Dialogmuseums. Dessen Architektur ist nicht bekannt,
 aber auch nicht weiter von Bedeutung. Lediglich die Schnittstelle zum Eintragen einer E-Mail Adresse in 
 die Newsletterliste ist relevant. Bei dieser handelt es sich um einen einzelnen Endpoint, welcher ebenfalls
 über das HTTPS-Protokoll angesprochen werden kann. 
