@@ -32,14 +32,14 @@ Vollbildmodus gestartet wird. Darüberhinaus sollten jegliche Betriebssystemfunk
 Verlassen der Applikation möglich machen würden, deaktiviert werden. Electron.js bietet dafür beispielsweise
 die \emph{kiosk} Option. Diese sorgt unter Anderem dafür, dass die Applikation im Vollbildmodus gestartet, 
 die Menüleiste ausgeblendet und das Verlassen des Vollbildmodus deaktiviert wird.\\
-Da sich jedoch zuvor entschieden wurde eine reine Browser-Anwendung zu implementieren, ist es nun naheliegend 
+Da sich jedoch zuvor entschieden wurde eine reine Browseranwendung zu implementieren, ist es nun naheliegend 
 diese auch in einem Browser und nicht als native Applikation zu präsentieren. Der Browser Google Chrome bietet
 dafür ebenfalls eine \emph{kiosk} Option. Diese kann durch Übergeben des Startparameters \texttt{-{}-kiosk}
 aktiviert werden. Zusätzlich kann eine URL angegeben werden, die beim Öffnen direkt aufgerufen werden soll.
 Der Browser startet dann ebenfalls in einem nicht verlassbaren Vollbildmodus und blendet jegliche Menüleisten aus.
 Zusätzlich wird bei Touch-Input der Mauszeiger vollständig ausgeblendet.\\
 
-Für die Clientapplikation der \shst{} wurde, wie zuvor beschrieben, eine reine Browser-Anwendung implementiert,
+Für die Clientapplikation der \shst{} wurde, wie zuvor beschrieben, eine reine Browseranwendung implementiert,
 um die Plattformunabhängigkeit zu gewährleisten. Für die Auslieferung der Software wurde auf ein Framework wie
 Electron.js gänzlich verzichtet. Stattdessen wurde sich entschieden, durch Definieren eines so genannten Webmanifests,
 eine installierbare Progressive Web App (PWA) zu erstellen \cite{web-app-manifest}. Dies bedeutet, 
