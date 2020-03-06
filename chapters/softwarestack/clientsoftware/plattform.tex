@@ -15,8 +15,8 @@ Möglichkeit, mit Webtechnologien native Desktop-Apps zu entwickeln. Es wird dab
 nur mit Browser-Technologien gearbeitet -- ein parallel laufender Node.js-Prozess bietet
 die Möglichkeit auf Betriebssystem-Funktionalitäten zuzugreifen 
 und über einen Inter-Process-Communication (IPC) Kanal mit der Oberfläche der Anwendung zu
-kommunizieren \cite{electron-architecture}. Dies bietet zwar allerhand Vorteile, beispielsweise bei der Kommunikation
-mit Hardwarekomponenten, bindet die Anwendung aber an eine Desktop-Umgebung. 
+kommunizieren \cite{electron-architecture}. Dies bietet zwar allerhand Vorteile, 
+beispielsweise bei der Kommunikation mit Hardwarekomponenten, bindet die Anwendung aber an eine Desktop-Umgebung. 
 Bei der Entwicklung der Applikation wird im besten Fall also darauf geachtet, dass nur mit 
 Browsertechnologien gearbeitet wird, da eine Bindung an eine spezifische Plattform so 
 nicht stattfindet. Bei einem solchen Vorgehen wäre es später immer noch möglich, 
@@ -38,3 +38,19 @@ dafür ebenfalls eine \emph{kiosk} Option. Diese kann durch Übergeben des Start
 aktiviert werden. Zusätzlich kann eine URL angegeben werden, die beim Öffnen direkt aufgerufen werden soll.
 Der Browser startet dann ebenfalls in einem nicht verlassbaren Vollbildmodus und blendet jegliche Menüleisten aus.
 Zusätzlich wird bei Touch-Input der Mauszeiger vollständig ausgeblendet.\\
+
+Für die Clientapplikation der \shst{} wurde, wie zuvor beschrieben, eine reine Browser-Anwendung implementiert,
+um die Plattformunabhängigkeit zu gewährleisten. Für die Auslieferung der Software wurde auf ein Framework wie
+Electron.js gänzlich verzichtet. Stattdessen wurde sich entschieden, durch Definieren eines so genannten Webmanifests,
+eine installierbare Progressive Web App (PWA) zu erstellen \cite{web-app-manifest}. Dies bedeutet, 
+dass die Applikation zum einem in einem Browser aufgerufen, aber auch durch Installieren dem Desktop 
+der Workstation hinzugefügt werden kann. Diese installierte Applikation entspricht nichts 
+weiter als einem Chrome-Browser, welcher bei Öffnen die gewünschte Seite direkt,
+bzw. durch den zuvor definierten Service-Worker die Applikation-Files aus dem lokalen Speicher, aufruft. Auch
+können der Applikation die selben Startparameter wie dem Chrome-Browser übergeben werden. Das ist wichtig,
+um hier ebenfalls die \texttt{-{}-kiosk} Option nutzen zu können.
+Zusätzlich kann für die installierte Version der Applikation ein Desktop-Icon definiert werden \cite{web-app-manifest}.
+Dieses trägt ebenfalls dazu bei, den Eindruck einer nativen Applikation zu erwecken.\\
+Wie schon beim Erstellen der Service-Worker, wurde auch für das Erstellen des Webmanifests auf ein 
+Webpack-Plugin \cite{webpack-pwa-manifest-plugin} zurückgegriffen. Zeile 15-30 in \autoref{fig:webpack-config} 
+zeigt die Einbindung dieser Plugins, welches während dem Build-Vorgang, mit den übergebenen Parametern, das Manifest erstellt. 
