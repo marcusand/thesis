@@ -1,2 +1,18 @@
 \chapter{Hardwareschnittstellen}
 \label{chap:hardwareschnittstellen}
+
+In diesem Kapitel wird die Kommunikation mit Hardwarekomponenten genau betrachet.
+\ref{nfa1} fordert, dass die Clientsoftware zusammen mit Hardwarekomponenten funktionieren muss.\\
+Während Serveranwendungen und der Node-Prozess einer Electron.js-Anwendung Zugriff auf die meisten
+Betriebssystemschnittstellen haben und somit leicht mit Hardwarekomponenten kommunizieren können, sind
+die Möglichkeiten einer reinen Browseranwendung wesentlich limitierter. Browseranwendungen werden
+typischerweise, aus sicherheitstechnischen Gründen, kein direkten Zugriff auf Betriebssystem-APIs gegeben.
+Nur einige ausgewählte Funktionalitäten werden durch die Web APIs zur Verfügung gestellt \cite{web-apis}.
+Für Anwendungsfälle, die über die Möglichkeiten der Web APIs hinausgehen, müssen eigene Lösungen entwickelt 
+werden. Hierzu wurden im Rahmen dieser Arbeit eine Lösung über das MQTT/Websocket Protokoll entwickelt.
+
+\section{Web APIs}
+Die Web APIs bilden Schnittstellen, mit denen eine Webanwendung, unter Anderem, mit Betriebssystemschnittstellen
+kommunizieren können. Mit der Web Audio API kann beispielsweise auf die angeschlossenen Aufnahme- und Ausgabequellen
+für Audio zugegriffen werden. 
+\section{Websocket-basierte Kommunikation}
