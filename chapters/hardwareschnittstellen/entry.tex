@@ -1,18 +1,19 @@
 \chapter{Hardwareschnittstellen}
 \label{chap:hardwareschnittstellen}
 
-In diesem Kapitel wird die Kommunikation mit Hardwarekomponenten genau betrachet.
-\ref{nfa1} fordert, dass die Clientsoftware zusammen mit Hardwarekomponenten funktionieren muss.\\
-Während Serveranwendungen und der Node-Prozess einer Electron.js-Anwendung Zugriff auf die meisten
-Betriebssystemschnittstellen haben und somit leicht mit Hardwarekomponenten kommunizieren können, sind
-die Möglichkeiten einer reinen Browseranwendung wesentlich limitierter. Browseranwendungen werden
+In diesem Kapitel wird die Kommunikation mit Hardwarekomponenten betrachet.
+\ref{nfa1} fordert, dass die Clientsoftware zusammen mit Hardwarekomponenten funktionieren muss. Wie in
+der Anforderung bereits erläutert, sind Hardwarekomponenten meist ein essenzieller Bestandteil von Kiosksystemen
+und die Steuerung dieser, durch die Clientsoftware, muss gewährleistet werden. Im Falle der webbasierten 
+Softwaretechnologien stößt man hier auf einige Hürden.\\
+Während Serveranwendungen, native Anwendungen und auch der Node-Prozess einer 
+Electron.js-Anwendung Zugriff auf eine Vielzahl von Betriebssystemschnittstellen haben \todo{Node API} 
+und somit leicht mit Hardwarekomponenten kommunizieren können, sind
+die Möglichkeiten einer reinen Browseranwendung wesentlich limitierter. Browseranwendungen und Webseiten werden
 typischerweise, aus sicherheitstechnischen Gründen, kein direkten Zugriff auf Betriebssystem-APIs gegeben.
 Nur einige ausgewählte Funktionalitäten werden durch die Web APIs zur Verfügung gestellt \cite{web-apis}.
 Für Anwendungsfälle, die über die Möglichkeiten der Web APIs hinausgehen, müssen eigene Lösungen entwickelt 
-werden. Hierzu wurden im Rahmen dieser Arbeit eine Lösung über das MQTT/Websocket Protokoll entwickelt.
+werden. Hierzu wurde im Rahmen dieser Arbeit eine Lösung über das MQTT/Websocket Protokoll entwickelt.
 
-\section{Web APIs}
-Die Web APIs bilden Schnittstellen, mit denen eine Webanwendung, unter Anderem, mit Betriebssystemschnittstellen
-kommunizieren können. Mit der Web Audio API kann beispielsweise auf die angeschlossenen Aufnahme- und Ausgabequellen
-für Audio zugegriffen werden. 
-\section{Websocket-basierte Kommunikation}
+\input{web-apis}
+\input{mqtt-websocket}
