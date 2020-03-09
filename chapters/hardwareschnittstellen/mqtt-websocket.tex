@@ -1,2 +1,19 @@
 \section{Kommunikation über das MQTT/Websocket Protokoll}
 \label{sec:mqtt-websocket}
+
+Um nicht von den Möglichkeiten der Web APIs abhängig zu sein und die Kommunikation
+zu weiteren Geräten, wie beispielsweise einem Kartenlesegerät und Münzschlitz (\ref{fa3}),
+zu ermöglichen, wird im Rahmen dieser
+Arbeit eine generische Lösung entwickelt, um die Kommunikation zwischen Hardwaregeräten
+und einer Browserapplikation zu ermöglichen. Darüberhinaus wird der Grundstein 
+einer Konvention für zukünftige Anwendungsfälle ähnlicher Art gelegt.\\
+
+\subsection{Websocket}
+Für eine sinnvolle Kommunikation zwischen einem Gerät und einer Anwendung ist meist
+eine bidirektionale Verbindung nötig. Ein Protokoll, welches die bidirektionale Verbindung
+bei Webanwendungen ermöglicht, ist das Websocket Protokoll \cite{rfc-websocket}. Über dieses
+kann eine Browseranwendung zum einen Nachrichten an einer Server übermitteln, zum anderen 
+aber auch zu jedem Zeitpunkt Nachrichten vom Server empfangen und auf diese reagieren.
+
+\subsection{MQTT über Websocket}
+\subsection{meso-connect}
