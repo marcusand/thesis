@@ -14,18 +14,19 @@ automatische Updates umsetzbar.\\
 Im Falle einer Applikation, die einzig mit Browsertechnologien implementiert wurde, sind 
 noch simplere Strategien denkbar. Hier ist ein normales Webhosting der Applikationsfiles 
 bereits eine ausreichende Deployment-Strategie. Wurde keine Offline-Verfügbarkeit durch
-Service-Worker implementiert, können die statischen Files einer Browseranwendung natürlich
+Service-Worker implementiert, können die statischen Files einer Browseranwendung
 auch einfach auf dem Filesystem der Workstation hinterlegt und in einem Browser aufgerufen 
-werden. Eventuelle Updates müssten in diesem Falle dann aber wieder vor Ort oder durch einen
+werden. Eventuelle Updates müssten in diesem Falle aber vor Ort oder durch einen
 Fernzugriff auf den Rechner eingespielt werden. Im Fall des Webhostings genügt das Überspielen
-der neuen Files auf den Webserver.\\
+der neuen Files auf einen Webserver.\\
 
 Für die \shst{} wurde auf dem Server neben dem CMS auch ein Webserver installiert, welcher die 
 Applikationsfiles ausliefert (\autoref{fig:ss-deployment-diagram}). Zusätzlich wurde über den 
 firmeninternen GitLab-Server \cite{gitlab} eine Build- und Deployment-Pipeline eingerichtet, welche die 
 Applikationsfiles automatisch generiert und vom Master-Branch des Repositorys auf den Webserver überträgt. 
 Für ein Updaten der Clientapplikation, auf der Workstation in der Ausstellung, ist also nichts weiter 
-nötig, als die Änderungen auf den Master-Branch des Repositorys zu übertragen.\\
+nötig als die Änderungen auf den Master-Branch des Repositorys zu übertragen und die Applikation vor
+Ort neu zu laden.\\
 Das Webhosting der Applikation bietet außerdem den Vorteil, dass diese jeder Zeit in einem Browser 
 über das Internet aufgerufen werden kann. Beim Anlegen von Daten im CMS kann dies so als
 Preview genutzt werden.
