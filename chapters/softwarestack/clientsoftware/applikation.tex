@@ -83,16 +83,18 @@ Interface-Elemente oder auch einzelne Unterseiten können als Komponenten gekaps
 Wie fein diese Kapselung sein soll, kann von den Entwickler*innen entschieden werden. Richtig implementiert,
 können Komponenten so wiederverwendet, ausgetauscht oder das System leicht um neue erweitert werden.\\
 \autoref{fig:ss-app-class-diagram} zeigt die Komponentenstruktur der Clientapplikation der \shst{}.
-Die Abbildung ist vereinfacht und zeigt nur die wichtigsten Komponenten. Die Darstellung orientiert
-sich an einem UML-Klassendiagramm \cite{uml-spec}, jedoch sind die Klassen in diesem Falle keine Klassen, sondern die
-Komponenten 
+Die Abbildung ist vereinfacht und zeigt nur die wichtigsten Komponenten. Die Art der Darstellung
+orientiert sich dabei an der von \citeext{visualizing-react} vorgeschlagenen Weise um React Anwendungen
+zu visualisieren. Diese wiederum basiert auf dem System des UML-Klassendiagramms \cite{uml-spec}, 
+jedoch sind die Klassen in diesem Falle keine Klassen, sondern die Komponenten 
 \footnote{React-Komponenten können Klassen sein - müssen aber nicht. Seit React 16.8.0 und
 der Einführung der Hook-API \cite{react-hooks} kann sogar gänzlich auf Klassen verzichtet werden und Komponenten 
-durchgängig als Funktionen implementiert werden. Das wurde in diesem Falle so umgesetzt.}. 
-Rot markierte Komponenten sind Container-Komponenten und haben keine eigene Darstellung, sondern implementieren 
+durchgängig als Funktionen implementiert werden. Das wurde in diesem Falle so umgesetzt.}.
+Rot markierte Komponenten sind Container-Komponenten und haben keine eigene Darstellung -- sie implementieren 
 lediglich Geschäftslogik. Blau markierte Komponenten sind Interface-Komponenten, die eine direkte 
 Darstellung in der Oberfläche haben. Die einzelne gelb markierte Komponente ist der Redux-Store. 
-Er ist ebenfalls eine besonderer Art der Container-Komponente und beinhaltet den Applikationszustand.\\
+Er ist ebenfalls eine besonderer Art der Container-Komponente und beinhaltet den Applikationszustand. 
+\todo{Assoziationen erklären}\\
 Im Zentrum der Abbildung befindet sich die Router-Komponente. Sie leitet zwischen den einzelnen Unterseiten
 zu denen die Nutzer*innen navigieren können. Teilbäume, abgehend von der Router-Komponente, können als
 die Hauptmodule der Applikation gesehen werden. Sie können dabei Untermenüs oder Module sein, welche

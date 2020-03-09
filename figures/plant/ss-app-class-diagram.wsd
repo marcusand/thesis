@@ -10,15 +10,23 @@ class App << (C, DeepSkyBlue) component>> {
   ~store
 }
 
+class IdleScreen << (C, DeepSkyBlue) component>> {
+
+}
+
+class VirtualKeyboard <<(C, DeepSkyBlue) component>> {
+
+}
+
+class Router << (C, OrangeRed) container>> {
+  ~store
+}
+
 class Header << (C, DeepSkyBlue) component>> {
   ~store
 }
 
 class ErrorAlert << (C, DeepSkyBlue) component>> {
-  ~store
-}
-
-class Router << (C, OrangeRed) container>> {
   ~store
 }
 
@@ -31,6 +39,7 @@ Class MenuEntry << (C, DeepSkyBlue) component>> {
 }
 
 class ArticleModuleContainer << (C, OrangeRed) container>> {
+  ~store
 }
 
 class ArticleModule << (C, DeepSkyBlue) component>> {
@@ -86,12 +95,14 @@ Redux <..> App
 App <..> Header
 App <..> ErrorAlert
 App <...> Router
+App -- IdleScreen
+App -- VirtualKeyboard
 
 Router -- Menu
-Router -- ArticleModuleContainer
-Router -- PhotoboxModuleContainer
-Router -- DonationModuleContainer
-Router -- ContactModuleContainer
+Router <..> ArticleModuleContainer
+Router <..> PhotoboxModuleContainer
+Router <..> DonationModuleContainer
+Router <..> ContactModuleContainer
 Router -- NotFound
 
 Menu -- MenuEntry
