@@ -7,3 +7,8 @@ sub makeglossaries {
   popd;
   return $return;
 }
+
+@cus_dep_list = (@cus_dep_list, "md tex 0 eps2pdf");
+sub eps2pdf {
+   system("pandoc $_[0].md -o $_[0].tex"); }
+
