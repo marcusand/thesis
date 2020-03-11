@@ -1,0 +1,28 @@
+{
+  "broker": {
+    "address": "<brokerAddress>",
+    "port": "<brokerPort>",
+    "username": "<username>",
+    "password": "<password>"
+  },
+  "devices": [
+    {
+      "id": "<deviceId>",
+      "nodes": [
+        {
+          "id": "<nodeId>",
+          "properties": [
+            {
+              "id": "<propertyId>",
+              "datatype": "<propertyDatatype>",
+              "unit": "<propertyUnit>",
+              "format": "<rangeOfPayloads>",
+              "settable": "<isSettable>",
+              "retained": "<isRetained>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -17,28 +17,30 @@ Praxis häufig zu Fehlern.\\
 \end{figure}
 
 Homie \cite{homie} bietet dafür eine Konvention, welche diese Probleme lösen soll. Dabei ist Homie
-ein Satz an Regeln, welcher in einigen verschiedenen Softwarebibliotheken, für verschiedene
-Sprachen und Plattformen, implementiert wurde. Die Konvention schreibt dabei vor wie Topics 
+ein Satz an Regeln, welcher in einigen Softwarebibliotheken, für verschiedene
+Sprachen und Plattformen, implementiert wurde. Die Konvention schreibt dabei vor, wie Topics 
 gebildet werden und führt eine Typisierung für die Payload-Daten ein.
 Um Topics zu bilden, unterscheidet Homie zwischen Devices, Nodes und Properties. Ein Device
 ist ein physisches Gerät, wie beispielsweise ein Mikrocontroller.
 Ein Device kann mehrere Funktionen besitzen -- diese werden als Nodes
-bezeichnet. Nodes wiederum können mehrere Properties haben. Properties sind Eigenschaften welche 
-eine konkreten Wert besitzen können oder deren Wert gesetzt werden kann. Aus dieser Unterscheidung
-heraus werden die Topics nach der Struktur \texttt{homie/device/node/property} gebildet. 
-\autoref{fig:homie-example} zeigt ein vollständiges Beispiel. Dort ist auch zu sehen, dass 
+bezeichnet. Nodes wiederum können mehrere Properties haben. Properties sind Eigenschaften, welche 
+eine konkreten Wert besitzen können oder deren Wert von anderen Clients gesetzt werden kann.
+Aus dieser Unterscheidung heraus werden die Topics nach der Struktur
+\[\texttt{homie/device/node/property} \]
+gebildet. \autoref{fig:homie-example} zeigt ein vollständiges Beispiel. Dort ist auch zu sehen, dass 
 Metadaten zu Devices, Nodes und Properties über spezielle Topics, mit dem Prefix \texttt{\$},
 veröffentlich werden. Zu den Metadaten auf Property-Ebene zählt unter Anderem die Angabe eines
 Datentyps. Homie gibt dafür die Typen String, Integer, Float, Boolean, Enum und Color vor.
 Weitere Metadaten sind das Attribut \texttt{\$settable}, mit dem bestimmt werden kann
 ob ein anderer Client den Wert setzten darf. Oder das Attribut \texttt{\$retained}, über 
 welches gesteuert werden kann, ob es sich bei dem Property um ein Event handelt oder einen Wert,
-welcher dauerhaft auf dem Topic ausgelesen werden kann.\\
-Geräte, welche die Homie Konvention implementieren sind praktisch konfigurationslos mit anderen
+welcher dauerhaft auf dem Topic ausgelesen werden kann. Es existieren noch einige weitere Attribute,
+welche aber aus Gründen des Umfangs nicht weiter erläutert werden.\\
+Geräte, welche die Homie Konvention implementieren, sind praktisch konfigurationslos mit anderen
 Homie Clients verwendbar. Denn: Durch die konsistente Veröffentlichung der Metadaten unter 
 den speziellen Topics ergibt sich eine Autodiscovery-Eigenschaft. Clients können durch Abonnieren
 von Wildcards andere Geräte finden und deren Eigenschaften erkennen. Zusätzlich ist durch die
-konsistente Typisierung, mit vorgegebenen Datentypen, eine standardisierte Kommunikation möglich. 
+konsistente Typisierung mit vorgegebenen Datentypen, eine standardisierte Kommunikation möglich. 
 
 \iffalse
 - Ein Design Prinzip ist Einfachheit (mqtt.github.io)

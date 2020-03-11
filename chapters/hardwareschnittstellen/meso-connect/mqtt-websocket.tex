@@ -13,12 +13,14 @@ Browser die Websocket API zur Verfügung \cite{websocket-api}.\\
 
 MQTT ist ein auf dem publish/subscribe-Pattern basierendes Nachrichten-Protokoll \cite{mqtt-standard}.
 Es wird häufig im den Bereichen IoT und Home-Automation eingesetzt. Es folgt einer
-klassischen Server-Client Architektur, wobei der Server in der MQTT Umgebung \emph{Broker}
+klassischen Server-Client-Architektur, wobei der Server in der MQTT Umgebung \emph{Broker}
 genannt wird. Clients können über den Broker Nachrichten-Topics abonnieren oder Nachrichten
 über den Broker auf Topics versenden. Der Broker leitet versendete Nachrichten an alle Clients
-weiter, die das entsprechende Topic abonniert haben. Topics sind Namespaces, welche hierarchisch
+weiter, die das entsprechende Topic abonniert haben. Topics sind Namespaces \todo{wirklich namespaces?}, welche hierarchisch
 aufgebaut sind. Das Slash-Zeichen wird dabei als Trennzeichen genutzt. Ein Topic kann also zum 
-Beispiel \texttt{home/living-room/temperature} lauten. Mit Wildcards (+ und \#) können auch ganze
+Beispiel 
+\[\texttt{home/living-room/temperature} \]
+lauten. Mit Wildcards (+ und \#) können auch ganze
 Namespaces, anstelle einzelner Topics, abonniert werden \cite{mqtt-man-page}.\\
 Über MQTT können Nachrichten in beliebiger Encodierung oder als binäre Daten versendet werden
 \cite{mqtt-essentials-part-4}.\\

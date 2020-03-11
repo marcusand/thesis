@@ -1,10 +1,86 @@
 \subsection{Konvention}
 \label{subs:konvention}
 
+Basierend auf der Kommunikation über das MQTT/Websocket Protokoll und der Homie Konvention,
+wurde im Rahmen dieser Arbeit eine eigene Konvention entwickelt, welche die Kommunikation
+zwischen Hardwaregeräten und Browseranwendungen standardisieren soll. Der Einsatz beschränkt
+sich dabei nicht nur auf Kiosksysteme, sondern ist auch in anderen Szenarien denkbar.\\
+
+Die Konvention setzt dabei im ersten Schritt die Kommunikation über das MQTT Protokoll voraus.
+Um Hardwaregeräte über das MQTT Protokoll ansprechen zu können sind unterschiedliche Lösungen 
+denkbar. Diese sind vom jeweiligen Gerät und Anwendungsfall abhängig. Bei einfachen Sensoren oder
+Geräten mit serieller Schnittstelle ist der Anschluss an einen Mikrocontroller (MCU) denkbar.
+Dieser muss entsprechend programmiert werden, um den Zugriff auf die angeschlossenen Geräte 
+oder Sensoren über eine MQTT Schnittstelle zu ermöglichen.\\
+Um eine Browseranwendung in die Kommunikation einzubinden, wird die Kommunikation über das MQTT/Websocket
+Protokoll vorausgesetzt. Der Broker muss dafür die Kommunikation auf zwei verschiedenen 
+Netzwerkports ermöglichen. Zum Beispiel Port 1883 für reguläre MQTT-Nachrichten und Port 9001
+für Nachrichten über das Websocket/MQTT Protokoll.\\
+Nach diesem Setup ist eine bidirektionale, flexible Datenverbindung zwischen Browseranwendung
+und Broker hergestellt.\\
+
+Um die Kommunikation zu vereinheitlichen, werden einige Grundsätze der Homie Konvention übernommen.
+Das ist zum ersten die Unterscheidung in Devices, Nodes und Properties und die sich daraus 
+ergebende Topic-Struktur. Weiter wird das Typsystem für die Payload-Daten übernommen. 
+Dieses wird allerdings um den \emph{JSON}-Typ erweitert. 
+Ein JSON-Objekt kann auch als ein String gesehen werden -- dann wäre allerdings
+das Überprüfen der Wohlgeformtheit des JSON-Objekts nicht Teil der Konvention.
+Da in der Praxis, und gerade bei Projekten der Firma \meso{}, oft mit JSON-Objekten in der 
+MQTT-Kommunikation gearbeitet wird, ist das standardmäßige Prüfen von JSON-Objekten eine
+sinnvolle Erweiterung.
+
+\begin{figure}
+  \lstinputlisting[%
+    style=ES6,
+    caption=
+  ]{meso-connect-config-blueprint.json}
+  \caption{meso-connect Konfigurationsfile}
+  \label{fig:meso-connect-config-blueprint}
+\end{figure}
+
+Die Hauptsache in der sich meso-connect von Homie unterscheidet, ist die Konfiguration. meso-connect
+sieht dafür ein File vor. Dieses, im JSON-Format gehaltene File, ist Grundlage jeder Kommunikation
+mit der meso-connect Konvention. Jeder Client wird dabei mit dem selben File konfiguriert -- es muss 
+deshalb nur einmalig erstellt werden und kann in einer Versionsverwaltung gehalten werden. 
+\autoref{fig:meso-connect-config-blueprint} zeigt die Vorlage für ein solches Konfigurationsfile. 
+Gut zu erkennen ist die Unterscheidung von Devices, Nodes und Properties. Diese sind jeweils Arrays --
+es können also jeweils beliebig viele eingetragen werden. Wichtig ist, dass jeder MQTT-Client als ein
+Device im Konfigurationsfile aufgelistet werden muss. Auch dann, wenn der Client selber 
+keine Nodes und Properties besitzt. Das Konfigurationsfile gibt so immer einen Überblick über die 
+gesamte MQTT Kommunikation eines Systems und kann für die Konfiguration jedes Clients genutzt werden.\\
+Die im Konfigurationsfile angegebenen Attribute sind von der Homie Konvention übernommen. Einzig \emph{id} heißt
+bei Homie \emph{name}. Diese Attribute werden bei Homie auf eigenen Topics veröffentlicht, um die 
+Auto-Discovery Funktion möglich zu machen. Darauf verzichtet meso-connect. Da jeder Client das gemeinsame
+Konfigurationsfile zur Grundlage hat, wäre das Veröffentlichen der Attribute redundant. Ein Auto-Discovery
+Feature ist im Kontext von Kiosk- bzw. Installationssystemen für Museen und Ausstellungen ohnehin weniger wichtig.
+Solche Systeme sind, mit all ihren Clients, meist im Voraus ausreichend bekannt. Das Konfigurationsfile
+bietet dafür in diesem Kontext größere Vorteile, da es die Konfiguration der einzelnen Clients stark
+vereinfacht \todo{Vorteile ausführen}. Die einzigen Attribute, welche auf Topics zur Laufzeit veröffentlicht 
+werden sind
+\[\texttt{meso-connect/devicename/\$state} \]
+und\\
+\[\texttt{meso-connect/devicename/nodename/propertyname/\$error} \]
+Das Attribut \texttt{\$state} ist aus der Homie Konvention übernommen und gibt Information über den aktuellen
+Zustand des Geräts. Dieser Wert ist dynamisch und kann sich zur Laufzeit verändern. \texttt{\$error} ist nicht 
+Teil der Homie Konvention. Aber auch dieser Wert kann nur dynamisch gesetzt werden.
+Auf diesem Topic sollen eventuell auftretende Fehler in der Kommunikation veröffentlicht
+werden. Das könnten zum Beispiel Fälle sein, in denen Daten verschickt werden, die nicht dem Typ entsprechen.
+Oder wenn ein Client versucht ein Property-Wert zu ändern, welcher nicht setzbar ist. Durch abonnieren 
+des Topics
+\[\texttt{meso-connect/+/+/\$error} \]
+können so beispielsweise alle auftretenden Fehler in einem System erfasst werden.\\
+
+Die so definierte Konvention kann dann für verschiedene Plattformen und Programmiersprachen implementiert werden.
+Im Rahmen dieser Arbeit wurde eine JavaScript Bibliothek implementiert, welche für den Gebrauch in einer 
+Browser- oder Node.js-Anwendung nutzbar ist.
+
+
 \iffalse
 - Eine bidirektionale flexible Datenverbindung zwischen Browserapplikation und Broker ist hergestellt
 - Hardwaregerät wird an MCU angeschlossen, welche die Kommunikation in MQTT Nachrichten übersetzt
   welcher eine MQTT Interface implementiert
-- Über den Broker kann Gerät so mit einer Browseranwendung kommuniziert werden
+- Über den Broker kann Gerät so mit einer Browseranwendung kommunizieren 
 - Um Kommunikation zur vereinheitlichen wird Konvention auf Basis von Homie angewendet
+
+- MQTT/Websocket Anbindung der Browseranwendung mit JS library
 \fi
