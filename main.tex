@@ -36,9 +36,12 @@
 
 \begin{document}
 
+\renewcommand*\abstractname{Zusammenfassung/Abstract}
+
 % Set page numbering to avoid "destination with the same identifier has been already used" warning for cover page.
 % (see https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Problems_with_Links_and_Pages).
 \pagenumbering{alph}
+
 
 \frontmatter{}
 
@@ -69,6 +72,7 @@
 \printbibliography{}
 
 \chapter{Anhang}
+
 \section{meso-connect specification}
 \label{app:meso-connect}
 \input{data/wiki.wiki/home}
