@@ -2,11 +2,11 @@
 \label{subs:konvention}
 
 Basierend auf der Kommunikation über das MQTT/Websocket Protokoll und der Homie Konvention,
-wurde im Rahmen dieser Arbeit eine eigene Konvention entwickelt, welche die Kommunikation
-zwischen Hardwaregeräten und Browseranwendungen standardisieren soll. Der Einsatz beschränkt
+wurde im Rahmen dieser Arbeit eine eigene Konvention entwickelt. Diese soll die Kommunikation
+zwischen Hardwaregeräten und Browseranwendungen standardisieren. Der Einsatz beschränkt
 sich dabei nicht nur auf Kiosksysteme, sondern ist auch in anderen Szenarien denkbar.\\
 Im Folgenden werden die wichtigsten Eigenschaften der Konvention erläutert -- die vollständige
-Konvention befindet sich in \autoref{app:meso-connect}. Auch sei an dieser Stelle zu erwähnen,
+Konvention befindet sich in \autoref{app:meso-connect}. Auch sei an dieser Stelle erwähnt,
 dass die Konvention in Absprache und teilweise zusammen mit anderen Mitarbeitern 
 der Firma \meso{} entwickelt wurde.\\
 
@@ -27,7 +27,7 @@ Um die Kommunikation zu vereinheitlichen, werden einige Grundsätze der Homie Ko
 Das ist zum ersten die Unterscheidung in Devices, Nodes und Properties und die sich daraus 
 ergebende Topic-Struktur. Weiter wird das Typsystem für die Payload-Daten übernommen. 
 Dieses wird allerdings um den \emph{JSON}-Typ erweitert. 
-Ein JSON-Objekt kann auch als ein String gesehen werden -- dann wäre allerdings
+Ein JSON-Objekt könnte auch als String übertragen werden -- dann wäre allerdings
 das Überprüfen der Wohlgeformtheit des JSON-Objekts nicht Teil der Konvention.
 Da in der Praxis, und gerade bei Projekten der Firma \meso{}, oft mit JSON-Objekten in der 
 MQTT-Kommunikation gearbeitet wird, ist das standardmäßige Prüfen von JSON-Objekten eine
@@ -60,7 +60,7 @@ Feature ist im Kontext von Kiosk- bzw. Installationssystemen für Museen und Aus
 Solche Systeme sind, mit all ihren Clients, meist im Voraus ausreichend bekannt. Das Konfigurationsfile
 bietet dafür in diesem Kontext größere Vorteile, da es die Konfiguration der einzelnen Clients stark
 vereinfacht \todo{Vorteile ausführen}. Die einzigen Attribute, welche auf Topics zur Laufzeit veröffentlicht 
-werden sind
+werden, sind
 
 \[\texttt{meso-connect/devicename/\$state} \]
 
@@ -73,17 +73,18 @@ Zustand des Geräts. Dieser Wert ist dynamisch und kann sich zur Laufzeit verän
 Teil der Homie Konvention. Aber auch dieser Wert kann nur dynamisch gesetzt werden.
 Auf diesem Topic sollen eventuell auftretende Fehler in der Kommunikation veröffentlicht
 werden. Das könnten zum Beispiel Fälle sein, in denen Daten verschickt werden, die nicht dem Typ entsprechen.
-Oder wenn ein Client versucht ein Property-Wert zu ändern, welcher nicht setzbar ist. Durch abonnieren 
-des Topics
+Oder wenn ein Client versucht ein Property-Wert zu ändern, welcher nicht setzbar ist. Beispielsweise können so,
+durch abonnieren des Topics
 
 \[\texttt{meso-connect/+/+/\$error} \]
 
-können so beispielsweise alle auftretenden Fehler in einem System erfasst werden.\\
+alle auftretenden Fehler in einem System erfasst werden.\\
 
 Die meso-connect Konvention wurde bei der \shst{} angewandt. Wie \autoref{fig:ss-deployment-diagram} zeigt,
 sind dafür Kartenterminal und der Sensor des Münzschlitz an einem Mikrocontroller angeschlossen. Dieser
-kommuniziert über Netzwerk und das MQTT Protokoll mit dem Broker. Der Broker ist ein Softwareservice,
-welcher auf der Kiosk-Workstation läuft. Der Broker wiederum kommuniziert über das Websocket/MQTT Protokoll
+kommuniziert über Netzwerk und das MQTT Protokoll mit dem Broker. Bei dem Broker handelt es sich um 
+eine Mosquitto-Instanz \cite{mosquitto}, welche auf der Kiosk-Workstation installiert ist. \todo{wirklich mosquitto?}
+Der Broker wiederum kommuniziert über das Websocket/MQTT Protokoll
 mit der Clientapplikation.\\
 Für die eigentliche Kommunikation über das Protokoll wurde im Rahmen dieser Arbeit und für die Clientapplikation 
 der \shst{} eine JavaScript Bibliothek implementiert, welche in einer Browser- oder Node.js-Anwendung

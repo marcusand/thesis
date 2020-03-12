@@ -32,14 +32,14 @@ Metadaten zu Devices, Nodes und Properties über spezielle Topics, mit dem Prefi
 veröffentlich werden. Zu den Metadaten auf Property-Ebene zählt unter Anderem die Angabe eines
 Datentyps. Homie gibt dafür die Typen String, Integer, Float, Boolean, Enum und Color vor.
 Weitere Metadaten sind das Attribut \texttt{\$settable}, mit dem bestimmt werden kann
-ob ein anderer Client den Wert setzten darf. Oder das Attribut \texttt{\$retained}, über 
+ob ein anderer Client den Wert setzten darf oder das Attribut \texttt{\$retained}, über 
 welches gesteuert werden kann, ob es sich bei dem Property um ein Event handelt oder einen Wert,
 welcher dauerhaft auf dem Topic ausgelesen werden kann. Es existieren noch einige weitere Attribute,
 welche aber aus Gründen des Umfangs nicht weiter erläutert werden.\\
 Geräte, welche die Homie Konvention implementieren, sind praktisch konfigurationslos mit anderen
 Homie Clients verwendbar. Denn: Durch die konsistente Veröffentlichung der Metadaten unter 
 den speziellen Topics ergibt sich eine Autodiscovery-Eigenschaft. Clients können durch Abonnieren
-von Wildcards andere Geräte finden und deren Eigenschaften erkennen. Zusätzlich ist durch die
+von Wildcard-Topics andere Clients finden und deren Eigenschaften erkennen. Zusätzlich ist durch die
 konsistente Typisierung mit vorgegebenen Datentypen, eine standardisierte Kommunikation möglich. 
 
 \iffalse
