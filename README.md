@@ -1,3 +1,3 @@
 # Thesis
 
-*Möglichkeiten und Grenzen eines webtechnologiebasierten Softwarestacks für Kiosk-Software-Systeme anhand der Entwicklung einer Sharing-Station für Museen und Ausstellungen.*
+*Möglichkeiten und Grenzen von Webtechnologien bei der Entwicklung von Kiosksoftware anhand der Implementierung einer Sharing-Station für Museen und Ausstellungen*
