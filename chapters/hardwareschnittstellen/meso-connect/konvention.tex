@@ -6,7 +6,9 @@ wurde im Rahmen dieser Arbeit eine eigene Konvention entwickelt, welche die Komm
 zwischen Hardwaregeräten und Browseranwendungen standardisieren soll. Der Einsatz beschränkt
 sich dabei nicht nur auf Kiosksysteme, sondern ist auch in anderen Szenarien denkbar.\\
 Im Folgenden werden die wichtigsten Eigenschaften der Konvention erläutert -- die vollständige
-Konvention befindet sich in \autoref{app:meso-connect}.\\
+Konvention befindet sich in \autoref{app:meso-connect}. Auch sei an dieser Stelle zu erwähnen,
+dass die Konvention in Absprache und teilweise zusammen mit anderen Mitarbeitern 
+der Firma \meso{} entwickelt wurde.\\
 
 Die Konvention setzt dabei im ersten Schritt die Kommunikation über das MQTT Protokoll voraus.
 Um Hardwaregeräte über das MQTT Protokoll ansprechen zu können sind unterschiedliche Lösungen 
@@ -59,9 +61,13 @@ Solche Systeme sind, mit all ihren Clients, meist im Voraus ausreichend bekannt.
 bietet dafür in diesem Kontext größere Vorteile, da es die Konfiguration der einzelnen Clients stark
 vereinfacht \todo{Vorteile ausführen}. Die einzigen Attribute, welche auf Topics zur Laufzeit veröffentlicht 
 werden sind
+
 \[\texttt{meso-connect/devicename/\$state} \]
-und\\
+
+und
+
 \[\texttt{meso-connect/devicename/nodename/propertyname/\$error} \]
+
 Das Attribut \texttt{\$state} ist aus der Homie Konvention übernommen und gibt Information über den aktuellen
 Zustand des Geräts. Dieser Wert ist dynamisch und kann sich zur Laufzeit verändern. \texttt{\$error} ist nicht 
 Teil der Homie Konvention. Aber auch dieser Wert kann nur dynamisch gesetzt werden.
@@ -69,20 +75,26 @@ Auf diesem Topic sollen eventuell auftretende Fehler in der Kommunikation veröf
 werden. Das könnten zum Beispiel Fälle sein, in denen Daten verschickt werden, die nicht dem Typ entsprechen.
 Oder wenn ein Client versucht ein Property-Wert zu ändern, welcher nicht setzbar ist. Durch abonnieren 
 des Topics
+
 \[\texttt{meso-connect/+/+/\$error} \]
+
 können so beispielsweise alle auftretenden Fehler in einem System erfasst werden.\\
 
-Die so definierte Konvention kann dann für verschiedene Plattformen und Programmiersprachen implementiert werden.
-Im Rahmen dieser Arbeit wurde eine JavaScript Bibliothek implementiert, welche für den Gebrauch in einer 
-Browser- oder Node.js-Anwendung nutzbar ist.
-
+Die meso-connect Konvention wurde bei der \shst{} angewandt. Wie \autoref{fig:ss-deployment-diagram} zeigt,
+sind dafür Kartenterminal und der Sensor des Münzschlitz an einem Mikrocontroller angeschlossen. Dieser
+kommuniziert über Netzwerk und das MQTT Protokoll mit dem Broker. Der Broker ist ein Softwareservice,
+welcher auf der Kiosk-Workstation läuft. Der Broker wiederum kommuniziert über das Websocket/MQTT Protokoll
+mit der Clientapplikation.\\
+Für die eigentliche Kommunikation über das Protokoll wurde im Rahmen dieser Arbeit und für die Clientapplikation 
+der \shst{} eine JavaScript Bibliothek implementiert, welche in einer Browser- oder Node.js-Anwendung
+nutzbar ist. Diese implementiert die gesamte meso-connect Konvention und ist für den universellen Einsatz
+konzipiert. 
 
 \iffalse
-- Eine bidirektionale flexible Datenverbindung zwischen Browserapplikation und Broker ist hergestellt
-- Hardwaregerät wird an MCU angeschlossen, welche die Kommunikation in MQTT Nachrichten übersetzt
-  welcher eine MQTT Interface implementiert
-- Über den Broker kann Gerät so mit einer Browseranwendung kommunizieren 
-- Um Kommunikation zur vereinheitlichen wird Konvention auf Basis von Homie angewendet
-
-- MQTT/Websocket Anbindung der Browseranwendung mit JS library
+- Kartenterminal und der Sensor des Münzschlitz sind an einen Mikrocontroller angeschlossen. 
+- Mikrocontroller kommuniziert über Netzwerk und das MQTT Protokoll mit dem Broker
+- Broker ist ein Softwareservice welcher auf der Workstation läuft
+- Die Clientapplikation kommuniziert über das MQTT/Websocket Protokoll mit dem Broker
+- Konfigurationsfile, Beispiel der JS Bib 
+- JS API Dokumentation in den Anhang
 \fi
