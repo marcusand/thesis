@@ -1,0 +1,6 @@
+[submodule "data/meso-connect-js"]
+	path = data/meso-connect-js
+	url = git@git.meso.design:meso-connect/meso-connect-js.git
+[submodule "data/wiki.wiki"]
+	path = data/wiki.wiki
+	url = git@git.meso.design:meso-connect/wiki.wiki.git
