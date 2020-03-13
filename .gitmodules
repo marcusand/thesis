@@ -4,3 +4,6 @@
 [submodule "data/wiki.wiki"]
 	path = data/wiki.wiki
 	url = git@git.meso.design:meso-connect/wiki.wiki.git
+[submodule "data/sharing-station-app"]
+	path = data/sharing-station-app
+	url = git@git.meso.design:dialogmuseum/sharing-station-app.git
