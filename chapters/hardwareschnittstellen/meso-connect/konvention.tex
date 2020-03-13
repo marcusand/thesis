@@ -91,11 +91,19 @@ der \shst{} eine JavaScript Bibliothek implementiert, welche in einer Browser- o
 nutzbar ist. Diese implementiert die gesamte meso-connect Konvention und ist für den universellen Einsatz
 konzipiert. Die vollständige API-Dokumentation dieser Bibliothek befindet sich in \autoref{app:meso-connect-js}.
 
+\begin{figure}
+  \lstinputlisting[%
+    style=ES6, 
+    caption=
+  ]{data/sharing-station-app/meso-connect-config.json}
+  \caption{meso-connect Konfigurationsfile der \shst{}}
+  \label{fig:shst-meso-connect-config}
+\end{figure}
+
+\autoref{fig:shst-meso-connect-config} zeigt das bei der \shst{} genutzte Konfigurationsfile für die 
+meso-connect Kommunikation.
+
 \iffalse
-- Kartenterminal und der Sensor des Münzschlitz sind an einen Mikrocontroller angeschlossen. 
-- Mikrocontroller kommuniziert über Netzwerk und das MQTT Protokoll mit dem Broker
-- Broker ist ein Softwareservice welcher auf der Workstation läuft
-- Die Clientapplikation kommuniziert über das MQTT/Websocket Protokoll mit dem Broker
 - Konfigurationsfile, Beispiel der JS Bib 
 - JS API Dokumentation in den Anhang
 \fi
