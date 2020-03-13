@@ -23,8 +23,10 @@ gebildet werden und führt eine Typisierung für die Payload-Daten ein.
 Um Topics zu bilden, unterscheidet Homie zwischen Devices, Nodes und Properties. Ein Device
 ist ein physisches Gerät, wie beispielsweise ein Mikrocontroller.
 Ein Device kann mehrere Funktionen besitzen -- diese werden als Nodes
-bezeichnet. Nodes wiederum können mehrere Properties haben. Properties sind Eigenschaften, welche 
+bezeichnet. Im Falle des Mikrocontrollers können das einzelne angeschlossene Sensoren
+oder Geräte sein. Nodes wiederum können mehrere Properties haben. Properties sind Eigenschaften, welche 
 eine konkreten Wert besitzen können oder deren Wert von anderen Clients gesetzt werden kann.
+Ist am Mikrocontroller ein Thermometer angeschlossen, könnte ein Property \emph{Temperatur} heißen.
 Aus dieser Unterscheidung heraus werden die Topics nach der Struktur
 \[\texttt{homie/device/node/property} \]
 gebildet. \autoref{fig:homie-example} zeigt ein vollständiges Beispiel. Dort ist auch zu sehen, dass 
@@ -40,7 +42,7 @@ Geräte, welche die Homie Konvention implementieren, sind praktisch konfiguratio
 Homie Clients verwendbar. Denn: Durch die konsistente Veröffentlichung der Metadaten unter 
 den speziellen Topics ergibt sich eine Autodiscovery-Eigenschaft. Clients können durch Abonnieren
 von Wildcard-Topics andere Clients finden und deren Eigenschaften erkennen. Zusätzlich ist durch die
-konsistente Typisierung mit vorgegebenen Datentypen, eine standardisierte Kommunikation möglich. 
+konsistente Typisierung mit vorgegebenen Datentypen eine standardisierte Kommunikation möglich. 
 
 \iffalse
 - Ein Design Prinzip ist Einfachheit (mqtt.github.io)

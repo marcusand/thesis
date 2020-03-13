@@ -14,8 +14,8 @@ Server geladen. Laden von weiteren Seiten beim Navigieren durch die Oberfläche
 findet nicht statt \cite{js-definitive}. Um Transaktionen und neue Zustände möglich zu machen,
 können jedoch im Hintergrund asynchrone Datenanfragen gestellt werden (AJAX). 
 Die SPA gibt so den Nutzer*innen nicht mehr das Gefühl einer
-Webseite, sonder einer geschlossenen Anwendung, was im Falle der Kiosksoftware ein gewünschter
-Effekt ist und damit in gewisser Weise auch zur Erfüllung der Anforderung \ref{nfa4} beiträgt.\\
+Webseite, sondern einer geschlossenen Anwendung, was im Falle der Kiosksoftware ein gewünschter
+Effekt ist und damit auch zur Erfüllung der Anforderung \ref{nfa4} beiträgt.\\
 Das Laden einer einzigen Seite vom Server bedeutet jedoch nicht, dass keine Navigationsstruktur
 mit Vor- und Zurück-Bewegungen implementieren werden kann. Die Navigation findet jedoch alleinig in 
 der Clientapplikation statt und ist nicht mit Laden von neuen Seiten verbunden. Es werden lediglich
@@ -56,7 +56,7 @@ bereits erläutert, können Datensätze im CMS mehrsprachig angelegt werden. Die
 in einem gemeinsamen Datensatz zur Verfügung gestellt und sind so zu jedem Zeitpunkt verfügbar. 
 Nutzer*innen sollen später in der Oberfläche der Clientapplikation die Möglichkeit haben, die Sprache
 umzustellen. Erfolgt dies, muss keine neue Seite oder neuer Datensatz vom Server angefordert werden, sondern lediglich
-die angezeigten Daten durch die entsprechende Sprachversion ausgetauscht werden.\\
+die angezeigten Daten durch die entsprechende Sprachversion ausgetauscht werden. \todo{Abschnitt allgemeiner halten}\\
 
 \begin{figure}
     \centering
@@ -119,7 +119,7 @@ Im Konfigurationsfile von Webpack, kann durch setzen von Parametern bestimmt wer
 der Service-Worker leisten soll. \autoref{fig:webpack-config} zeigt einen Teil der 
 Webpack-Konfiguration der \shst{}. In Zeile 31-39 wird das Objekt zur Generierung des
 Service-Workers erstellt. Als Parameter wird ein Objekt mit der Konfiguration übergeben. 
-Dieses Objekt ist optional -- auch ohne Konfiguration wird ein Service-Worker erstellt,
+Dieses Objekt ist optional -- auch ohne Konfiguration würde ein Service-Worker erstellt werden,
 welcher dafür sorgt, dass alle von Webpack erstellten Files beim Nutzen der Applikation
 gecached und offline verfügbar gemacht werden. Weitere Funktionalitäten können durch
 Setzen der Konfigurationsparameter aktiviert werden.\\
