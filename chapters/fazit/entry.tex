@@ -1,2 +1,71 @@
-\chapter{Fazit}
+\chapter{Fazit/Ausblick}
 \label{chap:fazit}
+
+Wie gezeigt werden konnte, eignen sich Webtechnologien sehr gut für
+die Entwicklung von Kiosksoftware. Dies hat sich durch die Entwicklung
+der \shst{} in der Praxis bestätigt. Webtechnologien bieten viele Vorteile, die andere
+Technologien nicht leisten können. Da der Begriff der Webtechnologien jedoch
+sehr weit fasst und ein riesiges Ökosystem an Technologien existiert, müssen bei
+der Wahl dieser, die Anforderungen gründlich geprüft und Technologien gegeneinander 
+abgewägt werden. Dafür wurde der Begriff der Browsertechnologien eingeführt und sich
+weiter bei den Entwicklung der Clientapplikation auf diese beschränkt. 
+Dabei haben sich einige Grenzen aufgetan, welche teilweise gelöst werden konnten.\\
+Manche Anforderungen, wie die Mulitlingualität oder die Erreichbarkeit des CMS über das Internet,
+sind mit Webtechnologien leicht umzusetzen, da sie auch Anforderungen typischer Webanwendungen sind.
+Technologien und Lösungen sind dafür bereits vorhanden und bewährt.\\
+Bei der Verwendung reiner Browsertechnologien für die Clientapplikation haben sich einige Vorteile 
+gezeigt. Eine solche Applikation ist stark plattforumunabhängigkeit, da Browser oder Browser-Umgebungen
+für praktische jede Plattform existieren und eine Anwendung so leicht portiert werden kann. Auch lassen
+sich sehr einfache Deployment-Strategien entwickeln. So wurde sich bei der \shst{} entschieden, die
+Applikationfiles auf einem Webserver zu hosten -- genauso wie man es auch bei einer klassischen % build Prozess?
+Webanwendung machen würde. Dies bietet darüber hinaus den Vorteil, dass die Applikation über das Internet
+im Browser aufgerufen und als Preview genutzt werden kann. Für die Präsentation dieser Anwendung als
+Kioskapplikation auf einer klassischen Workstation, muss auf die vollständige Geschlossenheit geachtet werden.
+Hierfür bietet sich die kiosk Option von Google Chrome und das Definieren eines Webmanifests an.\\
+Durch Ausliefern der Applikationfiles über einen Webserver ist allerdings eine Offline-Verfügbarkeit
+erstmal nicht gegeben. Diese kann aber durch Implementieren einer Progressive-Web-App und 
+Service-Workern weitestgehend hergestellt werden.
+Vollständige Offline-Verfügbarkeit ist dadurch aber nicht erreicht, da von Nutzer*innen initiierte
+Transaktionen über das Internet an einen Server erfolgen müssen. Um solche Anfragen lokal zwischenzuspeichern,
+ehe sie bei Netzwerkverfügbarkeit an einen Server erfolgen, sind weitere Technologien und 
+Architektur-Pattern nötig, welche im Rahmen dieser Arbeit aber nicht weiter verfolgt wurden.\\
+Die größter Herausforderung bei der Verwendung von Browsertechnologien stellte die Kommunikation 
+der Anwendung mit Hardwaregeräten da. 
+Die Möglichkeiten sind dabei auf die der Web APIs beschränkt. Diese lassen zwar die Kommunikation zu manchen
+Geräten wie Aufnahme- und Ausgabequellen für Audio oder Webcams zu, für andere Geräte muss die Kommunikation
+jedoch auf anderem Wege hergestellt werden. Im Rahmen dieser Arbeit wurde dafür die meso-connect Konvention 
+entwickelt, welche über das MQTT/Websocket Protokoll und einer standardisierten Kommunikation die Verbindung
+zu unterschiedlichen Geräten möglich macht. Die Systemarchitektur für eine solche Kommunikation ist dabei zwar
+aufwendig, die softwareseitige Anbindung aber ist, durch die strikte Konvention und die Implementation der Konvention
+in eine Softwarebibliothek, abstrahiert und daher eher simple. Die entwickelte Konvention lässt sich darüber 
+hinaus auch für andere Kiosksysteme und andere Projekte anwenden.\\
+
+Die so entstandenen Ergebnisse dieser Arbeit, sowie die Beschreibung der Architektur und der verwendeten
+Softwaretechnologien bei der \shst{}, können ein Leitfaden für andere Softwareentwickler sein, die 
+vor der Aufgabe stehen eine Kiosksoftware zu entwickeln. Auch soll klar geworden sein, in wie fern 
+Webtechnologien sich für eine solche Aufgabe eignen, welche Dinge es zu beachten gibt und ob andere
+Technologien möglicherweise besser geeignet sind.
+% Da die Beliebtheit von Webtechnologien, das Ökosystem rund um JavaScript sowie die Möglichkeiten
+% von Browseranwendungen weiterhin zunehmen ist eine Investition in diese Technologien
+
+\iffalse
+- Manche Anforderungen an Kiosksoftware, wie die Mulitlingualität, sind mit
+Webtechnologien sehr leicht umzusetzen, da sie auch Anforderungen typischer
+Webanwendungen darstellen. Technologien dafür sind vorhanden
+
+- Geschlossen
+
+- Vorteile:
+  - Deployment ist leicht durch Hosting
+  - Kein aufwendiger Build Process, lediglich statische Files
+  - Lose Kopplung leicht durch PWA und Server-Client Kommunikation
+  - großer Vorteil der Plattforumunabhängigkeit -- gerade bei reinen Browseranwendungen
+  universelle Nutzung denkbar
+
+- Nachteile/Probleme:
+  - Hardwarekommunikation bedarf spezieller Architektur und Software
+  - Geräte können nur in manchen Fällen direkt mit der Applikation kommunizieren;
+  - Web APIs werden ständig weiter entwickelt -> Web USB
+  - Offline Verfügbarkeit ist bei Browseranwendung und Server/Client Architektur eher 
+    aufwendig. 
+\fi
