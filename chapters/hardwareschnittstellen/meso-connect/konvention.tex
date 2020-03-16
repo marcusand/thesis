@@ -21,7 +21,7 @@ Protokoll vorausgesetzt. Der Broker muss dafür die Kommunikation auf zwei versc
 Netzwerkports ermöglichen. Zum Beispiel Port 1883 für reguläre MQTT-Nachrichten und Port 9001
 für Nachrichten über das Websocket/MQTT Protokoll.\\
 Nach diesem Setup ist eine bidirektionale, flexible Datenverbindung zwischen Browseranwendung
-und Broker hergestellt.\\
+und Hardwaregeräten hergestellt.\\
 
 Um die Kommunikation zu vereinheitlichen, werden einige Grundsätze der Homie Konvention übernommen.
 Das ist zum ersten die Unterscheidung in Devices, Nodes und Properties und die sich daraus 
@@ -62,11 +62,11 @@ bietet dafür in diesem Kontext größere Vorteile, da es die Konfiguration der 
 vereinfacht \todo{Vorteile ausführen}. Die einzigen Attribute, welche auf Topics zur Laufzeit veröffentlicht 
 werden, sind
 
-\[\texttt{meso-connect/devicename/\$state} \]
+\[\texttt{meso-connect/device/\$state} \]
 
 und
 
-\[\texttt{meso-connect/devicename/nodename/propertyname/\$error} \]
+\[\texttt{meso-connect/device/node/property/\$error} \]
 
 Das Attribut \texttt{\$state} ist aus der Homie Konvention übernommen und gibt Information über den aktuellen
 Zustand des Geräts. Dieser Wert ist dynamisch und kann sich zur Laufzeit verändern. \texttt{\$error} ist nicht 
@@ -101,7 +101,21 @@ konzipiert. Die vollständige API-Dokumentation dieser Bibliothek befindet sich 
 \end{figure}
 
 \autoref{fig:shst-meso-connect-config} zeigt das bei der \shst{} genutzte Konfigurationsfile für die 
-meso-connect Kommunikation.
+meso-connect Kommunikation. Zu erkennen sind dort die zwei, in der Kommunikation beteiligten Clients
+\emph{donation-controller} und \emph{sharing-station-app}. Während letzterer keine Nodes
+besitzt, sind an den \emph{donation-controller} die zwei Nodes \emph{card-terminal} und 
+\emph{coin-slot} angeschlossen. \emph{coin-slot} besitzt dabei nur ein Property, über
+welches das Event des Münzeinwurfs von \emph{donation-controller} gesendet wird. Bei dem Node
+\emph{card-terminal} handelt es sich um ein angeschlossenes Kontaktlos-Modul für Zahlungen. Dieses wickelt
+den eigentlichen Zahlungsvorgang selbst über das Internet und einen Zahlungsdienstleister ab. 
+Die Clientapplikation muss lediglich den Vorgang, mit dem in der Applikation gewählten Betrag,
+starten. Dafür existiert das Property \emph{start-transaction}. War die Transaktion erfolgreich,
+wird über das \emph{transaction-success} Property ein entsprechendes Event ausgesendet. Tritt ein 
+Fehler auf, wird dieser über das Property \emph{transaction-error} ausgesendet. Diese beiden Event-Properties
+sind nicht \emph{settable}. Das heißt, die beiden Events können nur von \emph{donation-controller} ausgesendet
+werden. Das Event \emph{stop-transaction} hingegen ist \emph{settable}. 
+Es kann von \emph{sharing-station-app} gesendet werden, um eine laufende Transaktion abzubrechen. 
+
 
 \iffalse
 - Konfigurationsfile, Beispiel der JS Bib 
