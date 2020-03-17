@@ -13,7 +13,7 @@ Falle der Webtechnologien eine Single-Page Applikation (SPA). Eine SPA wird einm
 Server geladen. Laden von weiteren Seiten beim Navigieren durch die Oberfläche 
 findet nicht statt \cite{js-definitive}. Um Transaktionen und neue Zustände möglich zu machen,
 können jedoch im Hintergrund asynchrone Datenanfragen gestellt werden (AJAX). 
-Die SPA gibt so den Nutzer*innen nicht mehr das Gefühl einer
+Die SPA gibt so den Nutzenden nicht mehr das Gefühl einer
 Webseite, sondern einer geschlossenen Anwendung, was im Falle der Kiosksoftware ein gewünschter
 Effekt ist und damit auch zur Erfüllung der Anforderung \ref{nfa4} beiträgt.\\
 Das Laden einer einzigen Seite vom Server bedeutet jedoch nicht, dass keine Navigationsstruktur
@@ -43,7 +43,7 @@ Service-Worker werden bei initialem Aufruf heruntergeladen und bleiben auch nach
 gespeichert. Das gilt auch für die Daten, welche sie speichern. Diese sind also auch bei Neustart ohne
 Netzwerkverbindung noch vorhanden und können angezeigt werden.\\
 Eine vollständige Offline-Verfügbarkeit wäre somit fast erreicht. Einzig Transaktionen, bei welchen Eingaben
-und Daten von Nutzer*innen gespeichert werden sollen, können noch nicht offline verfügbar gemacht werden.
+und Daten von Nutzenden gespeichert werden sollen, können noch nicht offline verfügbar gemacht werden.
 Auch hier kommt die Technik der Service-Worker an ihre Grenzen \cite{service-worker-post}.\\
 Dennoch gibt es auch hier Lösungen für dieses
 Problem. Beispielsweise bietet die JavaScript Datenbank pouchDB \cite{pouchdb} die Möglichkeit POST-Anfragen
@@ -80,7 +80,7 @@ Anwendung zu modularisieren. Denn: Neben der losen Kopplung von CMS und Clientap
 ist auch eine Modularität innerhalb der Clientapplikation nötig, um die Anforderung \ref{nfa8}
 vollständig zu erfüllen. React erlaubt dies durch sein Komponenten-basiertes System. Einzelne
 Interface-Elemente oder auch einzelne Unterseiten können als Komponenten gekapselt werden.
-Wie fein diese Kapselung sein soll, kann von den Entwickler*innen entschieden werden. Richtig implementiert,
+Wie fein diese Kapselung sein soll, kann von der entwickelnden Person entschieden werden. Richtig implementiert,
 können Komponenten so wiederverwendet, ausgetauscht oder das System leicht um neue erweitert werden.\\
 \autoref{fig:ss-app-class-diagram} zeigt die Komponentenstruktur der Clientapplikation der \shst{}.
 Die Abbildung ist vereinfacht und zeigt nur die wichtigsten Komponenten. Die Art der Darstellung
@@ -97,7 +97,7 @@ Er ist ebenfalls eine besondere Art der Container-Komponente und beinhaltet den 
 Die gestrichelten Linien visualisieren, welche Komponenten dabei direkten Zugriff auf den 
 Store haben.\\
 Im Zentrum der Abbildung befindet sich die Router-Komponente. Sie leitet zwischen den einzelnen Unterseiten
-zu denen die Nutzer*innen navigieren können. Teilbäume, abgehend von der Router-Komponente, können als
+zu denen die Nutzenden navigieren können. Teilbäume, abgehend von der Router-Komponente, können als
 die Hauptmodule der Applikation gesehen werden. Sie können dabei Untermenüs oder Module sein, welche
 die konkreten Funktionalitäten wie die Spenden-Funktion (\ref{fa3}) oder die Newsletter-Funktion (\ref{fa5}) 
 implementieren. Diese klarer Abgrenzung der einzelnen Module bietet so die Möglichkeit, diese leicht
