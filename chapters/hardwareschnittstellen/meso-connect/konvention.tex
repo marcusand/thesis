@@ -13,7 +13,7 @@ der Firma \meso{} entwickelt wurde.\\
 Die Konvention setzt dabei im ersten Schritt die Kommunikation über das MQTT Protokoll voraus.
 Um Hardwaregeräte über das MQTT Protokoll ansprechen zu können sind unterschiedliche Lösungen 
 denkbar. Diese sind vom jeweiligen Gerät und Anwendungsfall abhängig. Bei einfachen Sensoren oder
-Geräten mit serieller Schnittstelle ist der Anschluss an einen Mikrocontroller denkbar.
+Geräten mit serieller Schnittstelle ist eine Möglichkeit der Anschluss an einen Mikrocontroller.
 Dieser muss entsprechend programmiert werden, um den Zugriff auf die angeschlossenen Geräte 
 oder Sensoren über eine MQTT Schnittstelle zu ermöglichen.\\
 Um eine Browseranwendung in die Kommunikation einzubinden, wird die Kommunikation über das MQTT/Websocket
@@ -104,7 +104,7 @@ konzipiert. Die vollständige API-Dokumentation dieser Bibliothek befindet sich 
 meso-connect Kommunikation. Zu erkennen sind dort die zwei, in der Kommunikation beteiligten Clients
 \emph{donation-controller} und \emph{sharing-station-app}. Während letzterer keine Nodes
 besitzt, sind an den \emph{donation-controller} die zwei Nodes \emph{card-terminal} und 
-\emph{coin-slot} angeschlossen. \emph{coin-slot} besitzt dabei nur ein Property, über
+\emph{coin-slot} angeschlossen. \emph{coin-slot} besitzt dabei nur eine Property, über
 welches das Event des Münzeinwurfs von \emph{donation-controller} gesendet wird. Bei dem Node
 \emph{card-terminal} handelt es sich um ein angeschlossenes Kontaktlos-Modul für Zahlungen. Dieses wickelt
 den eigentlichen Zahlungsvorgang selbst über das Internet und einen Zahlungsdienstleister ab. 
