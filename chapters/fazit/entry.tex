@@ -1,4 +1,4 @@
-\chapter{Fazit}
+\chapter{Fazit und Ausblick}
 \label{chap:fazit}
 
 Wie gezeigt werden konnte, eignen sich Webtechnologien sehr gut für
@@ -8,7 +8,7 @@ Technologien nicht leisten können. Da der Begriff der Webtechnologien jedoch
 sehr weit fasst und ein riesiges Ökosystem an Technologien existiert, müssen bei
 der Wahl dieser, die Anforderungen gründlich geprüft und Technologien gegeneinander 
 abgewägt werden. Dafür wurde der Begriff der Browsertechnologien eingeführt und sich
-weiter bei den Entwicklung der Clientapplikation auf diese beschränkt. 
+weiter bei der Entwicklung der Clientapplikation auf diese beschränkt. 
 Dabei haben sich einige Grenzen aufgetan, welche teilweise gelöst werden konnten.\\
 Manche Anforderungen, wie die Mulitlingualität oder die Erreichbarkeit des CMS über das Internet,
 sind mit Webtechnologien leicht umzusetzen, da sie auch Anforderungen typischer Webanwendungen sind.
@@ -17,13 +17,13 @@ Bei der Verwendung reiner Browsertechnologien für die Clientapplikation haben s
 gezeigt. Eine solche Applikation ist stark plattforumunabhängigkeit, da Browser oder Browser-Umgebungen
 für praktische jede Plattform existieren und eine Anwendung so leicht portiert werden kann. Auch lassen
 sich sehr einfache Deployment-Strategien entwickeln. So wurde sich bei der \shst{} entschieden, die
-Applikationfiles auf einem Webserver zu hosten -- genauso wie man es auch bei einer klassischen % build Prozess?
+Applikationsdateien auf einem Webserver zu hosten -- genauso wie man es auch bei einer klassischen % build Prozess?
 Webanwendung machen würde. Dies bietet darüber hinaus den Vorteil, dass die Applikation über das Internet
 im Browser aufgerufen und als Vorschau genutzt werden kann. Für die Präsentation dieser Anwendung als
 Kioskapplikation auf einer klassischen Workstation, muss auf die vollständige Geschlossenheit geachtet werden.
 Hierfür bietet sich die kiosk Option von Google Chrome und das Definieren eines Webmanifests an.\\
-Durch Ausliefern der Applikationfiles über einen Webserver ist allerdings eine Offline-Verfügbarkeit
-erstmal nicht gegeben. Diese kann aber durch Implementieren einer Progressive-Web-App und 
+Durch Ausliefern der Applikationsdateien über einen Webserver ist allerdings eine Offline-Verfügbarkeit
+erstmal nicht gegeben. Diese kann durch Implementieren einer Single-Page Applikation und 
 Service-Workern weitestgehend hergestellt werden.
 Vollständige Offline-Verfügbarkeit ist dadurch aber nicht erreicht, da von Nutzenden initiierte
 Transaktionen über das Internet an einen Server erfolgen müssen. Um solche Anfragen lokal zwischenzuspeichern,
@@ -37,14 +37,19 @@ jedoch auf anderem Wege hergestellt werden. Im Rahmen dieser Arbeit wurde dafür
 entwickelt, welche über das MQTT/Websocket Protokoll und einer standardisierten Kommunikation die Verbindung
 zu unterschiedlichen Geräten möglich macht. Die Systemarchitektur für eine solche Kommunikation ist dabei zwar
 aufwendig, die softwareseitige Anbindung aber ist, durch die strikte Konvention und die Implementation der Konvention
-in eine Softwarebibliothek, abstrahiert und daher eher simple. Die entwickelte Konvention lässt sich darüber 
+in einer Softwarebibliothek, abstrahiert und daher eher simple. Die entwickelte Konvention lässt sich darüber 
 hinaus auch für andere Kiosksysteme und andere Projekte anwenden.\\
 
 Die so entstandenen Ergebnisse dieser Arbeit, sowie die Beschreibung der Architektur und der verwendeten
 Softwaretechnologien bei der \shst{}, können ein Leitfaden für andere Softwareentwickler sein, die 
 vor der Aufgabe stehen eine Kiosksoftware zu entwickeln. Auch soll klar geworden sein, in wie fern 
-Webtechnologien sich für eine solche Aufgabe eignen, welche Dinge es zu beachten gibt und ob andere
-Technologien möglicherweise besser geeignet sind. 
+Webtechnologien sich für eine solche Aufgabe eignen und was dabei die Möglichkeiten und Grenzen sind.\\
+Die Entwicklung der \shst{} ist für \meso{} die Grundlage für ein Produkt, 
+welches in der Zukunft weiteren Kunden angeboten werden soll. Es sollen dabei in erster Linie Kunden 
+aus dem Museums- und Ausstellungsbetrieb ansprechen.\\
+Die meso-connect Konvention soll zukünftig nicht nur Anwendung bei weiteren Kiosksystemen finden, sondern 
+möglichst bei allen Projekten der Firma \meso{} bei denen eine MQTT Kommunikation vorgesehen ist. 
+
 % Da die Beliebtheit von Webtechnologien, das Ökosystem rund um JavaScript sowie die Möglichkeiten
 % von Browseranwendungen weiterhin zunehmen ist eine Investition in diese Technologien
 

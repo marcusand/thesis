@@ -62,11 +62,11 @@ bietet dafür in diesem Kontext größere Vorteile, da es die Konfiguration der 
 vereinfacht \todo{Vorteile ausführen}. Die einzigen Attribute, welche auf Topics zur Laufzeit veröffentlicht 
 werden, sind
 
-\[\texttt{meso-connect/device/\$state} \]
+\[\texttt{meso-connect/<device>/\$state} \]
 
 und
 
-\[\texttt{meso-connect/device/node/property/\$error} \]
+\[\texttt{meso-connect/<device>/<node>/<property>/\$error} \]
 
 Das Attribut \texttt{\$state} ist aus der Homie Konvention übernommen und gibt Information über den aktuellen
 Zustand des Geräts. Dieser Wert ist dynamisch und kann sich zur Laufzeit verändern. \texttt{\$error} ist nicht 
@@ -79,6 +79,16 @@ durch abonnieren des Topics
 \[\texttt{meso-connect/+/+/\$error} \]
 
 alle auftretenden Fehler in einem System erfasst werden.\\
+
+Ist eine Property \emph{settable} kann der Wert von einem anderen Client gesetzt werden. Das geschieht dabei 
+über das Topic
+
+\[\texttt{meso-connect/<device>/<node>/<property>/set} \]
+
+Das heißt, der Client, welcher diese einstellbare Property besitzt muss dieses Topic abonnieren und
+auf Nachrichten reagieren. Erreicht ihn ein neuer Wert auf diesem Topic, muss dieser Wert so schnell wie 
+möglich auf dem regulären Property-Topic reflektiert werden. Dieser Reflexionsmechanismus, welcher ebenfalls von Homie
+übernommen wurde, gibt Sicherheit über die erfolgreiche Übertragung und die entsprechende Statusänderung.\\
 
 Die meso-connect Konvention wurde bei der \shst{} angewandt. Wie \autoref{fig:ss-deployment-diagram} zeigt,
 sind dafür Kartenterminal und der Sensor des Münzschlitz an einem Mikrocontroller angeschlossen. Dieser

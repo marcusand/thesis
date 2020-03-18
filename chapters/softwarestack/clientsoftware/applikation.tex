@@ -70,8 +70,9 @@ unter Anderen die JavaScript Bibliotheken React \cite{react} und Redux \cite{red
 Toolkit Workbox \cite{workbox} verwendet. React bildet dabei
 den Rahmen für die SPA-Architektur, Workbox bietet eine Bibliothek, welche es erleichtert 
 Service-Worker zu implementieren und Redux ist eine Bibliothek, welche ein Pattern für die Verwaltung 
-von Applikationszuständen bereitstellt. Redux hilft bei steigender Komplexität von 
-Zuständen in Anwendungen -- ist im Rahmen dieser Thesis aber von untergeordneter Bedeutung und wird daher
+von Applikationszuständen bereitstellt. Bei steigender Komplexität von Zuständen in einer Anwendung 
+bietet der Einsatz der Redux Bibliothek allerhand Vorteile 
+-- dies ist im Rahmen dieser Thesis aber von untergeordneter Bedeutung und wird daher
 nicht weiter erläutert.\\
 
 React bietet die Möglichkeit, die meisten der zuvor genannten Anforderungen zu erfüllen. 
@@ -96,12 +97,12 @@ Darstellung in der Oberfläche haben. Die einzelne gelb markierte Komponente ist
 Er ist ebenfalls eine besondere Art der Container-Komponente und beinhaltet den Applikationszustand. 
 Die gestrichelten Linien visualisieren, welche Komponenten dabei direkten Zugriff auf den 
 Store haben.\\
-Im Zentrum der Abbildung befindet sich die Router-Komponente. Sie leitet zwischen den einzelnen Unterseiten
-zu denen die Nutzenden navigieren können. Teilbäume, abgehend von der Router-Komponente, können als
+Im Zentrum der Abbildung befindet sich die Router-Komponente. Diese entscheidet anhand der aufgerufenen
+URL, welche Komponenten geladen und dargestellt werden. Teilbäume, abgehend von der Router-Komponente, können als
 die Hauptmodule der Applikation gesehen werden. Sie können dabei Untermenüs oder Module sein, welche
 die konkreten Funktionalitäten wie die Spenden-Funktion (\ref{fa3}) oder die Newsletter-Funktion (\ref{fa5}) 
 implementieren. Diese klarer Abgrenzung der einzelnen Module bietet so die Möglichkeit, diese leicht
-durch andere zu ersetzen oder um neue zu erweitern.\\
+zu entfernen, durch andere zu ersetzen oder um neue zu erweitern.\\
 
 \begin{figure}
   \lstinputlisting[%

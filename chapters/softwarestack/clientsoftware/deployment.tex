@@ -12,7 +12,7 @@ möglichst simpel zu gestalten. Beispielsweise mit dem eigenen
 \emph{electron-builder} \cite{electron-builder}. Auch sind mit beiden Möglichkeiten
 automatische Updates umsetzbar.\\
 Im Falle einer Applikation, die einzig mit Browsertechnologien implementiert wurde, sind 
-noch simplere Strategien denkbar. Hier ist ein normales Webhosting der Applikationsfiles 
+noch simplere Strategien denkbar. Hier ist ein normales Webhosting der Applikationsdateien 
 bereits eine ausreichende Deployment-Strategie. Wurde keine Offline-Verfügbarkeit durch
 Service-Worker implementiert, können die statischen Files einer Browseranwendung
 auch einfach auf dem Filesystem der Workstation hinterlegt und in einem Browser aufgerufen 
@@ -21,9 +21,9 @@ Fernzugriff auf den Rechner eingespielt werden. Im Fall des Webhostings genügt 
 der neuen Files auf einen Webserver.\\
 
 Für die \shst{} wurde auf dem Server neben dem CMS auch ein Webserver installiert, welcher die 
-Applikationsfiles ausliefert (\autoref{fig:ss-deployment-diagram}). Zusätzlich wurde über den 
+Applikationsdateien ausliefert (\autoref{fig:ss-deployment-diagram}). Zusätzlich wurde über den 
 firmeninternen GitLab-Server \cite{gitlab} eine Build- und Deployment-Pipeline eingerichtet, welche die 
-Applikationsfiles automatisch generiert und vom Master-Branch des Repositorys auf den Webserver überträgt. 
+Applikationsdateien automatisch generiert und vom Master-Branch des Repositorys auf den Webserver überträgt. 
 Für ein Updaten der Clientapplikation, auf der Workstation in der Ausstellung, ist also nichts weiter 
 nötig als die Änderungen auf den Master-Branch des Repositorys zu übertragen und die Applikation vor
 Ort neu zu laden.\\

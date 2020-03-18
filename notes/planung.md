@@ -31,7 +31,7 @@
 - Betreiben der Software im Vollbildmodus um Verlassen und Beenden zu Verhindern
 - Performance
 - Continous Deployment Strategien
-  - eigentliche Applikationsfiles können statisch gehostet werden und bei Start geladen werden, darüber hinaus können diese im Browser geladen werden.
+  - eigentliche Applikationsdateien können statisch gehostet werden und bei Start geladen werden, darüber hinaus können diese im Browser geladen werden.
   - die installierte Anwendung ist nur noch Rahmen
 - Darüber schreiben wie sonst Interfaces, Anwendungen und Kiosksysteme bei MESO programmiert werden
 
