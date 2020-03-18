@@ -36,41 +36,41 @@ Diese bezieht sich immer zuerst auf Kiosksoftware und Kiosksysteme im Allgemeine
 der Anforderung für die \shst{}.
 
 \begin{enumerate}[label=\textbf{NFA\arabic*}]
-	\item\label{nfa1} \textbf{Die Clientsoftware muss so gestaltet sein, dass sie zusammen mit Hardwarekomponenten 
+	\item\label{nfa1} \textbf{Die Clientanwendung muss so gestaltet sein, dass sie zusammen mit Hardwarekomponenten 
   betrieben werden kann.}\\
   Für viele Kiosksysteme sind angeschlossene Hardwarekomponenten, als Nutzerschnittstelle oder Ausgabegeräte, essenziell.
   Gerade Service-Kioske sind meist ohne ihre Hardwarekomponenten nicht zu benutzen. Das wohl eindrücklichste
   Beispiel hierfür ist der Ticketautomat: Ohne Kreditkartenterminal und Ticketdrucker wäre dieses Gerät nicht denkbar.\\
   Auch die \shst{} soll Hardwarekomponenten beinhalten. Für die Foto-Commitment-Funktion (\ref{fa4}) wird eine
   Kamera und für die Spenden-Funktion (\ref{fa3}) ein Kreditkartenterminal und ein Münzeinwurf benötigt. Alle 
-  Geräte müssen mit der Clientsoftware kommunizieren können um eine Steuerung und ein Feedback über die Oberfläche
+  Geräte müssen mit der Clientanwendung kommunizieren können um eine Steuerung und ein Feedback über die Oberfläche
   zu gewährleisten. 
-	\item\label{nfa2} \textbf{Die Clientsoftware sollte so gestaltet sein, dass sie auch offline 
+	\item\label{nfa2} \textbf{Die Clientanwendung sollte so gestaltet sein, dass sie auch offline 
   betrieben werden kann.}\\
-  Die Bedienbarkeit der Clientsoftware sollte auch dann gewährleistet werden, wenn das Netz zwischenzeitlich
+  Die Bedienbarkeit der Clientanwendung sollte auch dann gewährleistet werden, wenn das Netz zwischenzeitlich
   ausfällt oder hoch belastet ist. Gerade Werbe- und Entertainment-Kioske sind sehr darauf bedacht, ihre
-  Nutzer möglichst lange am Gerät zu halten \cite{across}. Ein zu langer Ladevorgang, durch welchen die 
-  Oberfläche zwischenzeitlich nicht bedienbar ist, würde dazu führen, dass sich vermutlich viele Nutzende 
+  Nutzenden möglichst lange am Gerät zu halten \cite{across}. Ein zu langer Ladevorgang, durch welchen die 
+  Oberfläche zwischenzeitlich nicht bedienbar ist, würde vermutlich dazu führen, dass sich viele Nutzende 
   vom Gerät entfernen. Dies soll verhindert werden.\\
   Bei der \shst{} soll das Navigieren durch die Oberfläche und das Ausführen möglichst aller Funktionen 
   auch offline möglich sein. Lediglich Transaktionen, bei denen die Nutzenden Daten abschicken, wie Speichern 
   eines Fotos oder Eintragen für den Newsletter, sollen auch nur dann positives Feedback geben, wenn 
   diese erfolgreich über das Netz erfolgt sind. Bei Nichterreichen eines Servers oder Services, soll eine entsprechende
   Fehlermeldung angezeigt werden, welche die Nutzenden darauf hinweist, es später noch einmal zu versuchen.
-  \item\label{nfa3} \textbf{Die Oberfläche der Clientsoftware muss multilingual sein.}\\
+  \item\label{nfa3} \textbf{Die Oberfläche der Clientanwendung muss multilingual sein.}\\
   Durch die meist öffentliche oder halböffentliche Platzierung von Kiosksystemen, stehen diese
   immer einer großen Anzahl unterschiedlicher Nutzer*innen zur Verfügung. Um möglichst vielen
   ein optimales Erlebnis zu gewährleisten, ist die Möglichkeit einer Spracheinstellung von großer Wichtigkeit.\\
   Auf Grund der typischen Besuchenden und den finanziellen Möglichkeiten des Museums, werden die 
   Spracheinstellungen der \shst{} auf Deutsch und Englisch beschränkt.
-  \item\label{nfa4} \textbf{Die Oberfläche der Clientsoftware muss in sich geschlossen sein.}\\
+  \item\label{nfa4} \textbf{Die Oberfläche der Clientanwendung muss in sich geschlossen sein.}\\
   Diese Anforderung ist typisch für Kiosksoftware. Sie bedeutet, dass die Oberfläche der Anwendung von Nutzenden 
   nicht verlassen werden kann. Sie soll den Eindruck eines geschlossenen Systems vermitteln. Dies ist zum eine
   aus der User-Experience Sicht wünschenswert aber auch aus einer sicherheitstechnischen Sicht relevant. Den 
-  Nutzenden soll keine Möglichkeit geboten werden Schaden auf dem System anzurichten oder andere Webseiten
+  Nutzenden soll keine Möglichkeit geboten werden, Schaden auf dem System anzurichten oder andere Webseiten
   im Netz zu erreichen.\\
   Diese Anforderung gilt genauso für die \shst{}. Den Nutzerinnen und Nutzern soll keine Möglichkeit geboten werden, die
-  Oberfläche der Clientsoftware zu verlassen. Auch soll nicht der Eindruck einer Webseite entstehen. 
+  Oberfläche der Clientanwendung zu verlassen. Auch soll nicht der Eindruck einer Webseite entstehen. 
   Typische Browser-Funktionalitäten müssen also deaktiviert werden, so dass der Eindruck 
   einer in sich geschlossenen Anwendung entsteht.
   \item\label{nfa6} \textbf{Die Clientsoftware sollte plattformunabhängig sein.}\\
@@ -83,7 +83,7 @@ der Anforderung für die \shst{}.
   unter den Gesichtspunkten der Adaptier- und Wiederverwendbarkeit entwickelt werden. Dazu zählt auch, dass die Software
   auf verschiedenen Plattformen lauffähig ist, da zukünftige Kunden die Anforderung nach einer anderen Plattform
   haben könnten. 
-  \item\label{nfa7} \textbf{Das Deployment der Clientsoftware sollte möglichst einfach und von außerhalb möglich sein.}\\
+  \item\label{nfa7} \textbf{Das Deployment der Clientanwendung sollte möglichst einfach und von außerhalb möglich sein.}\\
   Bei Kiosksystemen ist es meist von Vorteil, wenn Softwareupdates nicht vor Ort am Gerät eingespielt werden 
   müssen, sondern von außerhalb erfolgen können.\\
   Bei der \shst{} ist dies keine vom Kunden geforderte Anforderung. Allerdings zeigt die Erfahrung, dass nachträgliche

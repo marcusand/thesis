@@ -6,14 +6,14 @@ In diesem Kapitel wird die Kommunikation mit Hardwarekomponenten betrachet.
 der Anforderung bereits erläutert, sind Hardwarekomponenten meist ein essenzieller Bestandteil von Kiosksystemen
 und die Steuerung dieser, durch die Clientsoftware, muss gewährleistet werden. Im Falle der webbasierten 
 Softwaretechnologien stößt man hier auf einige Hürden.\\
-Während Serveranwendungen, native Anwendungen und auch der Node-Prozess einer 
-Electron.js-Anwendung Zugriff auf eine Vielzahl von Betriebssystemschnittstellen haben \todo{Node API}
+Während Serveranwendungen, native Anwendungen und auch der Node.js-Prozess einer 
+Electron-Anwendung Zugriff auf eine Vielzahl von Betriebssystemschnittstellen haben \todo{Node API}
 und somit leicht mit Hardwarekomponenten kommunizieren können, sind
 die Möglichkeiten einer reinen Browseranwendung wesentlich limitierter. Browseranwendungen und Webseiten werden
 typischerweise, aus sicherheitstechnischen Gründen, kein direkten Zugriff auf Betriebssystem-APIs gegeben.
 Nur einige ausgewählte Funktionalitäten werden durch die Web APIs zur Verfügung gestellt \cite{web-apis}.
 Für Anwendungsfälle, die über die Möglichkeiten der Web APIs hinausgehen, müssen eigene Lösungen entwickelt 
-werden. Hierzu wurde im Rahmen dieser Arbeit eine Lösung über das MQTT/Websocket Protokoll entwickelt.
+werden. Hierzu wurde im Rahmen dieser Arbeit eine Lösung über das MQTT/Websocket-Protokoll entwickelt.
 
 \input{web-apis}
 \subimport{meso-connect/}{entry}

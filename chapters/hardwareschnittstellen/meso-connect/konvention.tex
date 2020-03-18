@@ -1,7 +1,7 @@
 \subsection{Konvention}
 \label{subs:konvention}
 
-Basierend auf der Kommunikation über das MQTT/Websocket Protokoll und der Homie Konvention,
+Basierend auf der Kommunikation über das MQTT/Websocket-Protokoll und der Homie Konvention,
 wurde im Rahmen dieser Arbeit eine eigene Konvention entwickelt. Diese soll die Kommunikation
 zwischen Hardwaregeräten und Browseranwendungen standardisieren. Der Einsatz beschränkt
 sich dabei nicht nur auf Kiosksysteme, sondern ist auch in anderen Szenarien denkbar.\\
@@ -10,16 +10,16 @@ Konvention befindet sich in \autoref{app:meso-connect}. Auch sei an dieser Stell
 dass die Konvention in Absprache und teilweise zusammen mit anderen Mitarbeitern 
 der Firma \meso{} entwickelt wurde.\\
 
-Die Konvention setzt dabei im ersten Schritt die Kommunikation über das MQTT Protokoll voraus.
-Um Hardwaregeräte über das MQTT Protokoll ansprechen zu können sind unterschiedliche Lösungen 
+Die Konvention setzt dabei im ersten Schritt die Kommunikation über das MQTT-Protokoll voraus.
+Um Hardwaregeräte über das MQTT-Protokoll ansprechen zu können sind unterschiedliche Lösungen 
 denkbar. Diese sind vom jeweiligen Gerät und Anwendungsfall abhängig. Bei einfachen Sensoren oder
 Geräten mit serieller Schnittstelle ist eine Möglichkeit der Anschluss an einen Mikrocontroller.
 Dieser muss entsprechend programmiert werden, um den Zugriff auf die angeschlossenen Geräte 
-oder Sensoren über eine MQTT Schnittstelle zu ermöglichen.\\
-Um eine Browseranwendung in die Kommunikation einzubinden, wird die Kommunikation über das MQTT/Websocket
-Protokoll vorausgesetzt. Der Broker muss dafür die Kommunikation auf zwei verschiedenen 
+oder Sensoren über eine MQTT-Schnittstelle zu ermöglichen.\\
+Um eine Browseranwendung in die Kommunikation einzubinden, wird die Kommunikation über das 
+MQTT/Websocket-Protokoll vorausgesetzt. Der Broker muss dafür die Kommunikation auf zwei verschiedenen 
 Netzwerkports ermöglichen. Zum Beispiel Port 1883 für reguläre MQTT-Nachrichten und Port 9001
-für Nachrichten über das Websocket/MQTT Protokoll.\\
+für Nachrichten über das Websocket/MQTT-Protokoll.\\
 Nach diesem Setup ist eine bidirektionale, flexible Datenverbindung zwischen Browseranwendung
 und Hardwaregeräten hergestellt.\\
 
@@ -92,11 +92,11 @@ möglich auf dem regulären Property-Topic reflektiert werden. Dieser Reflexions
 
 Die meso-connect Konvention wurde bei der \shst{} angewandt. Wie \autoref{fig:ss-deployment-diagram} zeigt,
 sind dafür Kartenterminal und der Sensor des Münzschlitz an einem Mikrocontroller angeschlossen. Dieser
-kommuniziert über Netzwerk und das MQTT Protokoll mit dem Broker. Bei dem Broker handelt es sich um 
+kommuniziert über Netzwerk und das MQTT-Protokoll mit dem Broker. Bei dem Broker handelt es sich um 
 eine Mosquitto-Instanz \cite{mosquitto}, welche auf der Kiosk-Workstation installiert ist. \todo{wirklich mosquitto?}
-Der Broker wiederum kommuniziert über das Websocket/MQTT Protokoll
-mit der Clientapplikation.\\
-Für die eigentliche Kommunikation über das Protokoll wurde im Rahmen dieser Arbeit und für die Clientapplikation 
+Der Broker wiederum kommuniziert über das Websocket/MQTT-Protokoll
+mit der Clientanwendung.\\
+Für die eigentliche Kommunikation über das Protokoll wurde im Rahmen dieser Arbeit und für die Clientanwendung 
 der \shst{} eine JavaScript Bibliothek implementiert, welche in einer Browser- oder Node.js-Anwendung
 nutzbar ist. Diese implementiert die gesamte meso-connect Konvention und ist für den universellen Einsatz
 konzipiert. Die vollständige API-Dokumentation dieser Bibliothek befindet sich in \autoref{app:meso-connect-js}.
@@ -118,7 +118,7 @@ besitzt, sind an den \emph{donation-controller} die zwei Nodes \emph{card-termin
 welches das Event des Münzeinwurfs von \emph{donation-controller} gesendet wird. Bei dem Node
 \emph{card-terminal} handelt es sich um ein angeschlossenes Kontaktlos-Modul für Zahlungen. Dieses wickelt
 den eigentlichen Zahlungsvorgang selbst über das Internet und einen Zahlungsdienstleister ab. 
-Die Clientapplikation muss lediglich den Vorgang, mit dem in der Applikation gewählten Betrag,
+Die Clientanwendung muss lediglich den Vorgang, mit dem in der Applikation gewählten Betrag,
 starten. Dafür existiert das Property \emph{start-transaction}. War die Transaktion erfolgreich,
 wird über das \emph{transaction-success} Property ein entsprechendes Event ausgesendet. Tritt ein 
 Fehler auf, wird dieser über das Property \emph{transaction-error} ausgesendet. Diese beiden Event-Properties

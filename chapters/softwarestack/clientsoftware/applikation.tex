@@ -5,9 +5,9 @@ Anforderungen aus \autoref{chap:anforderungen}, welche die eigentliche Applikati
 der Clientsoftware betreffen, sind die Anforderungen \ref{nfa2}, \ref{nfa3} und \ref{nfa8}.\\
 
 \ref{nfa8} stellt die Anforderung der Modularität an das gesamte Softwaresystem. Diese
-betrifft also auch die Clientapplikation. Wie in \autoref{sec:backend} bereits erläutert, 
+betrifft also auch die Clientanwendung. Wie in \autoref{sec:backend} bereits erläutert, 
 ist für eine starke Modularität eine lose Kopplung von Daten- und Präsentationsschicht ein
-wichtiger Faktor. Umgekehrt bedeutet dies, dass die Clientsoftware eine in sich geschlossene
+wichtiger Faktor. Umgekehrt bedeutet dies, dass die Clientanwendung eine in sich geschlossene
 eigene Anwendung sein muss. Sie besitzt lediglich die Datenschnittstelle zum CMS. Das leistet im 
 Falle der Webtechnologien eine Single-Page Applikation (SPA). Eine SPA wird einmalig von einem 
 Server geladen. Laden von weiteren Seiten beim Navigieren durch die Oberfläche 
@@ -18,7 +18,7 @@ Webseite, sondern einer geschlossenen Anwendung, was im Falle der Kiosksoftware 
 Effekt ist und damit auch zur Erfüllung der Anforderung \ref{nfa4} beiträgt.\\
 Das Laden einer einzigen Seite vom Server bedeutet jedoch nicht, dass keine Navigationsstruktur
 mit Vor- und Zurück-Bewegungen implementieren werden kann. Die Navigation findet jedoch alleinig in 
-der Clientapplikation statt und ist nicht mit Laden von neuen Seiten verbunden. Es werden lediglich
+der Clientanwendung statt und ist nicht mit Laden von neuen Seiten verbunden. Es werden lediglich
 neue Zustände aufgerufen \cite{spa-manifesto}.\\
 
 \ref{nfa2} fordert Offline-Verfügbarkeit. Auch hier trägt das Konzept der SPA zur 
@@ -54,8 +54,8 @@ aus Gründen des Umfangs, nicht weiter verfolgt.\\
 \ref{nfa8} fordert schließlich die Multilingualität der Oberfläche. Wie in \autoref{sec:backend} 
 bereits erläutert, können Datensätze im CMS der \shst{} mehrsprachig angelegt werden. Diese Funktion
 existiert bei den meisten CMS. Die Daten werden dann entweder über einen gemeinsamen Datensatz oder über einen
-Datensatz für jede Sprache zur Verfügung gestellt. Die Oberfläche der Clientapplikation muss die Möglichkeit
-bieten, die Sprache umzustellen. Erfolgt dies, muss keine neue Seite vom Server sondern maximal ein anderer
+Datensatz für jede Sprache der Clientanwendung zur Verfügung gestellt. Die Oberfläche der Clientanwendung muss die Möglichkeit
+bieten die Sprache umzustellen. Erfolgt dies, muss keine neue Seite vom Server sondern maximal ein anderer
 Datensatz angefordert und die angezeigten Daten durch die entsprechende Sprachversion ausgetauscht werden.\\
 
 \begin{figure}
@@ -65,7 +65,7 @@ Datensatz angefordert und die angezeigten Daten durch die entsprechende Sprachve
     \label{fig:ss-app-class-diagram}
 \end{figure}
 
-Um dieser beschriebenen Architektur gerecht zu werden, wurde für die Clientapplikation der \shst{} 
+Um dieser beschriebenen Architektur gerecht zu werden, wurde für die Clientanwendung der \shst{} 
 unter Anderen die JavaScript Bibliotheken React \cite{react} und Redux \cite{redux} zusammen mit dem 
 Toolkit Workbox \cite{workbox} verwendet. React bildet dabei
 den Rahmen für die SPA-Architektur, Workbox bietet eine Bibliothek, welche es erleichtert 
@@ -77,13 +77,13 @@ nicht weiter erläutert.\\
 
 React bietet die Möglichkeit, die meisten der zuvor genannten Anforderungen zu erfüllen. 
 Das ist neben der Implementierung der SPA-Architektur, auch die Möglichkeit die 
-Anwendung zu modularisieren. Denn: Neben der losen Kopplung von CMS und Clientapplikation
-ist auch eine Modularität innerhalb der Clientapplikation nötig, um die Anforderung \ref{nfa8}
+Anwendung zu modularisieren. Denn: Neben der losen Kopplung von CMS und Clientanwendung
+ist auch eine Modularität innerhalb der Clientanwendung nötig, um die Anforderung \ref{nfa8}
 vollständig zu erfüllen. React erlaubt dies durch sein Komponenten-basiertes System. Einzelne
 Interface-Elemente oder auch einzelne Unterseiten können als Komponenten gekapselt werden.
 Wie fein diese Kapselung sein soll, kann von der entwickelnden Person entschieden werden. Richtig implementiert,
 können Komponenten so wiederverwendet, ausgetauscht oder das System leicht um neue erweitert werden.\\
-\autoref{fig:ss-app-class-diagram} zeigt die Komponentenstruktur der Clientapplikation der \shst{}.
+\autoref{fig:ss-app-class-diagram} zeigt die Komponentenstruktur der Clientanwendung der \shst{}.
 Die Abbildung ist vereinfacht und zeigt nur die wichtigsten Komponenten. Die Art der Darstellung
 orientiert sich dabei an der von \citeext{visualizing-react} vorgeschlagenen Weise um React Anwendungen
 zu visualisieren. Diese wiederum basiert auf dem System des UML-Klassendiagramms \cite{uml-spec}, 

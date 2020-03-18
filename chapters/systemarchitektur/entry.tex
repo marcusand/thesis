@@ -25,13 +25,13 @@ sind eine spezielle Art der Assoziation und stellen in diesem Fall Kommunikation
 Die Beschriftung an den Wegen nennt dabei das genutzte Kommunikationsprotokoll.
 Die umschließenden Rahmen zeigen welche Komponenten sich in welchem Netz befinden.\\
 Im Mittelpunkt der Architektur steht die Kiosk-Workstation -- der Ausstellungsrechner. Auf ihm läuft
-die Clientapplikation (\emph{Sharing Station App}). An die Workstation direkt angeschlossen, und mit der
+die Clientanwendung (\emph{Sharing Station App}). An die Workstation direkt angeschlossen, und mit der
 Applikation über die USB-Schnittstelle kommunizierend, ist die Webcam, 
 welche für die Foto-Commitment Funktion (\ref{fa4}) benötigt wird. 
 Die zwei weiteren Hardwarekomponenten \emph{Card Terminal} und \emph{Coin Slot} (\ref{fa3}) sind nicht 
 an die Kiosk-Workstation, sondern über eine serielle Schnittstelle an einen
 Mikrocontroller (\emph{Embedded-Client}) angeschlossen. Dieser kommuniziert über
-den \emph{MQTT Broker} mit der Clientapplikation. Die Hintergründe zu dieser Architektur werden in
+den \emph{MQTT Broker} mit der Clientanwendung. Die Hintergründe zu dieser Architektur werden in
 \autoref{chap:hardwareschnittstellen} erläutert.\\
 Alle eben beschriebenen Komponenten befinden sich im lokalen Netzwerk des Museums. Darüber hinaus gibt 
 es noch die Dienste, welche über das Internet erreichbar sind. Im Zentrum steht hier der Server. 
@@ -40,7 +40,7 @@ der Datenbank gehostet. So ist das CMS über eine Weboberfläche im Internet err
 damit die Anforderung \ref{nfa9}. Neben dem CMS und der Datenbank ist auf dem Server noch ein
 Webserver gehostet, welcher die Applikationsdateien der \emph{Sharing
 Station App} ausliefert. Die Hintergründe hierzu werden in \autoref{subs:deployment} beschrieben.
-Die Clientapplikation kommuniziert über das HTTPS-Protokoll mit CMS und Webserver.\\
+Die Clientanwendung kommuniziert über das HTTPS-Protokoll mit CMS und Webserver.\\
 Und schließlich gibt es noch den Wordpress-Server des Dialogmuseums. Dessen Architektur ist nicht bekannt,
 aber auch nicht weiter von Bedeutung. Lediglich die Schnittstelle zum Eintragen einer E-Mail Adresse in 
 die Newsletterliste ist relevant. Bei dieser handelt es sich um einen einzelnen Endpoint, welcher ebenfalls

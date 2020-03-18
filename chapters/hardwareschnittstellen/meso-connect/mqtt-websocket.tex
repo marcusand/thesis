@@ -3,12 +3,12 @@
 
 Für eine sinnvolle Kommunikation zwischen einem Gerät und einer Anwendung ist meist
 eine bidirektionale Verbindung nötig. Ein Protokoll, welches bei Webanwendungen die 
-bidirektionale Verbindung erlaubt, ist das Websocket Protokoll \cite{rfc-websocket}. Über dieses
+bidirektionale Verbindung erlaubt, ist das Websocket-Protokoll \cite{rfc-websocket}. Über dieses
 kann eine Browseranwendung zum einen Nachrichten an einer Server übermitteln, zum anderen 
 aber auch zu jedem Zeitpunkt Nachrichten vom Server empfangen und auf diese reagieren.
 Im TCP/IP-Modell ist Websocket dabei ein Protokoll, welches auf der Anwendungsschicht arbeitet. 
 Dennoch kann es selbst auch eine Transportschicht für weitere Protokolle sein \cite{websocket-definitive}.
-Um in Browseranwendungen mit dem Websocket Protokoll zu arbeiten, stellen die meisten 
+Um in Browseranwendungen mit dem Websocket-Protokoll zu arbeiten, stellen die meisten 
 Browser die Websocket API zur Verfügung \cite{websocket-api}.\\
 
 MQTT ist ein auf dem publish/subscribe-Pattern basierendes Nachrichten-Protokoll \cite{mqtt-standard}.
@@ -25,9 +25,9 @@ Namespaces, anstelle einzelner Topics, abonniert werden \cite{mqtt-man-page}.\\
 Über MQTT können Nachrichten in beliebiger Encodierung oder als binäre Daten versendet werden
 \cite{mqtt-essentials-part-4}.\\
 
-Wie eingangs erwähnt, kann das Websocket Protokoll Transportschicht für
+Wie eingangs erwähnt, kann das Websocket-Protokoll Transportschicht für
 höhere Protokolle sein. So kann es auch die Transportschicht für MQTT sein und eine Browseranwendung
-kann zum MQTT-Client werden. Da das Websocket Protokoll alle nötigen Eigenschaften besitzt, ist es
-möglich MQTT Pakete über Websocket Pakete zu versenden. Die einzige Voraussetzung hierfür ist, dass der Broker
+kann zum MQTT-Client werden. Da das Websocket-Protokoll alle nötigen Eigenschaften besitzt, ist es
+möglich MQTT-Pakete über Websocket-Pakete zu versenden. Die einzige Voraussetzung hierfür ist, dass der Broker
 die Option der Kommunikation über Websockets unterstützt. Der beliebte Open Source Broker Mosquitto \cite{mosquitto}
 besitzt diese Option.

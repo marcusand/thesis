@@ -6,7 +6,7 @@ Die einzige Anforderung, welche das Deployment direkt betrifft, ist die
 sein soll.\\
 Bei nativen Applikation wäre hier ein Updater denkbar. Also ein Service,
 welcher regelmäßig die Verfügbarkeit neuer Versionen auf einem Server prüft und einen Download 
-dieser anbietet. Electron.js bietet für diesen Fall einige Möglichkeiten, diesen Prozess 
+dieser anbietet. Electron bietet für diesen Fall einige Möglichkeiten, diesen Prozess 
 möglichst simpel zu gestalten. Beispielsweise mit dem eigenen 
 \texttt{autoUpdater}-Modul \cite{electron-autoUpdater} oder Plugins wie 
 \emph{electron-builder} \cite{electron-builder}. Auch sind mit beiden Möglichkeiten
@@ -31,7 +31,7 @@ Für die \shst{} wurde auf dem Server neben dem CMS auch ein Webserver installie
 Applikationsdateien ausliefert (\autoref{fig:ss-deployment-diagram}). Zusätzlich wurde über den 
 firmeninternen GitLab-Server \cite{gitlab} eine Build- und Deployment-Pipeline eingerichtet, welche die 
 Applikationsdateien automatisch generiert und vom Master-Branch des Repositorys auf den Webserver überträgt. 
-Für ein Updaten der Clientapplikation, auf der Workstation in der Ausstellung, ist also nichts weiter 
+Für ein Updaten der Clientanwendung, auf der Workstation in der Ausstellung, ist also nichts weiter 
 nötig als die Änderungen auf den Master-Branch des Repositorys zu übertragen und die Applikation vor
 Ort neu zu laden.\\
 Das Webhosting der Applikation bietet außerdem den Vorteil, dass diese jeder Zeit in einem Browser 

@@ -6,16 +6,16 @@ Darüberhinaus gibt es für CMS eine große Auswahl an kommerziellen und freien 
 Nach der Anforderungsanalyse aus \autoref{chap:anforderungen} muss das CMS den Anforderungen
 \ref{nfa9}, \ref{nfa8} und \ref{nfa3} gerecht werden.\\
 
-\ref{nfa3} stellt die Forderung der Multilingualität an die Oberfläche der Clientsoftware. 
+\ref{nfa3} stellt die Forderung der Multilingualität an die Oberfläche der Clientanwendung. 
 Um dies zu erfüllen, müssen Inhalte mehrsprachig verfügbar sein, also muss auch 
 das CMS die Möglichkeit bieten Datenobjekte mehrsprachig anzulegen.\\
 \ref{nfa8} stellt die Forderung der Modularität an die Software. 
 Dabei spielt auch die Kopplung zwischen CMS und 
-Clientapplikation eine Rolle. Diese sollte möglichst lose sein. Eine lose Kopplung
+Clientanwendung eine Rolle. Diese sollte möglichst lose sein. Eine lose Kopplung
 wird erreicht, wenn das CMS nicht für die Darstellung der Daten verantwortlich ist, sondern 
 diese nur über eine Schnittstelle zur Verfügung stellt. CMS dieser Art besitzen also 
 keine Präsentationsschicht und werden deshalb als \emph{headless} bezeichnet \cite{headless-market}.
-Die Darstellung der Daten findet alleinig in der Clientapplikation statt.\\
+Die Darstellung der Daten findet alleinig in der Clientanwendung statt.\\
 Und schließlich fordert \ref{nfa9}, dass das CMS über das Internet erreichbar ist. 
 Das CMS sollte also selbst eine Webanwendungen sein, welche auf einem über das Internet erreichbarem Server
 gehostet ist.\\
@@ -42,7 +42,7 @@ MongoDB \cite{mongo}.\\
 Es handelt sich dabei um ein reines headless CMS. Es besitzt neben einer JSON-API um die Daten 
 auszuliefern noch eine Upload-Schnittstelle sowie eine Schnittstelle um Formulardaten abzuspeichern.\\
 Die Struktur des CMS ist Template-basiert. Administratoren können Templates 
-anlegen, welche eine Datenstruktur definieren. Redakteure können dann anhand dieser Templates 
+anlegen, welche eine Datenstruktur definieren. Redakteure können anhand dieser Templates 
 konkrete Content-Objekte erstellen, welche baumartig miteinander verknüpft werden. Templates 
 werden dabei mithilfe von verschiedenen Datenfeldern gebildet. Datenfelder sind zum Beispiel
 Zahlenfeld, Textfeld oder Rich-Text-Feld. Datenfelder können dabei als übersetzbare Felder angelegt

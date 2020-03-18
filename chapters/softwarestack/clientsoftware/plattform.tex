@@ -2,7 +2,7 @@
 \label{subs:plattform}
 
 Nach dem Anforderungskatalog aus \autoref{chap:anforderungen}, betreffen die Anforderungen
-\ref{nfa4} und \ref{nfa6} die Plattform der Clientapplikation.\\
+\ref{nfa4} und \ref{nfa6} die Plattform der Clientanwendung.\\
 
 \ref{nfa6} fordert die Plattformunabhängigkeit. Dies meint, dass die entwickelte
 Applikation später, wenn gewünscht, in unterschiedlichen Umgebungen genutzt werden kann.
@@ -10,7 +10,7 @@ Also beispielsweise neben auf einer herkömmlichen Windows-Workstation auch auf 
 Tablet oder einer Linux-Workstation. Webtechnologien bieten hierfür die beste Vorraussetzung. 
 Browser oder Umgebungen die Webanwendungen ausführen können, gibt es für praktisch 
 jede Plattform. Wichtig ist jedoch trotzdem, dass bei der Entwicklung auf
-Plattformunabhängigkeit geachtet wird. Beispielsweise bietet das Framework Electron.js die 
+Plattformunabhängigkeit geachtet wird. Beispielsweise bietet das Framework Electron die 
 Möglichkeit, mit Webtechnologien native Desktop-Apps zu entwickeln. Es wird dabei aber nicht
 nur mit Browsertechnologien gearbeitet -- ein parallel laufender Node.js-Prozess bietet
 die Möglichkeit auf Betriebssystem-Funktionalitäten zuzugreifen 
@@ -20,16 +20,16 @@ beispielsweise bei der Kommunikation mit Hardwarekomponenten, bindet die Anwendu
 Bei der Entwicklung der Applikation wird im besten Fall also darauf geachtet, dass nur mit 
 Browsertechnologien gearbeitet wird, da eine Bindung an eine spezifische Plattform so 
 nicht stattfindet. Bei einem solchen Vorgehen wäre es später immer noch möglich, 
-die Anwendung in einem Electron.js-Framework zu verpacken und als Desktop-Anwendung auszuliefern. 
+die Anwendung in einem Electron-Framework zu verpacken und als Desktop-Anwendung auszuliefern. 
 Genauso könnte die Applikation aber auch als klassische Webanwendung im Internet verfügbar gemacht oder 
 als mobile App, mit ein Framework wie Apache Cordova \cite{cordova}, ausgeliefert werden.\\
 
-\ref{nfa4} fordert die Geschlossenheit der Clientapplikation. Im Folgenden wird davon ausgegangen, 
+\ref{nfa4} fordert die Geschlossenheit der Clientanwendung. Im Folgenden wird davon ausgegangen, 
 dass die Software auf einer Workstation und nicht beispielsweise auf einem mobilen Endgerät präsentiert
 werden soll -- dies würde eine andere Herangehensweise erfordern.\\
 Für die Geschlossenheit ist es im ersten Schritt zwingend notwendig, dass die Applikation in einem 
 Vollbildmodus gestartet wird. Darüberhinaus sollten jegliche Betriebssystemfunktionen, die das 
-Verlassen der Applikation möglich machen würden, deaktiviert werden. Electron.js bietet dafür
+Verlassen der Applikation möglich machen würden, deaktiviert werden. Electron bietet dafür
 die \emph{kiosk} Option. Diese sorgt unter Anderem dafür, dass die Applikation im Vollbildmodus gestartet, 
 die Menüleiste ausgeblendet und das Verlassen des Vollbildmodus deaktiviert wird.\\
 Da sich jedoch zuvor entschieden wurde eine reine Browseranwendung zu implementieren, ist es nun naheliegend 
@@ -39,9 +39,9 @@ aktiviert werden. Zusätzlich kann eine URL angegeben werden, die beim Öffnen d
 Der Browser startet dann ebenfalls in einem nicht verlassbaren Vollbildmodus und blendet jegliche Menüleisten aus.
 Zusätzlich wird bei Touch-Input der Mauszeiger vollständig ausgeblendet.\\
 
-Für die Clientapplikation der \shst{} wurde, wie zuvor beschrieben, eine reine Browseranwendung implementiert,
+Für die Clientanwendung der \shst{} wurde, wie zuvor beschrieben, eine reine Browseranwendung implementiert,
 um die Plattformunabhängigkeit zu gewährleisten. Für die Auslieferung der Software wurde auf ein Framework wie
-Electron.js gänzlich verzichtet. Stattdessen wurde sich entschieden, durch Definieren eines so genannten Webmanifests,
+Electron gänzlich verzichtet. Stattdessen wurde sich entschieden, durch Definieren eines so genannten Webmanifests,
 eine installierbare Progressive Web App (PWA) zu erstellen \cite{web-app-manifest}. Dies bedeutet, 
 dass die Applikation zum einem in einem Browser aufgerufen, aber auch durch Installieren dem Desktop 
 der Workstation hinzugefügt werden kann. Diese installierte Applikation entspricht nichts 

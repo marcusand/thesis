@@ -8,12 +8,12 @@ Technologien nicht leisten können. Da der Begriff der Webtechnologien jedoch
 sehr weit fasst und ein riesiges Ökosystem an Technologien existiert, müssen bei
 der Wahl dieser, die Anforderungen gründlich geprüft und Technologien gegeneinander 
 abgewägt werden. Dafür wurde der Begriff der Browsertechnologien eingeführt und sich
-weiter bei der Entwicklung der Clientapplikation auf diese beschränkt. 
+weiter bei der Entwicklung der Clientanwendung auf diese beschränkt. 
 Dabei haben sich einige Grenzen aufgetan, welche teilweise gelöst werden konnten.\\
 Manche Anforderungen, wie die Mulitlingualität oder die Erreichbarkeit des CMS über das Internet,
 sind mit Webtechnologien leicht umzusetzen, da sie auch Anforderungen typischer Webanwendungen sind.
 Technologien und Lösungen sind dafür bereits vorhanden und bewährt.\\
-Bei der Verwendung reiner Browsertechnologien für die Clientapplikation haben sich einige Vorteile 
+Bei der Verwendung reiner Browsertechnologien für die Clientanwendung haben sich einige Vorteile 
 gezeigt. Eine solche Applikation ist stark plattforumunabhängigkeit, da Browser oder Browser-Umgebungen
 für praktische jede Plattform existieren und eine Anwendung so leicht portiert werden kann. Auch lassen
 sich sehr einfache Deployment-Strategien entwickeln. So wurde sich bei der \shst{} entschieden, die
@@ -34,7 +34,7 @@ der Anwendung mit Hardwaregeräten da.
 Die Möglichkeiten sind dabei auf die der Web APIs beschränkt. Diese lassen zwar die Kommunikation zu manchen
 Geräten wie Aufnahme- und Ausgabequellen für Audio oder Webcams zu, für andere Geräte muss die Kommunikation
 jedoch auf anderem Wege hergestellt werden. Im Rahmen dieser Arbeit wurde dafür die meso-connect Konvention 
-entwickelt, welche über das MQTT/Websocket Protokoll und einer standardisierten Kommunikation die Verbindung
+entwickelt, welche über das MQTT/Websocket-Protokoll und einer standardisierten Kommunikation die Verbindung
 zu unterschiedlichen Geräten möglich macht. Die Systemarchitektur für eine solche Kommunikation ist dabei zwar
 aufwendig, die softwareseitige Anbindung aber ist, durch die strikte Konvention und die Implementation der Konvention
 in einer Softwarebibliothek, abstrahiert und daher eher simple. Die entwickelte Konvention lässt sich darüber 
@@ -42,11 +42,11 @@ hinaus auch für andere Kiosksysteme und andere Projekte anwenden.\\
 
 Die so entstandenen Ergebnisse dieser Arbeit, sowie die Beschreibung der Architektur und der verwendeten
 Softwaretechnologien bei der \shst{}, können ein Leitfaden für andere Softwareentwickler sein, die 
-vor der Aufgabe stehen eine Kiosksoftware zu entwickeln. Auch soll klar geworden sein, in wie fern 
+vor der Aufgabe stehen eine Kiosksoftware zu entwickeln. Dabei soll klar geworden sein, in wie fern 
 Webtechnologien sich für eine solche Aufgabe eignen und was dabei die Möglichkeiten und Grenzen sind.\\
 Die Entwicklung der \shst{} ist für \meso{} die Grundlage für ein Produkt, 
 welches in der Zukunft weiteren Kunden angeboten werden soll. Es sollen dabei in erster Linie Kunden 
-aus dem Museums- und Ausstellungsbetrieb ansprechen.\\
+aus dem Museums- und Ausstellungsbetrieb angesprochen werden.\\
 Die meso-connect Konvention soll zukünftig nicht nur Anwendung bei weiteren Kiosksystemen finden, sondern 
 möglichst bei allen Projekten der Firma \meso{} bei denen eine MQTT Kommunikation vorgesehen ist. 
 
