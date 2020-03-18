@@ -20,6 +20,13 @@ werden. Eventuelle Updates müssten in diesem Falle aber vor Ort oder durch eine
 Fernzugriff auf den Rechner eingespielt werden. Im Fall des Webhostings genügt das Überspielen
 der neuen Files auf einen Webserver.\\
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{figures/images/browser-preview.png}
+    \caption{Vorschau der \shst{} Applikation im Browser}
+    \label{fig:browser-preview}
+\end{figure}
+
 Für die \shst{} wurde auf dem Server neben dem CMS auch ein Webserver installiert, welcher die 
 Applikationsdateien ausliefert (\autoref{fig:ss-deployment-diagram}). Zusätzlich wurde über den 
 firmeninternen GitLab-Server \cite{gitlab} eine Build- und Deployment-Pipeline eingerichtet, welche die 
@@ -29,4 +36,4 @@ nötig als die Änderungen auf den Master-Branch des Repositorys zu übertragen 
 Ort neu zu laden.\\
 Das Webhosting der Applikation bietet außerdem den Vorteil, dass diese jeder Zeit in einem Browser 
 über das Internet aufgerufen werden kann. Beim Anlegen von Daten im CMS kann dies so als
-Vorschau genutzt werden. \todo{Screenshot der Browser Preview einfügen}
+Vorschau genutzt werden (\autoref{fig:browser-preview}). 
