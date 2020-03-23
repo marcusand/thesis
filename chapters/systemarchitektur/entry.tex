@@ -9,20 +9,20 @@
 \end{figure}
 
 Für die weitere Betrachtung der Softwaretechnologien ist es erst nötig einen Überblick über 
-das Gesamtsystem der \shst{} zu erhalten, um zu verstehen, wie die einzelnen Komponenten
+das Gesamtsystem der \shst{} zu geben, um zu verstehen, wie die einzelnen Komponenten
 zusammenarbeiten.\\
 Dafür zeigt das Diagram in \autoref{fig:ss-deployment-diagram} die Topologie des Gesamtsystems.
-Es soll dabei Überblick über alle im System enthaltenen Hardwarekomponenten und Applikationen
-geben. Zusätzlich werden die Netzstruktur und die Kommunikationswege zwischen den Komponenten 
-aufgezeigt.\\
+Es gibt dabei Überblick über alle im System enthaltenen Hardwarekomponenten und Applikationen.
+Zusätzlich werden die Netzstruktur und die Kommunikationswege zwischen den Komponenten 
+dargestellt.\\
 
-Bei dem Diagram handelt es sich um ein UML Deployment Diagram \cite{uml-spec}. Es ist dafür 
-gedacht, um die Systemarchitektur und die Verteilung von Hardware- und Softwarekomponenten in der 
-Umgebung des Systems zu visualisieren \cite{uml-2.5}. Hardwarekomponenten werden dabei als Geräteknoten
+Bei dem Diagram handelt es sich um ein UML Deployment Diagram \cite{uml-spec}. 
+Es visualisiert die Systemarchitektur und die Verteilung von Hardware- und Softwarekomponenten in der 
+Umgebung des Systems \cite{uml-2.5}. Hardwarekomponenten werden dabei als Geräteknoten
 (\emph{device}) dargestellt. Auf ihnen können Softwarekomponenten verteilt werden (\emph{service,
 application, database}) \cite{uml-diagrams, uml-2.5}. Die Verbindungen zwischen Knoten und Komponenten
 sind eine spezielle Art der Assoziation und stellen in diesem Fall Kommunikationspfade dar \cite{uml-2.5}.
-Die Beschriftung an den Wegen nennt dabei das genutzte Kommunikationsprotokoll.
+Die Beschriftung an den Wegen benennt dabei das genutzte Kommunikationsprotokoll.
 Die umschließenden Rahmen zeigen welche Komponenten sich in welchem Netz befinden.\\
 Im Mittelpunkt der Architektur steht die Kiosk-Workstation -- der Ausstellungsrechner. Auf ihm läuft
 die Clientanwendung (\emph{Sharing Station App}). An die Workstation direkt angeschlossen, und mit der

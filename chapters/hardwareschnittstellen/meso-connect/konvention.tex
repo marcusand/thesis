@@ -44,8 +44,8 @@ sinnvolle Erweiterung.
 
 Die Hauptsache in der sich meso-connect von Homie unterscheidet, ist die Konfiguration. meso-connect
 sieht dafür ein File vor. Dieses, im JSON-Format gehaltene File, ist Grundlage jeder Kommunikation
-mit der meso-connect Konvention. Jeder Client wird dabei mit dem selben File konfiguriert -- es muss 
-deshalb nur einmalig erstellt werden und kann in einer Versionsverwaltung gehalten werden. 
+mit der meso-connect Konvention. Jeder Client wird dabei mit demselben File konfiguriert -- es muss 
+deshalb nur einmalig erstellt und kann in einer Versionsverwaltung gehalten werden. 
 \autoref{fig:meso-connect-config-blueprint} zeigt die Vorlage für ein solches Konfigurationsfile. 
 Gut zu erkennen ist die Unterscheidung von Devices, Nodes und Properties. Diese sind jeweils Arrays --
 es können also jeweils beliebig viele eingetragen werden. Wichtig ist, dass jeder MQTT-Client als ein
@@ -73,7 +73,7 @@ Zustand des Geräts. Dieser Wert ist dynamisch und kann sich zur Laufzeit verän
 Teil der Homie Konvention. Aber auch dieser Wert kann nur dynamisch gesetzt werden.
 Auf diesem Topic sollen eventuell auftretende Fehler in der Kommunikation veröffentlicht
 werden. Das könnten zum Beispiel Fälle sein, in denen Daten verschickt werden, die nicht dem Typ entsprechen.
-Oder wenn ein Client versucht ein Property-Wert zu ändern, welcher nicht setzbar ist. Beispielsweise können so,
+Oder wenn ein Client versucht, einen Property-Wert zu ändern, welcher nicht setzbar ist. Beispielsweise können so,
 durch abonnieren des Topics
 
 \[\texttt{meso-connect/+/+/\$error} \]

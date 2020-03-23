@@ -18,7 +18,7 @@ Praxis häufig zu Fehlern.\\
 
 Homie \cite{homie} bietet dafür eine Konvention, welche diese Probleme lösen soll. Dabei ist Homie
 ein Satz an Regeln, welcher in einigen Softwarebibliotheken, für verschiedene
-Sprachen und Plattformen, implementiert wurde. Die Konvention schreibt dabei vor, wie Topics 
+Sprachen und Plattformen, implementiert wurde. Die Konvention schreibt vor, wie Topics 
 gebildet werden und führt eine Typisierung für die Payload-Daten ein.
 Um Topics zu bilden, unterscheidet Homie zwischen Devices, Nodes und Properties. Ein Device
 ist ein physisches Gerät, wie beispielsweise ein Mikrocontroller.
@@ -33,7 +33,7 @@ gebildet. \autoref{fig:homie-example} zeigt ein vollständiges Beispiel. Dort is
 Metadaten zu Devices, Nodes und Properties über spezielle Topics, mit dem Prefix \texttt{\$},
 veröffentlich werden. Zu den Metadaten auf Property-Ebene zählt unter Anderem die Angabe eines
 Datentyps. Homie gibt dafür die Typen String, Integer, Float, Boolean, Enum und Color vor.
-Weitere Metadaten sind das Attribut \texttt{\$settable}, mit dem bestimmt werden kann
+Weitere Metadaten sind das Attribut \texttt{\$settable}, mit dem bestimmt werden kann,
 ob ein anderer Client den Wert setzten darf oder das Attribut \texttt{\$retained}, über 
 welches gesteuert werden kann, ob es sich bei dem Property um ein Event handelt oder einen Wert,
 welcher dauerhaft auf dem Topic ausgelesen werden kann. Es existieren noch einige weitere Attribute,

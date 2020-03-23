@@ -68,8 +68,8 @@ Datensatz angefordert und die angezeigten Daten durch die entsprechende Sprachve
 Um dieser beschriebenen Architektur gerecht zu werden, wurde für die Clientanwendung der \shst{} 
 unter Anderen die JavaScript Bibliotheken React \cite{react} und Redux \cite{redux} zusammen mit dem 
 Toolkit Workbox \cite{workbox} verwendet. React bildet dabei
-den Rahmen für die SPA-Architektur, Workbox bietet eine Bibliothek, welche es erleichtert 
-Service-Worker zu implementieren und Redux ist eine Bibliothek, welche ein Pattern für die Verwaltung 
+den Rahmen für die SPA-Architektur, Workbox bietet eine Bibliothek, die es erleichtert 
+Service-Worker zu implementieren und Redux ist eine Bibliothek, die ein Pattern für die Verwaltung 
 von Applikationszuständen bereitstellt. Bei steigender Komplexität von Zuständen in einer Anwendung 
 bietet der Einsatz der Redux Bibliothek allerhand Vorteile 
 -- dies ist im Rahmen dieser Thesis aber von untergeordneter Bedeutung und wird daher
@@ -117,7 +117,7 @@ Workbox hilft bei der Implementierung von Service-Worker Skripten. Darüber hina
 Workbox-Plugin \cite{workbox-webpack-plugin} für den JavaScript-Bundler Webpack \cite{webpack}. 
 Beide Technologien wurden im Falle der \shst{} eingesetzt. Mit Hilfe dieses Plugins, müssen 
 Service-Worker Skripte nicht selbst implementiert werden, sondern werden automatisiert erstellt.
-In der Konfiguration von Webpack, kann durch Setzen von Parametern bestimmt werden, was
+In der Konfiguration von Webpack kann durch Setzen von Parametern bestimmt werden, was
 der Service-Worker leisten soll. \autoref{fig:webpack-config} zeigt einen Teil der 
 Webpack-Konfiguration der \shst{}. In Zeile 31-39 wird das Objekt zur Generierung des
 Service-Workers erstellt. Als Parameter wird ein Objekt mit der Konfiguration übergeben. 
@@ -127,7 +127,7 @@ gecached und offline verfügbar gemacht werden. Weitere Funktionalitäten könne
 Setzen diverser Konfigurationsparameter aktiviert werden.\\
 In Zeile 34 wird die maximale Dateigröße gesetzt. 
 Dateien größer als dieser Wert, werden nicht offline verfügbar gemacht. Dieser Wert
-ist standardmäßig niedriger und wurde an dieser Stelle erhöht um auch das Video zu cachen, welches
+ist standardmäßig niedriger und wurde an dieser Stelle erhöht, um auch das Video zu cachen, welches
 für den Idle-Modus (\ref{fa8}) benötigt wird.
 
 \begin{figure}
@@ -137,7 +137,7 @@ für den Idle-Modus (\ref{fa8}) benötigt wird.
     \label{fig:network-first}
 \end{figure}
 
-In Zeile 35 wird definiert welche Dateien, neben den von Webpack erstellten Dateien, 
+In Zeile 35 wird definiert, welche Dateien, neben den von Webpack erstellten Dateien, 
 gecached werden sollen. Das sind in diesem Fall alle Daten und Dateien, die durch Netzwerkanfragen an 
 das CMS geladen werden. Diese Anfragen haben den gemeinsamen Namespace \texttt{/api/} und 
 können dadurch mit dem regulären Ausdruck \texttt{/.*\textbackslash/api\textbackslash/.*/} erfasst werden.
