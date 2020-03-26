@@ -95,7 +95,7 @@ Rot markierte Komponenten sind Container-Komponenten und haben keine eigene Dars
 lediglich Geschäftslogik. Blau markierte Komponenten sind Interface-Komponenten, die eine direkte 
 Darstellung in der Oberfläche haben. Die einzelne gelb markierte Komponente ist der Redux-Store. 
 Er ist ebenfalls eine besondere Art der Container-Komponente und beinhaltet den Applikationszustand. 
-Die gestrichelten Linien visualisieren, welche Komponenten dabei direkten Zugriff auf den 
+Die gestrichelten Linien visualisieren welche Komponenten dabei direkten Zugriff auf den 
 Store haben.\\
 Im Zentrum der Abbildung befindet sich die Router-Komponente. Diese entscheidet anhand der aufgerufenen
 URL, welche Komponenten geladen und dargestellt werden. Teilbäume, abgehend von der Router-Komponente, können als
@@ -115,7 +115,7 @@ zu entfernen, durch andere zu ersetzen oder um neue zu erweitern.\\
 
 Workbox hilft bei der Implementierung von Service-Worker Skripten. Darüber hinaus gibt es ein 
 Workbox-Plugin \cite{workbox-webpack-plugin} für den JavaScript-Bundler Webpack \cite{webpack}. 
-Beide Technologien wurden im Falle der \shst{} eingesetzt. Mit Hilfe dieses Plugins, müssen 
+Beide Technologien wurden im Falle der \shst{} eingesetzt. Mit Hilfe dieses Plugins müssen 
 Service-Worker Skripte nicht selbst implementiert werden, sondern werden automatisiert erstellt.
 In der Konfiguration von Webpack kann durch Setzen von Parametern bestimmt werden, was
 der Service-Worker leisten soll. \autoref{fig:webpack-config} zeigt einen Teil der 
@@ -146,5 +146,4 @@ zwischen fünf verschiedenen, vordefinierten Handler-Klassen zu wählen \cite{wo
 Die Strategie der Klasse \texttt{NetworkFirst} beruht darauf, dass die Anfrage zuerst an das Netzwerk
 gestellt wird. Ist dieses nicht erreichbar, wird auf die letzte Version im Cache zurückgegriffen. 
 Ist ein Netzwerkzugriff erfolgreich, wird auch immer die Version im Cache durch die neue Version ersetzt.
-\autoref{fig:network-first} visualisiert diese Strategie. \todo{Strategie vielleicht nochmal überarbeiten
-bzw. Nachteile behandeln}
+\autoref{fig:network-first} visualisiert diese Strategie.

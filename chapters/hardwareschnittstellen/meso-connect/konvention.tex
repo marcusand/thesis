@@ -59,7 +59,7 @@ Konfigurationsfile zur Grundlage hat, wäre das Veröffentlichen der Attribute r
 Feature ist im Kontext von Kiosk- bzw. Installationssystemen für Museen und Ausstellungen ohnehin weniger wichtig.
 Solche Systeme sind, mit all ihren Clients, meist im Voraus ausreichend bekannt. Das Konfigurationsfile
 bietet dafür in diesem Kontext größere Vorteile, da es die Konfiguration der einzelnen Clients stark
-vereinfacht \todo{Vorteile ausführen}. Die einzigen Attribute, welche auf Topics zur Laufzeit veröffentlicht 
+vereinfacht. Die einzigen Attribute, welche auf Topics zur Laufzeit veröffentlicht 
 werden, sind
 
 \[\texttt{meso-connect/<device>/\$state} \]
@@ -73,7 +73,7 @@ Zustand des Geräts. Dieser Wert ist dynamisch und kann sich zur Laufzeit verän
 Teil der Homie Konvention. Aber auch dieser Wert kann nur dynamisch gesetzt werden.
 Auf diesem Topic sollen eventuell auftretende Fehler in der Kommunikation veröffentlicht
 werden. Das könnten zum Beispiel Fälle sein, in denen Daten verschickt werden, die nicht dem Typ entsprechen.
-Oder wenn ein Client versucht, einen Property-Wert zu ändern, welcher nicht setzbar ist. Beispielsweise können so,
+Oder wenn ein Client versucht einen Property-Wert zu ändern, welcher nicht setzbar ist. Beispielsweise können so,
 durch abonnieren des Topics
 
 \[\texttt{meso-connect/+/+/\$error} \]
@@ -93,11 +93,11 @@ möglich auf dem regulären Property-Topic reflektiert werden. Dieser Reflexions
 Die meso-connect Konvention wurde bei der \shst{} angewandt. Wie \autoref{fig:ss-deployment-diagram} zeigt,
 sind dafür Kartenterminal und der Sensor des Münzschlitz an einem Mikrocontroller angeschlossen. Dieser
 kommuniziert über Netzwerk und das MQTT-Protokoll mit dem Broker. Bei dem Broker handelt es sich um 
-eine Mosquitto-Instanz \cite{mosquitto}, welche auf der Kiosk-Workstation installiert ist. \todo{wirklich mosquitto?}
+eine Mosquitto-Instanz \cite{mosquitto}, welche auf der Kiosk-Workstation installiert ist.
 Der Broker wiederum kommuniziert über das Websocket/MQTT-Protokoll
 mit der Clientanwendung.\\
 Für die eigentliche Kommunikation über das Protokoll wurde im Rahmen dieser Arbeit und für die Clientanwendung 
-der \shst{} eine JavaScript Bibliothek implementiert, welche in einer Browser- oder Node.js-Anwendung
+der \shst{} eine JavaScript-Bibliothek implementiert, welche in einer Browser- oder Node.js-Anwendung
 nutzbar ist. Diese implementiert die gesamte meso-connect Konvention und ist für den universellen Einsatz
 konzipiert. Die vollständige API-Dokumentation dieser Bibliothek befindet sich in \autoref{app:meso-connect-js}.
 

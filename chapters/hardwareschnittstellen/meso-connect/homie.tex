@@ -7,15 +7,6 @@ Encodierung und Typisierung. Eine Kommunikation muss also immer selbst und
 für jedes Projekt neu konfiguriert werden. Das ist aufwendig und führt in der 
 Praxis häufig zu Fehlern.\\
 
-\begin{figure}
-  \lstinputlisting[%
-    style=ES6,
-    caption=
-  ]{homie-example.txt}
-  \caption{Homie Topic Struktur. Quelle: \cite{homie}}
-  \label{fig:homie-example}
-\end{figure}
-
 Homie \cite{homie} bietet dafür eine Konvention, welche diese Probleme lösen soll. Dabei ist Homie
 ein Satz an Regeln, welcher in einigen Softwarebibliotheken, für verschiedene
 Sprachen und Plattformen, implementiert wurde. Die Konvention schreibt vor, wie Topics 
@@ -27,6 +18,16 @@ bezeichnet. Im Falle des Mikrocontrollers können das einzelne angeschlossene Se
 oder Geräte sein. Nodes wiederum können mehrere Properties haben. Properties sind Eigenschaften, welche 
 einen konkreten Wert besitzen können oder deren Wert von anderen Clients gesetzt werden kann.
 Ist am Mikrocontroller ein Thermometer angeschlossen, könnte eine Property \emph{Temperatur} heißen.
+
+\begin{figure}
+  \lstinputlisting[%
+    style=ES6,
+    caption=
+  ]{homie-example.txt}
+  \caption{Homie Topic Struktur. Quelle: \cite{homie}}
+  \label{fig:homie-example}
+\end{figure}
+
 Aus dieser Unterscheidung heraus werden die Topics nach der Struktur
 \[\texttt{homie/<device>/<node>/<property>} \]
 gebildet. \autoref{fig:homie-example} zeigt ein vollständiges Beispiel. Dort ist auch zu sehen, dass 

@@ -12,11 +12,11 @@ Um in Browseranwendungen mit dem Websocket-Protokoll zu arbeiten, stellen die me
 Browser die Websocket API zur Verfügung \cite{websocket-api}.\\
 
 MQTT ist ein auf dem publish/subscribe-Pattern basierendes Nachrichten-Protokoll \cite{mqtt-standard}.
-Es wird häufig in den Bereichen IoT und Home-Automation eingesetzt. Es folgt einer
+Es wird häufig in den Bereichen IoT und Home-Automation eingesetzt \cite{mqtt-org}. Es folgt einer
 klassischen Server-Client-Architektur, wobei der Server in der MQTT Umgebung \emph{Broker}
 genannt wird. Clients können über den Broker Nachrichten-Topics abonnieren oder Nachrichten
 über den Broker auf Topics versenden. Der Broker leitet versendete Nachrichten an alle Clients
-weiter, die das entsprechende Topic abonniert haben. Topics sind Namespaces \todo{wirklich namespaces?}, welche hierarchisch
+weiter, die das entsprechende Topic abonniert haben. Topics sind Namespaces, welche hierarchisch
 aufgebaut sind. Das Slash-Zeichen wird dabei als Trennzeichen genutzt. Ein Topic kann also zum 
 Beispiel 
 \[\texttt{home/living-room/temperature} \]
@@ -27,7 +27,8 @@ Namespaces, anstelle einzelner Topics, abonniert werden \cite{mqtt-man-page}.\\
 
 Wie eingangs erwähnt, kann das Websocket-Protokoll Transportschicht für
 höhere Protokolle sein. So kann es auch die Transportschicht für MQTT sein und eine Browseranwendung
-kann zum MQTT-Client werden. Da das Websocket-Protokoll alle nötigen Eigenschaften besitzt, ist es
+kann zum MQTT-Client werden \cite{mqtt-over-websockets}. 
+Da das Websocket-Protokoll alle nötigen Eigenschaften besitzt, ist es
 möglich MQTT-Pakete über Websocket-Pakete zu versenden. Die einzige Voraussetzung hierfür ist, dass der Broker
 die Option der Kommunikation über Websockets unterstützt. Der beliebte Open Source Broker Mosquitto \cite{mosquitto}
 besitzt diese Option.
