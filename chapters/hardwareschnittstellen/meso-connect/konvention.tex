@@ -113,9 +113,9 @@ konzipiert. Die vollständige API-Dokumentation dieser Bibliothek befindet sich 
 \autoref{fig:shst-meso-connect-config} zeigt das bei der \shst{} genutzte Konfigurationsfile für die 
 meso-connect Kommunikation. Zu erkennen sind dort die zwei, in der Kommunikation beteiligten Clients
 \emph{donation-controller} und \emph{sharing-station-app}. Während letzterer keine Nodes
-besitzt, sind an den \emph{donation-controller} die zwei Nodes \emph{card-terminal} und 
-\emph{coin-slot} angeschlossen. \emph{coin-slot} besitzt dabei nur eine Property, über
-welches das Event des Münzeinwurfs von \emph{donation-controller} gesendet wird. Bei dem Node
+besitzt, sind an \emph{donation-controller} die zwei Nodes \emph{card-terminal} und 
+\emph{coin-slot} angeschlossen. \emph{coin-slot} besitzt nur eine Property, über
+welches das Event des Münzeinwurfs gesendet wird. Bei dem Node
 \emph{card-terminal} handelt es sich um ein angeschlossenes Kontaktlos-Modul für Zahlungen. Dieses wickelt
 den eigentlichen Zahlungsvorgang selbst über das Internet und einen Zahlungsdienstleister ab. 
 Die Clientanwendung muss lediglich den Vorgang, mit dem in der Applikation gewählten Betrag,
