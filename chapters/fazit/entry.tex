@@ -15,7 +15,7 @@ sind mit Webtechnologien leicht umzusetzen, da sie auch Anforderungen typischer 
 Technologien und Lösungen sind dafür bereits vorhanden und bewährt.\\
 Bei der Verwendung reiner Browsertechnologien für die Clientanwendung haben sich einige Vorteile 
 gezeigt. Eine solche Applikation ist stark plattforumunabhängig, da Browser oder Browser-Umgebungen
-für praktische jede Plattform existieren und eine Anwendung so leicht portiert werden kann. Auch lassen
+für praktisch jede Plattform existieren und eine Anwendung so leicht portiert werden kann. Auch lassen
 sich sehr einfache Deployment-Strategien entwickeln. So wurde sich bei der \shst{} entschieden, die
 Applikationsdateien auf einem Webserver zu hosten -- genauso wie man es auch bei einer klassischen % build Prozess?
 Webanwendung machen würde. Dies bietet darüber hinaus den Vorteil, dass die Applikation über das Internet
@@ -34,43 +34,24 @@ der Anwendung mit Hardwaregeräten da.
 Die Möglichkeiten sind dabei auf die der Web APIs beschränkt. Diese lassen zwar die Kommunikation zu manchen
 Geräten wie Aufnahme- und Ausgabequellen für Audio oder Webcams zu, für andere Geräte muss die Kommunikation
 jedoch auf anderem Wege hergestellt werden. Im Rahmen dieser Arbeit wurde dafür die meso-connect Konvention 
-entwickelt, welche über das MQTT/Websocket-Protokoll und einer standardisierten Kommunikation die Verbindung
+entwickelt, welche über das MQTT/Websocket-Protokoll und eine standardisierte Kommunikation die Verbindung
 zu unterschiedlichen Geräten möglich macht. Die Systemarchitektur für eine solche Kommunikation ist dabei zwar
-aufwendig, die softwareseitige Anbindung aber ist, durch die strikte Konvention und die Implementation der Konvention
-in einer Softwarebibliothek, abstrahiert und daher eher simpel. Die entwickelte Konvention lässt sich darüber 
+aufwendig, die softwareseitige Anbindung aber ist, durch die strikte Konvention und die Implementierung der Konvention
+in eine Softwarebibliothek, abstrahiert und daher eher simpel. Die entwickelte Konvention lässt sich darüber 
 hinaus auch für andere Kiosksysteme und andere Projekte anwenden.\\
+Es ist zu erwarten, dass die Web APIs kontinuierlich weiterentwickelt werden und in der Zukunft andere,
+möglicherweise simplere, Lösungen zur Anbindung von Hardwaregeräten an Browseranwendungen denkbar sind. Eine Bemühung
+stellt die WebUSB API dar \cite{web-usb}. Diese soll die direkte Kommunikation von Browseranwendungen mit angeschlossenen
+USB Geräten ermöglichen. Diese Technologien steht allerdings noch am Anfang und ist nur in wenigen Browsern 
+nutzbar. Zukünftig könnte sie allerdings eine Alternative für manche Anwendungsfälle darstellen.\\
 
 Die so entstandenen Ergebnisse dieser Arbeit, sowie die Beschreibung der Architektur und der verwendeten
-Softwaretechnologien bei der \shst{}, können ein Leitfaden für andere Softwareentwickler sein, die 
-vor der Aufgabe stehen eine Kiosksoftware zu entwickeln. Dabei soll klar geworden sein, inwiefern 
+Softwaretechnologien der \shst{}, können ein Leitfaden für andere Softwareentwickler sein, die 
+vor der Aufgabe stehen eine Kiosksoftware zu entwickeln. Dabei soll klar geworden sein inwiefern 
 Webtechnologien sich für eine solche Aufgabe eignen und was dabei die Möglichkeiten und Grenzen sind.\\
 Die Entwicklung der \shst{} ist für \meso{} die Grundlage für ein Produkt, 
 welches in der Zukunft weiteren Kunden angeboten werden soll. Es sollen dabei in erster Linie Kunden 
 aus dem Museums- und Ausstellungsbetrieb angesprochen werden.\\
 Die meso-connect Konvention soll zukünftig nicht nur Anwendung bei weiteren Kiosksystemen finden, sondern 
-möglichst bei allen Projekten der Firma \meso{} bei denen eine MQTT Kommunikation vorgesehen ist. 
-
-% Da die Beliebtheit von Webtechnologien, das Ökosystem rund um JavaScript sowie die Möglichkeiten
-% von Browseranwendungen weiterhin zunehmen ist eine Investition in diese Technologien
-
-\iffalse
-- Manche Anforderungen an Kiosksoftware, wie die Mulitlingualität, sind mit
-Webtechnologien sehr leicht umzusetzen, da sie auch Anforderungen typischer
-Webanwendungen darstellen. Technologien dafür sind vorhanden
-
-- Geschlossen
-
-- Vorteile:
-  - Deployment ist leicht durch Hosting
-  - Kein aufwendiger Build Process, lediglich statische Files
-  - Lose Kopplung leicht durch PWA und Server-Client Kommunikation
-  - großer Vorteil der Plattforumunabhängigkeit -- gerade bei reinen Browseranwendungen
-  universelle Nutzung denkbar
-
-- Nachteile/Probleme:
-  - Hardwarekommunikation bedarf spezieller Architektur und Software
-  - Geräte können nur in manchen Fällen direkt mit der Applikation kommunizieren;
-  - Web APIs werden ständig weiter entwickelt -> Web USB
-  - Offline Verfügbarkeit ist bei Browseranwendung und Server/Client Architektur eher 
-    aufwendig. 
-\fi
+möglichst bei allen Projekten der Firma \meso{}, bei denen eine MQTT Kommunikation vorgesehen ist, eingesetzt
+werden.
