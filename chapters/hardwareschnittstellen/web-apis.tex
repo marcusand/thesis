@@ -1,15 +1,6 @@
 \section{Web APIs}
 \label{sec:web-apis}
 
-\begin{figure}
-  \lstinputlisting[%
-    style=ES6,
-    caption=
-  ]{webcam.js}
-  \caption{Zugriff auf die Webcam über die \emph{Media Capture and Streams API}}
-  \label{fig:webcam}
-\end{figure}
-
 Die Web APIs bilden Schnittstellen, mit denen eine Browseranwendung, typischerweise über ein JavaScript-Interface,
 kommunizieren kann \cite{web-apis}. Manche APIs bieten dabei auch Zugriff auf ausgewählte 
 Betriebssystemschnittstellen und Hardware. Beispielsweise kann mit der \emph{Web Audio API} auf 
@@ -21,6 +12,17 @@ Streams API} möglich \cite{media-stream}. \autoref{fig:webcam} zeigt den Zugrif
 kann genau spezifiziert werden, welche Art von Stream vom Betriebssystem angefordert werden soll. In diesem Fall
 wird ein reiner Video-Stream mit einer 4k-Auflösung im Seitenverhältnis 1:1 gefordert. Der Zugriff muss 
 im Browser über ein Dialogfenster bestätigt werden, anschließend kann das \texttt{MediaStream} Objekt als
-Videoquelle in der Anwendung genutzt werden. Der \texttt{insertWebcamStream} Funktion in Zeile 23 kann dafür
+Videoquelle in der Anwendung genutzt werden. 
+
+\begin{figure}
+  \lstinputlisting[%
+    style=ES6,
+    caption=
+  ]{webcam.js}
+  \caption{Zugriff auf die Webcam über die \emph{Media Capture and Streams API}}
+  \label{fig:webcam}
+\end{figure}
+
+Der \texttt{insertWebcamStream} Funktion in Zeile 23 kann dafür
 ein HTML Video-Element als Parameter übergeben werden. In Zeile 27 wird das Stream-Objekt als Quelle
 des Video-Elements gesetzt und anschließend in Zeile 30 gestartet.

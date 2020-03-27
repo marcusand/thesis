@@ -1,13 +1,6 @@
 \chapter{Systemarchitektur}
 \label{chap:systemarchitektur}
 
-\begin{figure}
-    \centering
-    \includestandalone[width=1\textwidth]{figures/plant/out/ss-deployment-diagram}
-    \caption{Deployment Diagram der \shst{}}
-    \label{fig:ss-deployment-diagram}
-\end{figure}
-
 Für die weitere Betrachtung der Softwaretechnologien ist es erst nötig einen Überblick über 
 das Gesamtsystem der \shst{} zu geben, um zu verstehen, wie die einzelnen Komponenten
 zusammenarbeiten.\\
@@ -45,3 +38,10 @@ Und schließlich gibt es noch den Wordpress-Server des Dialogmuseums. Dessen Arc
 aber auch nicht weiter von Bedeutung. Lediglich die Schnittstelle zum Eintragen einer E-Mail Adresse in 
 die Newsletterliste ist relevant. Bei dieser handelt es sich um einen einzelnen Endpoint, welcher ebenfalls
 über das HTTPS-Protokoll angesprochen werden kann. 
+
+\begin{figure}
+    \centering
+    \includestandalone[width=1\textwidth]{figures/plant/out/ss-deployment-diagram}
+    \caption{Deployment Diagram der \shst{}}
+    \label{fig:ss-deployment-diagram}
+\end{figure}
