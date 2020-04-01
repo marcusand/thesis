@@ -17,9 +17,9 @@ application, database}) \cite{uml-diagrams, uml-2.5}. Die Verbindungen zwischen 
 sind eine spezielle Art der Assoziation und stellen in diesem Fall Kommunikationspfade dar \cite{uml-2.5}.
 Die Beschriftung an den Wegen benennt dabei das genutzte Kommunikationsprotokoll.
 Die umschließenden Rahmen zeigen welche Komponenten sich in welchem Netz befinden.\\
-Im Mittelpunkt der Architektur steht die Kiosk-Workstation -- der Ausstellungsrechner. Auf ihm läuft
+Im Mittelpunkt der Architektur steht die \emph{Kiosk-Workstation} -- der Ausstellungsrechner. Auf ihm läuft
 die Clientanwendung (\emph{Sharing Station App}). An die Workstation direkt angeschlossen, und mit der
-Applikation über die USB-Schnittstelle kommunizierend, ist die Webcam, 
+Applikation über die USB-Schnittstelle kommunizierend, ist die \emph{Webcam}, 
 welche für die Foto-Commitment Funktion (\ref{fa4}) benötigt wird. 
 Die zwei weiteren Hardwarekomponenten \emph{Card Terminal} und \emph{Coin Slot} (\ref{fa3}) sind nicht 
 an die Kiosk-Workstation, sondern über eine serielle Schnittstelle an einen
@@ -27,7 +27,7 @@ Mikrocontroller (\emph{Embedded-Client}) angeschlossen. Dieser kommuniziert übe
 den \emph{MQTT Broker} mit der Clientanwendung. Die Hintergründe zu dieser Architektur werden in
 \autoref{chap:hardwareschnittstellen} erläutert.\\
 Alle eben beschriebenen Komponenten befinden sich im lokalen Netzwerk des Museums. Darüber hinaus gibt 
-es noch die Dienste, welche über das Internet erreichbar sind. Im Zentrum steht hier der Server. 
+es noch die Dienste, welche über das Internet erreichbar sind. Im Zentrum steht hier der \emph{Server}. 
 Bei diesem handelt es sich um einen Cloud-Server mit Root-Zugriff. Auf diesem ist das CMS zusammen mit
 der Datenbank gehostet. So ist das CMS über eine Weboberfläche im Internet erreichbar und erfüllt
 damit die Anforderung \ref{nfa9}. Neben dem CMS und der Datenbank ist auf dem Server noch ein
