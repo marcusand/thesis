@@ -25,8 +25,8 @@ und Hardwaregeräten hergestellt.\\
 
 Um die Kommunikation zu vereinheitlichen, werden einige Grundsätze der Homie Konvention übernommen.
 Das ist zum ersten die Unterscheidung in Devices, Nodes und Properties und die sich daraus 
-ergebende Topic-Struktur. Weiter wird das Typsystem für die Payload-Daten übernommen. 
-Dieses wird allerdings um den \emph{JSON}-Typ erweitert. 
+ergebende Topic-Struktur. Weiter wird das Typsystem für Payload-Daten übernommen. 
+Dieses wird jedoch um den \emph{JSON}-Typ erweitert. 
 Ein JSON-Objekt könnte auch als String übertragen werden -- dann wäre allerdings
 das Überprüfen der Wohlgeformtheit des JSON-Objekts nicht Teil der Konvention.
 Da in der Praxis, und gerade bei Projekten der Firma \meso{}, oft mit JSON-Objekten in der 
@@ -47,7 +47,7 @@ sieht dafür ein File vor. Dieses, im JSON-Format gehaltene File, ist Grundlage 
 mit der meso-connect Konvention. Jeder Client wird dabei mit demselben File konfiguriert -- es muss 
 deshalb nur einmalig erstellt und kann in einer Versionsverwaltung gehalten werden. 
 \autoref{fig:meso-connect-config-blueprint} zeigt die Vorlage für ein solches Konfigurationsfile. 
-Gut zu erkennen ist die Unterscheidung von Devices, Nodes und Properties. Diese sind jeweils Arrays --
+Gut zu erkennen, ist die Unterscheidung von Devices, Nodes und Properties. Diese sind jeweils Arrays --
 es können also jeweils beliebig viele eingetragen werden. Wichtig ist, dass jeder MQTT-Client als ein
 Device im Konfigurationsfile aufgelistet werden muss. Auch dann, wenn der Client selber 
 keine Nodes und Properties besitzt. Das Konfigurationsfile gibt so immer einen Überblick über die 
@@ -85,10 +85,11 @@ Ist eine Property \emph{settable} kann der Wert von einem anderen Client gesetzt
 
 \[\texttt{meso-connect/<device>/<node>/<property>/set} \]
 
-Das heißt, der Client, welcher diese einstellbare Property besitzt muss dieses Topic abonnieren und
+Das heißt, der Client, welcher das einstellbare Property besitzt muss dieses Topic abonnieren und
 auf Nachrichten reagieren. Erreicht ihn ein neuer Wert auf diesem Topic, muss dieser Wert so schnell wie 
-möglich auf dem regulären Property-Topic reflektiert werden. Dieser Reflexionsmechanismus, welcher ebenfalls von Homie
-übernommen wurde, gibt Sicherheit über die erfolgreiche Übertragung und die entsprechende Statusänderung.\\
+möglich auf dem regulären Property-Topic reflektiert werden. Dieser Reflexionsmechanismus wurde ebenfalls 
+von Homie übernommen. Er gibt Sicherheit über die erfolgreiche Übertragung und die entsprechende 
+Statusänderung.\\
 
 Die meso-connect Konvention wurde bei der \shst{} angewandt. Wie \autoref{fig:ss-deployment-diagram} zeigt,
 sind dafür Kartenterminal und der Sensor des Münzschlitz an einem Mikrocontroller angeschlossen. Dieser
@@ -116,7 +117,7 @@ meso-connect Kommunikation. Zu erkennen sind dort die zwei, in der Kommunikation
 besitzt, sind an den \emph{donation-controller} die zwei Nodes \emph{card-terminal} und 
 \emph{coin-slot} angeschlossen. \emph{coin-slot} besitzt nur eine Property, über
 welches das Event des Münzeinwurfs von \emph{donation-controller} gesendet wird. Bei dem Node
-\emph{card-terminal} handelt es sich um ein angeschlossenes Kontaktlos-Modul für Zahlungen. Dieses wickelt
+\emph{card-terminal} handelt es sich um ein angeschlossenes Kontaktlosmodul für Zahlungen. Dieses wickelt
 den eigentlichen Zahlungsvorgang selbst über das Internet und einen Zahlungsdienstleister ab. 
 Die Clientanwendung muss lediglich den Vorgang, mit dem in der Applikation gewählten Betrag,
 starten. Dafür existiert das Property \emph{start-transaction}. War die Transaktion erfolgreich,
