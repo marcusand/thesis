@@ -7,7 +7,7 @@ Betriebssystemschnittstellen und Hardware. Beispielsweise kann mit der \emph{Web
 angeschlossene Aufnahme- und Ausgabequellen für Audio zugegriffen werden \cite{web-audio-api}.\\
 Für die in \ref{fa4} beschriebene
 Foto-Commitment Funktion wird das Bild einer angeschlossenen Webcam benötigt. Das ist mit der \emph{Media Capture and 
-Streams API} möglich \cite{media-stream}. \autoref{fig:webcam} zeigt den Zugriff über die API. In Zeile 16 wird 
+Streams API} möglich \cite{media-stream}. \autoref{fig:webcam} zeigt den Zugriff über die API. In Zeile 14 wird 
 über die \texttt{getUserMedia()} Funktion ein \texttt{MediaStream} Objekt angefordert. Über das Konfigurationsobjekt
 kann genau spezifiziert werden, welche Art von Stream vom Betriebssystem angefordert werden soll. In diesem Fall
 wird ein reiner Video-Stream mit einer 4k-Auflösung im Seitenverhältnis 1:1 gefordert. Der Zugriff muss 
@@ -23,6 +23,6 @@ Videoquelle in der Anwendung genutzt werden.
   \label{fig:webcam}
 \end{figure}
 
-Der \texttt{insertWebcamStream} Funktion in Zeile 23 kann dafür
-ein HTML Video-Element als Parameter übergeben werden. In Zeile 27 wird das Stream-Objekt als Quelle
-des Video-Elements gesetzt und anschließend in Zeile 30 gestartet.
+Der \texttt{insertWebcamStream} Funktion in Zeile 21 kann dafür
+ein HTML Video-Element als Parameter übergeben werden. In Zeile 25 wird das Stream-Objekt als Quelle
+des Video-Elements gesetzt und anschließend in Zeile 28 gestartet.
